@@ -1,5 +1,8 @@
 package vista;
 
-public class PanelSuperAstro {
+import javax.swing.*;
+
+public class PanelSuperAstro extends JPanel
+{
 
 }

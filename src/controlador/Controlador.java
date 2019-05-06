@@ -1,9 +1,12 @@
 package controlador;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import modelo.Mundo;
 import vista.InterfazGUI;
 
-public class Controlador 
+public class Controlador implements ActionListener
 {
 	private Mundo modelo;
 	private InterfazGUI vista;
@@ -12,5 +15,12 @@ public class Controlador
 	{
 		modelo = new Mundo();
 		vista = new InterfazGUI(this);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent evento) 
+	{
+		// TODO Apéndice de método generado automáticamente
+		
 	}
 }

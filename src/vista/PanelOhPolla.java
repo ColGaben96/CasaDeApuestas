@@ -1,5 +1,8 @@
 package vista;
 
-public class PanelOhPolla {
+import javax.swing.*;
+
+public class PanelOhPolla extends JPanel
+{
 
 }
