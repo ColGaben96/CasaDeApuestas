@@ -17,4 +17,14 @@ public class SuperAstroOperaciones extends JPanel
 		add(descartar);
 	}
 
+	public JButton getApostar() 
+	{
+		return apostar;
+	}
+
+	public JButton getDescartar() 
+	{
+		return descartar;
+	}
+
 }

@@ -19,4 +19,12 @@ public class PanelSuperAstro extends JPanel
 		add(operaciones);
 	}
 
+	public SuperAstroFormulario getFormulario() {
+		return formulario;
+	}
+
+	public SuperAstroOperaciones getOperaciones() {
+		return operaciones;
+	}
+
 }
