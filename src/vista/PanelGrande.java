@@ -1,6 +1,6 @@
 package vista;
 
-import java.awt.GridLayout;
+import java.awt.*;
 
 import javax.swing.*;
 
@@ -14,9 +14,9 @@ public class PanelGrande extends JPanel
 	{
 		setLayout(new GridLayout(1, 2));
 		pestanas = new PanelPestanas();
-		operaciones = new PanelOperaciones();
-		
+		pestanas.getMaximumSize();
 		add(pestanas);
+		operaciones = new PanelOperaciones();
 		add(operaciones);
 	}
 

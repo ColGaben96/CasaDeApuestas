@@ -20,7 +20,7 @@ public class InterfazGUI extends JFrame
 		setLayout(new BorderLayout());
 		setTitle("Oh! Apuestas");
 		setVisible(true);
-		setSize(1366, 800);
+		setSize(1000, 400);
 		
 		tooltip.getMarCerrar().addActionListener(control);
 		tooltip.getMayAcercaDe().addActionListener(control);
