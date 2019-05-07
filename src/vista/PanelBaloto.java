@@ -1,5 +1,7 @@
 package vista;
 
-public class PanelBaloto {
+import javax.swing.*;
+public class PanelBaloto extends JPanel
+{
 
 }
