@@ -7,20 +7,32 @@ public class PanelPestanas extends JPanel
 {
 	private static final long serialVersionUID = 1L;
 	private JTabbedPane pestanas;
-	private PanelSuperAstro psa;
-	private PanelBaloto pb;
-	private PanelOhPolla poh;
+	private PanelSuperAstro superAstro;
+	private PanelBaloto baloto;
+	private PanelOhPolla ohPolla;
 	
 	public PanelPestanas()
 	{
 		setLayout(new GridLayout());
 		pestanas = new JTabbedPane();
-		psa = new PanelSuperAstro();
-		pb = new PanelBaloto();
-		poh = new PanelOhPolla();
+		superAstro = new PanelSuperAstro();
+		baloto = new PanelBaloto();
+		ohPolla = new PanelOhPolla();
 		add(pestanas);
-		pestanas.addTab("SuperAstro", psa);
-		pestanas.addTab("Baloto", pb);
-		pestanas.addTab("Marcardor Oh!Polla", poh);
+		pestanas.addTab("SuperAstro", superAstro);
+		pestanas.addTab("Baloto", baloto);
+		pestanas.addTab("Marcardor Oh!Polla", ohPolla);
+	}
+
+	public PanelSuperAstro getSuperAstro() {
+		return superAstro;
+	}
+
+	public PanelBaloto getBaloto() {
+		return baloto;
+	}
+
+	public PanelOhPolla getOhPolla() {
+		return ohPolla;
 	}
 }
