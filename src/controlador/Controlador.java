@@ -20,7 +20,7 @@ public class Controlador implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent evento) 
 	{
-		// TODO Apéndice de método generado automáticamente
+		
 		
 	}
 }
