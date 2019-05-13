@@ -5,17 +5,20 @@ import java.awt.event.ActionListener;
 
 import modelo.Mundo;
 import vista.InterfazGUI;
+import vista.VentanaDetalles;
 
 public class Controlador implements ActionListener
 {
 	private Mundo modelo;
 	private InterfazGUI vista;
+	private VentanaDetalles detalles;
 	public Controlador()
 	{
 		modelo = new Mundo();
 		vista = new InterfazGUI(this);
-		vista.getPanelGrande().getPestanas().getParametros().butGuardar.addActionListener(this);
-		vista.getPanelGrande().getPestanas().getParametros().butCargar.addActionListener(this);
+		detalles = new VentanaDetalles();
+		
+		vista.getPanelGrande().getOperaciones().getDetallesPunto().addActionListener(this);
 		
 	}
 
@@ -34,6 +37,12 @@ public class Controlador implements ActionListener
 		    vista.getPanelGrande().getPestanas().getParametros().txtSedes.getText(), 
 		    vista.getPanelGrande().getPestanas().getParametros().txtPresupuesto.getText());
 		}
+		
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getOperaciones().DETALLES)) {
+			detalles.setVisible(true);
+		}
+		
+		
 		
 	}
 
