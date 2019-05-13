@@ -10,6 +10,7 @@ public class PanelPestanas extends JPanel
 	private PanelSuperAstro superAstro;
 	private PanelBaloto baloto;
 	private PanelOhPolla ohPolla;
+	private PanelParametros para;
 	
 	public PanelPestanas()
 	{
@@ -18,10 +19,12 @@ public class PanelPestanas extends JPanel
 		superAstro = new PanelSuperAstro();
 		baloto = new PanelBaloto();
 		ohPolla = new PanelOhPolla();
+		para = new PanelParametros();
 		add(pestanas);
 		pestanas.addTab("SuperAstro", superAstro);
 		pestanas.addTab("Baloto", baloto);
 		pestanas.addTab("Marcardor Oh!Polla", ohPolla);
+		pestanas.addTab("Parametrizacion", para);
 	}
 
 	public PanelSuperAstro getSuperAstro() {
@@ -34,5 +37,9 @@ public class PanelPestanas extends JPanel
 
 	public PanelOhPolla getOhPolla() {
 		return ohPolla;
+	}
+	
+	public PanelParametros getParametros() {
+		return para;
 	}
 }

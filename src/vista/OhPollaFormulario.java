@@ -11,7 +11,7 @@ public class OhPollaFormulario extends JPanel
 	
 	public OhPollaFormulario()
 	{
-		idFactura = new JLabel("ID Factura N°");
+		idFactura = new JLabel("ID Factura Nï¿½");
 		txFactura = new JTextField("0000");
 		txFactura.setEditable(false);
 		txFactura.setForeground(Color.RED);

@@ -28,4 +28,5 @@ public class PanelGrande extends JPanel
 		return operaciones;
 	}
 	
+	
 }

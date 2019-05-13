@@ -24,7 +24,6 @@ public class InterfazGUI extends JFrame
 		
 		tooltip.getMarCerrar().addActionListener(control);
 		tooltip.getMayAcercaDe().addActionListener(control);
-		
 		add(tooltip, BorderLayout.NORTH);
 		add(panelGrande, BorderLayout.CENTER);
 		add(statusBar, BorderLayout.SOUTH);
