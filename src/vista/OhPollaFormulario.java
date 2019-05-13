@@ -11,7 +11,11 @@ public class OhPollaFormulario extends JPanel
 	
 	public OhPollaFormulario()
 	{
+<<<<<<< HEAD
 		idFactura = new JLabel("ID Factura Nï¿½");
+=======
+		idFactura = new JLabel("ID Factura N°");
+>>>>>>> origin/Pochecito
 		txFactura = new JTextField("0000");
 		txFactura.setEditable(false);
 		txFactura.setForeground(Color.RED);
@@ -20,12 +24,15 @@ public class OhPollaFormulario extends JPanel
 		txFactura.setFont(fuenteFactura);
 		add(idFactura);
 		add(txFactura);
+<<<<<<< HEAD
 		idCliente = new JLabel("C.C / C.E");
 		txidCliente = new JTextField();
 		add(idCliente);
 		add(txidCliente);
 		txEquipoA = new JTextField();
 		labelvs = new JLabel("vs");
+=======
+>>>>>>> origin/Pochecito
 	}
 
 }
