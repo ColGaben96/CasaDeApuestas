@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 
+import javax.swing.JOptionPane;
+
 public class Propiedades {
 
 	public String casa;
@@ -29,6 +31,8 @@ public class Propiedades {
 
      } catch (IOException ex) {
          ex.printStackTrace();
+         JOptionPane.showMessageDialog(null, "ERROR, es posible que no hayas guardado ninguna configuracion \n guarda una"
+         		+ "configuracion e intente denuevo", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
      }
 
 	}
@@ -47,6 +51,7 @@ public class Propiedades {
 
      } catch (IOException io) {
          io.printStackTrace();
+
      }  
 	}
 }
