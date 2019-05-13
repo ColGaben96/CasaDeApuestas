@@ -28,4 +28,8 @@ public class PanelGrande extends JPanel
 		return operaciones;
 	}
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> origin/Pochecito
 }
