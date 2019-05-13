@@ -31,7 +31,7 @@ public class Propiedades {
          JOptionPane.showMessageDialog(null, "EXITOSO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
      } catch (IOException ex) {
          ex.printStackTrace();
-         JOptionPane.showMessageDialog(null, "ERROR", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
      }
 
 	}
@@ -54,5 +54,15 @@ public class Propiedades {
          io.printStackTrace();
          JOptionPane.showMessageDialog(null, "ERROR", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
      }  
+	}
+	
+	public String getCasa() {
+		return casa;
+	}
+	public String getSedes() {
+		return sedes;
+	}
+	public String getPresupuesto() {
+		return presupuesto;
 	}
 }

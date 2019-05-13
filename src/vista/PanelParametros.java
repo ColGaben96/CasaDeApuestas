@@ -61,6 +61,20 @@ public class PanelParametros extends JPanel{
 		add(butGuardar); add(butCargar);
 	}
 	
-	
+	public JButton getGuardar() {
+		return butGuardar;
+	}
+	public JButton getCargar() {
+		return butCargar;
+	}
+	public JTextField getCasa() {
+		return txtCasa;
+	}
+	public JTextField getSedes() {
+		return txtSedes;
+	}
+	public JTextField getPresupuesto() {
+		return txtPresupuesto;
+	}
 	
 }

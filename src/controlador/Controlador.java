@@ -16,33 +16,41 @@ public class Controlador implements ActionListener
 	{
 		modelo = new Mundo();
 		vista = new InterfazGUI(this);
-		detalles = new VentanaDetalles();
-		
+		detalles = new VentanaDetalles(this);
 		vista.getPanelGrande().getOperaciones().getDetallesPunto().addActionListener(this);
-		
+		detalles.getParametros().getGuardar().addActionListener(this);
+		detalles.getParametros().getCargar().addActionListener(this);
 	}
 
 
 	public  void actionPerformed(ActionEvent evento) 
 	{
-		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getParametros().CARGAR)) {
+		if(evento.getActionCommand().equals(detalles.getParametros().CARGAR)) {
 			modelo.getP().leerPropiedades();
-			vista.getPanelGrande().getPestanas().getParametros().txtCasa.setText(modelo.getP().casa);
-			vista.getPanelGrande().getPestanas().getParametros().txtSedes.setText(modelo.getP().sedes);
-			vista.getPanelGrande().getPestanas().getParametros().txtPresupuesto.setText(modelo.getP().presupuesto);
+			detalles.getParametros().getCasa().setText(modelo.getP().getCasa());
+			detalles.getParametros().getSedes().setText(modelo.getP().getSedes());
+			detalles.getParametros().getPresupuesto().setText(modelo.getP().getPresupuesto());
 		}
 		
-		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getParametros().GUARDAR)) {
-			modelo.getP().escribirPropiedades(vista.getPanelGrande().getPestanas().getParametros().txtCasa.getText(), 
-		    vista.getPanelGrande().getPestanas().getParametros().txtSedes.getText(), 
-		    vista.getPanelGrande().getPestanas().getParametros().txtPresupuesto.getText());
+		if(evento.getActionCommand().equals(detalles.getParametros().GUARDAR)) {
+			modelo.getP().escribirPropiedades(detalles.getParametros().getCasa().getText(), 
+		    detalles.getParametros().getSedes().getText(), 
+		    detalles.getParametros().getPresupuesto().getText());
 		}
 		
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getOperaciones().DETALLES)) {
 			detalles.setVisible(true);
 		}
 		
-		
+		if(evento.getActionCommand().equals(detalles.getSedes().GUARDAR)) {
+			modelo.getA().leerArchivo();
+			detalles.getSedes().getUbicacion().setText(modelo.getA().getUbicacion());
+			detalles.getSedes().getNumEmp().setText(modelo.getA().getNumEmp());
+		}
+		if(evento.getActionCommand().equals(detalles.getSedes().CARGAR)) {
+			modelo.getA().escribirArchivo(detalles.getSedes().getUbicacion().getText(), 
+					detalles.getSedes().getNumEmp().getText());
+		}
 		
 	}
 
