@@ -10,24 +10,10 @@ public class Controlador implements ActionListener
 {
 	private Mundo modelo;
 	private InterfazGUI vista;
-<<<<<<< HEAD
-	
-=======
->>>>>>> origin/Pochecito
 	public Controlador()
 	{
 		modelo = new Mundo();
 		vista = new InterfazGUI(this);
-<<<<<<< HEAD
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent evento) 
-	{
-		
-		
-	}
-=======
 		vista.getPanelGrande().getPestanas().getParametros().butGuardar.addActionListener(this);
 		vista.getPanelGrande().getPestanas().getParametros().butCargar.addActionListener(this);
 		
@@ -52,5 +38,4 @@ public class Controlador implements ActionListener
 	}
 
 
->>>>>>> origin/Pochecito
 }

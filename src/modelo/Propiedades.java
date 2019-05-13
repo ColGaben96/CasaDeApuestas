@@ -1,9 +1,5 @@
 package modelo;
 
-<<<<<<< HEAD
-public class Propiedades {
-
-=======
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -36,7 +32,7 @@ public class Propiedades {
      } catch (IOException ex) {
          ex.printStackTrace();
          JOptionPane.showMessageDialog(null, "ERROR, es posible que no hayas guardado ninguna configuracion \n guarda una"
-         		+ "configuracion e intente denuevo", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+         		+ "configuracion e intente denuevo", "Tï¿½tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
      }
 
 	}
@@ -58,5 +54,4 @@ public class Propiedades {
 
      }  
 	}
->>>>>>> origin/Pochecito
 }
