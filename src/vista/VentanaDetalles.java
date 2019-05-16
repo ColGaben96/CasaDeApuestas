@@ -13,6 +13,7 @@ public class VentanaDetalles extends JFrame{
 	private JTabbedPane pestanas;
 	private PanelParametros para;
 	private PanelSedes sede;
+	private PanelApostador apos;
 	
 	public VentanaDetalles(Controlador control) {
 		
@@ -20,9 +21,11 @@ public class VentanaDetalles extends JFrame{
 		pestanas = new JTabbedPane();
 		para = new PanelParametros();
 		sede = new PanelSedes();
+		apos= new PanelApostador();
 		add(pestanas);
 		pestanas.addTab("Parametrizacion", para);
 		pestanas.addTab("Sede", sede);
+		pestanas.addTab("Apostador", apos);
 		setSize(800, 400);
 		
 	}
@@ -31,6 +34,9 @@ public class VentanaDetalles extends JFrame{
 	}
 	public PanelSedes getSedes() {
 		return sede;
+	}
+	public PanelApostador getApostador() {
+		return apos;
 	}
 
 }
