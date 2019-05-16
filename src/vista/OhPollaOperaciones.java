@@ -1,8 +1,14 @@
 package vista;
 
 import java.awt.*;
-
 import javax.swing.*;
+
+/**
+ * 
+ * @author Oh! Enterprises
+ * OhPollaOperaciones: 
+ *
+ */
 public class OhPollaOperaciones extends JPanel
 {
 	private static final long serialVersionUID = 1L;
