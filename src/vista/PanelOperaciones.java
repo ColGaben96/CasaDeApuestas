@@ -10,14 +10,12 @@ import javax.swing.*;
  */
 public class PanelOperaciones extends JPanel
 {
-	/**
-	 * Serial por defecto.
-	 */
 	private static final long serialVersionUID = 1L;
 	/**
 	 * Crea boton de generarExtractos, crearReporte, imprimirFacturas, detallesPunto.
 	 */
 	private JButton generarExtractos, crearReporte, imprimirFacturas, detallesPunto;
+	public static final String DETALLES = "Detalles";
 	public PanelOperaciones()
 	{
 		/**
@@ -37,7 +35,7 @@ public class PanelOperaciones extends JPanel
 		crearReporte = new JButton("Crear Reporte");
 		imprimirFacturas = new JButton("Imprimir Facturas");
 		detallesPunto = new JButton("Detalles del Punto");
-		
+		detallesPunto.setActionCommand(DETALLES);
 		add(generarExtractos);
 		add(crearReporte);
 		add(imprimirFacturas);
