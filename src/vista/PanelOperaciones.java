@@ -25,7 +25,12 @@ public class PanelOperaciones extends JPanel
 		 * setLayout(new GridLayout(4,1)): Crea el panel grande y las cuadriculas (4 filas, 1 columna).
 		 * generarExtractos = new JButton("Generar Extractos"): Crea el boton "Generar Extractos".
 		 * crearReporte = new JButton("Crear Reporte"): Crea el boton "Crear Reporte".
-		 * imprimirFacturas
+		 * imprimirFacturas = new JButton("Imprimir Facturas"): Crea el boton "Imprimir Facturas".
+		 * detallesPunto = new JButton("Detalles del Punto"): Crea el boton "Detalles del Punto".
+		 * add(generarExtractos): Agrega el boton "Generar Extractos" a la interfaz.
+		 * add(crearReporte): Agrega el boton "Crear Reporte" a la interfaz.
+		 * add(imprimirFacturas): Agrega el boton "Imprimir Facturas" a la intefaz.
+		 * add(detallesPunto): Agrega el boton "Detalles del Puntos" a la interfaz.
 		 */
 		setLayout(new GridLayout(4, 1));
 		generarExtractos = new JButton("Generar Extractos");
@@ -38,15 +43,31 @@ public class PanelOperaciones extends JPanel
 		add(imprimirFacturas);
 		add(detallesPunto);
 	}
+	/**
+	 * Obtener generar extractos.
+	 * @return generarExtractos.
+	 */
 	public JButton getGenerarExtractos() {
 		return generarExtractos;
 	}
+	/**
+	 * Obtener crear reporte.
+	 * @return crearReporte.
+	 */
 	public JButton getCrearReporte() {
 		return crearReporte;
 	}
+	/**
+	 * Obtener imprimir facturas.
+	 * @return imprimirFacturas.
+	 */
 	public JButton getImprimirFacturas() {
 		return imprimirFacturas;
 	}
+	/**
+	 * Obtener detalles del punto.
+	 * @return detallesPunto.
+	 */
 	public JButton getDetallesPunto() {
 		return detallesPunto;
 	}
