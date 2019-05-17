@@ -3,16 +3,30 @@ package vista;
 import java.awt.GridLayout;
 
 import javax.swing.*;
-
+/**
+ * 
+ * @author Oh! Enterprises
+ *
+ */
 public class PanelOperaciones extends JPanel
 {
 	/**
-	 * 
+	 * Serial por defecto.
 	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * Crea boton de generarExtractos, crearReporte, imprimirFacturas, detallesPunto.
+	 */
 	private JButton generarExtractos, crearReporte, imprimirFacturas, detallesPunto;
 	public PanelOperaciones()
 	{
+		/**
+		 * @param PanelOperaciones: Constructor del panel de operaciones.
+		 * setLayout(new GridLayout(4,1)): Crea el panel grande y las cuadriculas (4 filas, 1 columna).
+		 * generarExtractos = new JButton("Generar Extractos"): Crea el boton "Generar Extractos".
+		 * crearReporte = new JButton("Crear Reporte"): Crea el boton "Crear Reporte".
+		 * imprimirFacturas
+		 */
 		setLayout(new GridLayout(4, 1));
 		generarExtractos = new JButton("Generar Extractos");
 		crearReporte = new JButton("Crear Reporte");
