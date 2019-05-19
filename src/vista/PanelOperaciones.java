@@ -6,10 +6,14 @@ import javax.swing.*;
 /**
  * 
  * @author Oh! Enterprises
+ * PanelOperaciones: Clase dedicada al panel de operaciones.
  *
  */
 public class PanelOperaciones extends JPanel
 {
+	/**
+	 * Serial por defecto.
+	 */
 	private static final long serialVersionUID = 1L;
 	/**
 	 * Crea boton de generarExtractos, crearReporte, imprimirFacturas, detallesPunto.

@@ -4,25 +4,53 @@ import java.awt.GridLayout;
 
 import javax.swing.*;
 
+/**
+ * 
+ * @author Oh! Enterprises.
+ * PanelSuperAstro: Clase dedicada al panel global de Super Astro.
+ */
 public class PanelSuperAstro extends JPanel
 {
+	/**
+	 * Serial por defecto.
+	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * Formulario de Super Astro.
+	 */
 	private SuperAstroFormulario formulario;
+	/**
+	 * Panel de operaciones de Super Astro.
+	 */
 	private SuperAstroOperaciones operaciones;
 	
 	public PanelSuperAstro()
 	{
+		/**
+		 * @param PanelSuperAstro: Constructor del panel Super Astro.
+		 * setLayout(new GridLayout(2, 1)): Crea el panel grande y los botones en cuadricula (2 filas, 1 columna).
+		 * formulario = new SuperAstroFormulario(): Crea nuevo formulario.
+		 * add(formulario): Agrega el formulario a la interfaz.
+		 * operaciones = new SuperAstroOperaciones(): Crea nuevo panel de operaciones.
+		 * add(operaciones): Agrega el panel a la interfaz.
+		 */
 		setLayout(new GridLayout(2, 1));
 		formulario = new SuperAstroFormulario();
 		add(formulario);
 		operaciones = new SuperAstroOperaciones();
 		add(operaciones);
 	}
-
+	/**
+	 * Obtener formulario.
+	 * @return formulario.
+	 */
 	public SuperAstroFormulario getFormulario() {
 		return formulario;
 	}
-
+	/**
+	 * Obtener panel de operaciones.
+	 * @return operaciones.
+	 */
 	public SuperAstroOperaciones getOperaciones() {
 		return operaciones;
 	}
