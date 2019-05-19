@@ -1,6 +1,6 @@
 package vista;
 
-import java.awt.GridLayout;
+import java.awt.BorderLayout;
 
 import javax.swing.*;
 public class PanelBaloto extends JPanel
@@ -11,11 +11,11 @@ public class PanelBaloto extends JPanel
 	
 	public PanelBaloto()
 	{
-		setLayout(new GridLayout(2, 1));
+		setLayout(new BorderLayout());
 		formulario = new BalotoFormulario();
-		add(formulario);
+		add(formulario, BorderLayout.CENTER);
 		operaciones = new BalotoOperaciones();
-		add(operaciones);
+		add(operaciones, BorderLayout.SOUTH);
 	}
 
 	public BalotoFormulario getFormulario() {

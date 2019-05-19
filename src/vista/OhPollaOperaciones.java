@@ -7,6 +7,7 @@ public class OhPollaOperaciones extends JPanel
 {
 	private static final long serialVersionUID = 1L;
 	private JButton apostar, descartar;
+	public static final String APOSTAR = "Apostar", DESCARTAR = "Descartar";
 	
 	public OhPollaOperaciones()
 	{
@@ -15,6 +16,9 @@ public class OhPollaOperaciones extends JPanel
 		add(apostar);
 		descartar = new JButton("Descartar");
 		add(descartar);
+		apostar.setActionCommand(APOSTAR);
+		descartar.setActionCommand(DESCARTAR);
+		
 	}
 
 	public JButton getApostar() 
@@ -26,5 +30,4 @@ public class OhPollaOperaciones extends JPanel
 	{
 		return descartar;
 	}
-
 }

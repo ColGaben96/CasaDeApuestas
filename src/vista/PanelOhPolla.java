@@ -1,6 +1,6 @@
 package vista;
 
-import java.awt.GridLayout;
+import java.awt.BorderLayout;
 
 import javax.swing.*;
 
@@ -12,11 +12,11 @@ public class PanelOhPolla extends JPanel
 	
 	public PanelOhPolla()
 	{
-		setLayout(new GridLayout(2, 1));
+		setLayout(new BorderLayout());
 		formulario = new OhPollaFormulario();
-		add(formulario);
+		add(formulario, BorderLayout.CENTER);
 		operaciones = new OhPollaOperaciones();
-		add(operaciones);
+		add(operaciones, BorderLayout.SOUTH);
 	}
 
 	public OhPollaFormulario getFormulario() {
