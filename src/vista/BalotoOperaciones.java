@@ -19,6 +19,7 @@ public class BalotoOperaciones extends JPanel
 	 * Creación de botones "Apostar" y "Descartar".
 	 */
 	private JButton apostar, descartar;
+	public static final String APOSTAR = "Apostar", DESCARTAR = "Descartar";
 	
 	public BalotoOperaciones()
 	{
@@ -38,6 +39,9 @@ public class BalotoOperaciones extends JPanel
 		add(apostar);
 		descartar = new JButton("Descartar");
 		add(descartar);
+		apostar.setActionCommand(APOSTAR);
+		descartar.setActionCommand(DESCARTAR);
+		
 	}
 
 	/**
@@ -57,5 +61,4 @@ public class BalotoOperaciones extends JPanel
 	{
 		return descartar;
 	}
-
 }

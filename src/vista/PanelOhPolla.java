@@ -1,6 +1,6 @@
 package vista;
 
-import java.awt.GridLayout;
+import java.awt.BorderLayout;
 
 import javax.swing.*;
 /**
@@ -26,6 +26,7 @@ public class PanelOhPolla extends JPanel
 	
 	public PanelOhPolla()
 	{
+		setLayout(new BorderLayout());
 		/**
 		 * @param PanelOhPolla: Panel principal de la Oh! Polla.
 		 * setLayout(new GridLayout(2,1)): Crea el panel maestro y crea un panel con cuadricula (2 flias, 1 columna).
@@ -34,11 +35,10 @@ public class PanelOhPolla extends JPanel
 		 * operaciones = new OhPollaOperaciones(): Crea el panel de operaciones en la clase.
 		 * add(operaciones): Agrega el panel de operaciones en la interfaz.
 		 */
-		setLayout(new GridLayout(2, 1));
 		formulario = new OhPollaFormulario();
-		add(formulario);
+		add(formulario, BorderLayout.CENTER);
 		operaciones = new OhPollaOperaciones();
-		add(operaciones);
+		add(operaciones, BorderLayout.SOUTH);
 	}
 
 	/**

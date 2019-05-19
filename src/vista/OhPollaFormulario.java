@@ -1,6 +1,7 @@
 package vista;
 
 import javax.swing.*;
+
 import java.awt.*;
 
 /**
@@ -18,11 +19,13 @@ public class OhPollaFormulario extends JPanel
 	 * JTextField txFactura, txidCliente, txEquipoA, txEquipoB, tx MarcadorA, txMarcadorB: Implementa los campos de texto de factura, IDCliente, Equipo A y B, Marcador A y B.
 	 */
 	private static final long serialVersionUID = 1L;
-	private JLabel idFactura, idCliente, labelvs, labelMarcador, labelSeparadorMarcador;
+	private JLabel idFactura, idCliente, labelEquipoA, labelEquipoB;
 	private JTextField txFactura, txidCliente, txEquipoA, txEquipoB, txMarcadorA, txMarcadorB;
 	
 	public OhPollaFormulario()
 	{
+		setLayout(new GridLayout(5, 2));
+		idFactura = new JLabel("ID Factura N.");
 		/**
 		 * @param OhPollaFormulario: Implementacion grafica del mercador de la polla.
 		 * idFactura = new JLabel("ID Factura Nº"): Crea la etiqueta del numero de factura.
@@ -44,6 +47,68 @@ public class OhPollaFormulario extends JPanel
 		txFactura.setFont(fuenteFactura);
 		add(idFactura);
 		add(txFactura);
+		
+		idCliente = new JLabel("Cedula");
+		txidCliente = new JTextField();
+		add(idCliente);
+		add(txidCliente);
+		
+		labelEquipoA = new JLabel("Equipo A");
+		txEquipoA = new JTextField("ej. Millonarios");
+		labelEquipoB = new JLabel("Equipo B");
+		txEquipoB = new JTextField("ej. Santafe");
+		txMarcadorA = new JTextField("ej 3");
+		txMarcadorB = new JTextField("ej 2");
+		add(labelEquipoA);
+		add(labelEquipoB);
+		
+		add(txEquipoA);
+		add(txEquipoB);
+		
+		add(txMarcadorA);
+		add(txMarcadorB);
 	}
+
+	public JLabel getIdFactura() {
+		return idFactura;
+	}
+
+	public JLabel getIdCliente() {
+		return idCliente;
+	}
+
+	public JLabel getLabelEquipoA() {
+		return labelEquipoA;
+	}
+
+	public JLabel getLabelEquipoB() {
+		return labelEquipoB;
+	}
+
+	public JTextField getTxFactura() {
+		return txFactura;
+	}
+
+	public JTextField getTxidCliente() {
+		return txidCliente;
+	}
+
+	public JTextField getTxEquipoA() {
+		return txEquipoA;
+	}
+
+	public JTextField getTxEquipoB() {
+		return txEquipoB;
+	}
+
+	public JTextField getTxMarcadorA() {
+		return txMarcadorA;
+	}
+
+	public JTextField getTxMarcadorB() {
+		return txMarcadorB;
+	}
+	
+	
 
 }

@@ -25,6 +25,7 @@ public class Controlador implements ActionListener
 	}
 
 
+	@SuppressWarnings("static-access")
 	public  void actionPerformed(ActionEvent evento) 
 	{
 		if(evento.getActionCommand().equals(detalles.getParametros().CARGAR)) {
@@ -68,6 +69,32 @@ public class Controlador implements ActionListener
 		    detalles.getApostador().getSede().getText(),
 		    detalles.getApostador().getDireccion().getText(), 
 		    detalles.getApostador().getCelular().getText());
+		}
+		
+		if(evento.getActionCommand().equals(vista.getTooltip().CERRAR))
+		{
+			System.exit(0);
+		}
+		
+		if(evento.getActionCommand().equals(vista.getTooltip().ACERCADE))
+		{
+			vista.getAboutus().setVisible(true);
+		}
+		
+		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOAUTOMATICO)
+		{
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getManual().setSelected(false);
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setEditable(false);
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setText("");
+		}
+		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOMANUAL)
+		{
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getAutomatico().setSelected(false);
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setEditable(true);
+		}
+		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getBaloto().getFormulario().GENERAR)
+		{
+			
 		}
 		
 	}

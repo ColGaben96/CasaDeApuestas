@@ -18,6 +18,7 @@ public class SuperAstroOperaciones extends JPanel
 	 * Botones de apostar y descartar.
 	 */
 	private JButton apostar, descartar;
+	public static final String APOSTAR = "Apostar", DESCARTAR = "Descartar";
 	
 	public SuperAstroOperaciones()
 	{
@@ -34,6 +35,9 @@ public class SuperAstroOperaciones extends JPanel
 		add(apostar);
 		descartar = new JButton("Descartar");
 		add(descartar);
+		apostar.setActionCommand(APOSTAR);
+		descartar.setActionCommand(DESCARTAR);
+		
 	}
 
 	/**
@@ -52,5 +56,4 @@ public class SuperAstroOperaciones extends JPanel
 	{
 		return descartar;
 	}
-
 }

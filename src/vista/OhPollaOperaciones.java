@@ -19,6 +19,7 @@ public class OhPollaOperaciones extends JPanel
 	 * Crea los respectivos botones de apostar y descartar.
 	 */
 	private JButton apostar, descartar;
+	public static final String APOSTAR = "Apostar", DESCARTAR = "Descartar";
 	
 	public OhPollaOperaciones()
 	{
@@ -34,6 +35,9 @@ public class OhPollaOperaciones extends JPanel
 		add(apostar);
 		descartar = new JButton("Descartar");
 		add(descartar);
+		apostar.setActionCommand(APOSTAR);
+		descartar.setActionCommand(DESCARTAR);
+		
 	}
 
 	/**
@@ -53,5 +57,4 @@ public class OhPollaOperaciones extends JPanel
 	{
 		return descartar;
 	}
-
 }

@@ -1,6 +1,6 @@
 package vista;
 
-import java.awt.GridLayout;
+import java.awt.BorderLayout;
 
 import javax.swing.*;
 
@@ -36,9 +36,9 @@ public class PanelSuperAstro extends JPanel
 		 */
 		setLayout(new GridLayout(2, 1));
 		formulario = new SuperAstroFormulario();
-		add(formulario);
+		add(formulario, BorderLayout.CENTER);
 		operaciones = new SuperAstroOperaciones();
-		add(operaciones);
+		add(operaciones, BorderLayout.SOUTH);
 	}
 	/**
 	 * Obtener formulario.

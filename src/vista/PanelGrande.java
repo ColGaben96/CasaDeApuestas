@@ -27,6 +27,7 @@ public class PanelGrande extends JPanel
 	
 	public PanelGrande()
 	{
+		setLayout(new BorderLayout());
 		/**
 		 * @param PanelGrande: Panel grande que aloja en su mayoria los componentes de la interfaz.
 		 * setLayout(new GridLayout(1,2)): Crea el panel maestro junto con las cuadriculas (1 fila, 2 columnas).
@@ -36,12 +37,10 @@ public class PanelGrande extends JPanel
 		 * operaciones = new PanelOperaciones(): Crea el panel de operaciones en la clase.
 		 * add(operaciones): Agrega el panel de operaciones en la interfaz.
 		 */
-		setLayout(new GridLayout(1, 2));
 		pestanas = new PanelPestanas();
-		pestanas.getMaximumSize();
-		add(pestanas);
+		add(pestanas, BorderLayout.CENTER);
 		operaciones = new PanelOperaciones();
-		add(operaciones);
+		add(operaciones, BorderLayout.EAST);
 	}
 
 	/**
