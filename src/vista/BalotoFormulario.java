@@ -13,6 +13,7 @@ public class BalotoFormulario extends JPanel
 	private JTextField txBalotas, txFactura;
 	private JSeparator separador;
 	private JButton generarNumeros;
+	public static final String RADIOAUTOMATICO = "RadioAutomatico", RADIOMANUAL = "RadioManual", GENERAR = "Generar";
 	
 	public BalotoFormulario()
 	{
@@ -37,10 +38,52 @@ public class BalotoFormulario extends JPanel
 		labelBalotas = new JLabel("Balotas a Jugar: ");
 		txBalotas = new JTextField();
 		add(labelBalotas);
-		add(txBalotas);
 		generarNumeros = new JButton("Generar");
 		add(generarNumeros);
+		add(txBalotas);
+		manual.setSelected(true);
+		automatico.setActionCommand(RADIOAUTOMATICO);
+		manual.setActionCommand(RADIOMANUAL);
+		generarNumeros.setActionCommand(GENERAR);
 		
 	}
+
+	public JCheckBox getRevancha() {
+		return revancha;
+	}
+
+	public JRadioButton getAutomatico() {
+		return automatico;
+	}
+
+	public JRadioButton getManual() {
+		return manual;
+	}
+
+	public JLabel getLabelBalotas() {
+		return labelBalotas;
+	}
+
+	public JLabel getIdFactura() {
+		return idFactura;
+	}
+
+	public JTextField getTxBalotas() {
+		return txBalotas;
+	}
+
+	public JTextField getTxFactura() {
+		return txFactura;
+	}
+
+	public JSeparator getSeparador() {
+		return separador;
+	}
+
+	public JButton getGenerarNumeros() {
+		return generarNumeros;
+	}
+	
+	
 
 }

@@ -12,12 +12,11 @@ public class PanelGrande extends JPanel
 	
 	public PanelGrande()
 	{
-		setLayout(new GridLayout(1, 2));
+		setLayout(new BorderLayout());
 		pestanas = new PanelPestanas();
-		pestanas.getMaximumSize();
-		add(pestanas);
+		add(pestanas, BorderLayout.CENTER);
 		operaciones = new PanelOperaciones();
-		add(operaciones);
+		add(operaciones, BorderLayout.EAST);
 	}
 
 	public PanelPestanas getPestanas() {
