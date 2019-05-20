@@ -40,7 +40,7 @@ public class OhPollaFormulario extends JPanel
 		 * add(idFactura): Agrega el idFactura a la interfaz.
 		 * add(txFactura): Agrega el campo de texto de la factura a la interfaz.
 		 */
-		idFactura = new JLabel("ID Factura Nº");
+		idFactura = new JLabel("ID Factura N.");
 		txFactura = new JTextField("0000");
 		txFactura.setEditable(false);
 		txFactura.setForeground(Color.RED);
