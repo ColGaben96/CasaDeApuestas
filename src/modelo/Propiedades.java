@@ -35,11 +35,18 @@ public class Propiedades {
      }
 
 	}
-	public void escribirPropiedades(String pCasa, String pSedes, String pPresupuesto) {
+	public void escribirPropiedades(String pCasa, String pSedes, String pPresupuesto, String pJuegospre) {
+		
+		if(Integer.parseInt(pPresupuesto)!=Integer.parseInt(pJuegospre)) {
+			JOptionPane.showMessageDialog(null, "ERROR: el presupuesto no es igual", "T�tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+		}
+		else {
 	 try (OutputStream output = new FileOutputStream("config.properties")) {
 
          Properties prop = new Properties();
 
+         
+         
          // set the properties value
          prop.setProperty("casa", pCasa);
          prop.setProperty("sedes", pSedes);
@@ -54,6 +61,7 @@ public class Propiedades {
          io.printStackTrace();
          JOptionPane.showMessageDialog(null, "ERROR", "T�tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
      }  
+		}
 	}
 	
 	public String getCasa() {

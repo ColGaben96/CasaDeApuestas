@@ -17,7 +17,7 @@ public class Controlador implements ActionListener
 		modelo = new Mundo();
 		vista = new InterfazGUI(this);
 		detalles = new VentanaDetalles(this);
-
+	
 	}
 
 
@@ -32,9 +32,10 @@ public class Controlador implements ActionListener
 		}
 		
 		if(evento.getActionCommand().equals(detalles.getParametros().GUARDAR)) {
+			modelo.getA().leerArchivoJuegos();
 			modelo.getP().escribirPropiedades(detalles.getParametros().getCasa().getText(), 
 		    detalles.getParametros().getSedes().getText(), 
-		    detalles.getParametros().getPresupuesto().getText());
+		    detalles.getParametros().getPresupuesto().getText(), modelo.getA().getPresupuesto());
 		}
 		
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getOperaciones().DETALLES)) {
@@ -76,7 +77,7 @@ public class Controlador implements ActionListener
 		{
 			vista.getAboutus().setVisible(true);
 		}
-		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getSuperAstro().getOperaciones().APOSTAR)
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getSuperAstro().getOperaciones().APOSTAR))
 		{
 			modelo.getA().escribirSuperAstro(modelo.getA().getSede(), modelo.getA().getCedula(),
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxIDCliente().getText()+"\n "+
@@ -84,30 +85,30 @@ public class Controlador implements ActionListener
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber().getText());
 			
 		}
-		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getBaloto().getOperaciones().APOSTAR)
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getOperaciones().APOSTAR))
 		{
 			modelo.getA().escribirBaloto(modelo.getA().getSede(), modelo.getA().getCedula(), 
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().getText());
 			
 		}
-		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getOhPolla().getOperaciones().APOSTAR)
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getOhPolla().getOperaciones().APOSTAR))
 		{
 			modelo.getA().escribirOhPolla(modelo.getA().getSede(), modelo.getA().getCedula(), 
 			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxEquipoA().getText());
 			
 		}
-		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOAUTOMATICO)
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOAUTOMATICO))
 		{
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getManual().setSelected(false);
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setEditable(false);
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setText("");
 		}
-		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOMANUAL)
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOMANUAL))
 		{
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getAutomatico().setSelected(false);
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setEditable(true);
 		}
-		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getBaloto().getFormulario().GENERAR)
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().GENERAR))
 		{
 			
 		}
