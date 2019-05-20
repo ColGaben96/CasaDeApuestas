@@ -26,6 +26,7 @@ public class Mundo
 	 * Clase dedicada a archivos.
 	 */
 	private Archivo a;
+	private Facturacion f;
 	
 	public Mundo()
 	{
@@ -42,6 +43,7 @@ public class Mundo
 		aohp = new ApuestaOhPolla();
 		p = new Propiedades();
 		a = new Archivo();
+		f = new Facturacion();
 	}
 	/**
 	 * Obtener apuesta baloto.
@@ -83,4 +85,9 @@ public class Mundo
 	{
 		return a;
 	}
+
+	public Facturacion getF() {
+		return f;
+	}
+	
 }

@@ -47,6 +47,10 @@ public class Controlador implements ActionListener
 		detalles.getParametros().getCargar().addActionListener(this);
 		detalles.getSedes().getGuardar().addActionListener(this);
 		detalles.getSedes().getCargar().addActionListener(this);
+		modelo.getF().hacerFactura();
+		vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
+		vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
+		vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
 	}
 
 
@@ -135,6 +139,7 @@ public class Controlador implements ActionListener
 		    detalles.getApostador().getCelular().getText());
 		}
 		
+		
 		if(evento.getActionCommand().equals(vista.getTooltip().CERRAR))
 		{
 			/**
@@ -151,7 +156,7 @@ public class Controlador implements ActionListener
 			vista.getAboutus().setVisible(true);
 		}
 		
-		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOAUTOMATICO)
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOAUTOMATICO))
 		{
 			/**
 			 * vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getManual().setSelected(false): Si se selecciona automatico, manual no se selecciona.
@@ -162,7 +167,7 @@ public class Controlador implements ActionListener
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setEditable(false);
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setText("");
 		}
-		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOMANUAL)
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOMANUAL))
 		{
 			/**
 			 * vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getAutomatico().setSelected(false): No se selecciona cuando otra opcion es seleccionada.
@@ -171,9 +176,68 @@ public class Controlador implements ActionListener
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getAutomatico().setSelected(false);
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setEditable(true);
 		}
-		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getBaloto().getFormulario().GENERAR)
+		if(evento.getActionCommand() .equals( vista.getPanelGrande().getPestanas().getBaloto().getFormulario().GENERAR))
 		{
-			
+			/* Generar balotas de manera random */
+		}
+		
+		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getBaloto().getOperaciones().APOSTAR))
+		{
+			/* Capturar datos y usar un generador de pdf*/
+			vista.getFactura().setVisible(true);
+			vista.getStatusBar().getStatus().setText("Saving Invoice...");
+			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxFactura().getText());
+			if(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getRevancha().isSelected())
+			{
+				Object[][] data = new Object[2][3];
+				vista.getFactura().getFactura().getModel().addRow(data);
+				
+			}
+			else
+			{
+				Object[][] data = new Object[1][3];
+				vista.getFactura().getFactura().getModel().addRow(data);
+			}
+		}
+		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getSuperAstro().getOperaciones().APOSTAR))
+		{
+			/* Capturar datos y usar un generador de pdf*/
+			vista.getFactura().setVisible(true);
+			vista.getStatusBar().getStatus().setText("Saving Invoice...");
+			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxFactura().getText());
+		}
+		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getOhPolla().getOperaciones().APOSTAR))
+		{
+			/* Capturar datos y usar un generador de pdf*/
+			vista.getFactura().setVisible(true);
+			vista.getStatusBar().getStatus().setText("Saving Invoice...");
+			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxFactura().getText());
+		}
+		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getBaloto().getOperaciones().DESCARTAR))
+		{
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getManual().setSelected(true);
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getAutomatico().setSelected(false);
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setEditable(true);
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getRevancha().setSelected(false);
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setText("");
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
+		}
+		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getSuperAstro().getOperaciones().DESCARTAR))
+		{
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getListAstro().setSelectedIndex(0);
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxIDCliente().setText("");
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber().setText("");
+			modelo.getF().hacerFactura();
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
+		}
+		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getOhPolla().getOperaciones().DESCARTAR))
+		{
+			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getListEquipoA().setSelectedIndex(0);
+			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getListEquipoB().setSelectedIndex(0);
+			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxMarcadorA().setText("Ej. 3");
+			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxMarcadorB().setText("Ej. 1");
+			modelo.getF().hacerFactura();
+			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
 		}
 		
 	}

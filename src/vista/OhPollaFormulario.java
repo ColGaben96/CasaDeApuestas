@@ -20,11 +20,13 @@ public class OhPollaFormulario extends JPanel
 	 */
 	private static final long serialVersionUID = 1L;
 	private JLabel idFactura, idCliente, labelEquipoA, labelEquipoB;
-	private JTextField txFactura, txidCliente, txEquipoA, txEquipoB, txMarcadorA, txMarcadorB;
+	private JTextField txFactura, txidCliente, txMarcadorA, txMarcadorB;
+	private JComboBox <String> listEquipoA, listEquipoB;
 	
 	public OhPollaFormulario()
 	{
 		setLayout(new GridLayout(5, 2));
+		String[] listEquipos = {"SELECCIONA UN EQUIPO", "Águilas Doradas", "Alianza Petrolera", "América de Cali", "Atlético Bucaramanga", "Atlético Huila", "Atlético Junior", "Atlético Nacional", "Boyacá Chicó", "Deportes Tolima", "Deportivo Cali", "Deportivo Pasto", "Envigado FC", "Independiente Medellín", "Independiente Santa Fe", "Jaguares de Córdoba", "La Equidad", "Leones FC", "Millonarios", "Once Caldas", "Patriotas FC", "Atlético FC", "Barranquilla FC", "Bogotá FC", "Cortuluá", "Cúcuta Deportivo", "Deportes Quindío", "Deportivo Pereira", "Fortaleza FC", "Llaneros FC", "Orsomarso SC", "Real Cartagena", "Real Santander", "Tigres FC", "Unión Magdalena", "Universitario Popayán", "Valledupar FC"};
 		idFactura = new JLabel("ID Factura N.");
 		/**
 		 * @param OhPollaFormulario: Implementacion grafica del mercador de la polla.
@@ -38,7 +40,7 @@ public class OhPollaFormulario extends JPanel
 		 * add(idFactura): Agrega el idFactura a la interfaz.
 		 * add(txFactura): Agrega el campo de texto de la factura a la interfaz.
 		 */
-		idFactura = new JLabel("ID Factura NÂº");
+		idFactura = new JLabel("ID Factura N.");
 		txFactura = new JTextField("0000");
 		txFactura.setEditable(false);
 		txFactura.setForeground(Color.RED);
@@ -54,16 +56,17 @@ public class OhPollaFormulario extends JPanel
 		add(txidCliente);
 		
 		labelEquipoA = new JLabel("Equipo A");
-		txEquipoA = new JTextField("ej. Millonarios");
+		listEquipoA = new JComboBox<String>(listEquipos);
 		labelEquipoB = new JLabel("Equipo B");
-		txEquipoB = new JTextField("ej. Santafe");
+		listEquipoB = new JComboBox<String>(listEquipos);
 		txMarcadorA = new JTextField("ej 3");
 		txMarcadorB = new JTextField("ej 2");
+		
 		add(labelEquipoA);
 		add(labelEquipoB);
 		
-		add(txEquipoA);
-		add(txEquipoB);
+		add(listEquipoA);
+		add(listEquipoB);
 		
 		add(txMarcadorA);
 		add(txMarcadorB);
@@ -93,20 +96,20 @@ public class OhPollaFormulario extends JPanel
 		return txidCliente;
 	}
 
-	public JTextField getTxEquipoA() {
-		return txEquipoA;
-	}
-
-	public JTextField getTxEquipoB() {
-		return txEquipoB;
-	}
-
 	public JTextField getTxMarcadorA() {
 		return txMarcadorA;
 	}
 
 	public JTextField getTxMarcadorB() {
 		return txMarcadorB;
+	}
+
+	public JComboBox<String> getListEquipoA() {
+		return listEquipoA;
+	}
+
+	public JComboBox<String> getListEquipoB() {
+		return listEquipoB;
 	}
 	
 	

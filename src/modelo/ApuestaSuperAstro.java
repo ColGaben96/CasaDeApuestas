@@ -1,5 +1,6 @@
 package modelo;
 
-public class ApuestaSuperAstro {
+public class ApuestaSuperAstro extends Apuestas
+{
 
 }

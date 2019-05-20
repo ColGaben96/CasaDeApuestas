@@ -24,6 +24,7 @@ public class InterfazGUI extends JFrame
 	private PanelGrande panelGrande;
 	private PanelStatusBar statusBar;
 	private AboutUs aboutus;
+	private DialogFactura factura;
 
 	public InterfazGUI(Controlador control)
 	{
@@ -47,6 +48,7 @@ public class InterfazGUI extends JFrame
 		panelGrande = new PanelGrande();
 		statusBar = new PanelStatusBar();
 		aboutus = new AboutUs();
+		factura = new DialogFactura();
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());
@@ -60,6 +62,7 @@ public class InterfazGUI extends JFrame
 		panelGrande.getPestanas().getBaloto().getFormulario().getAutomatico().addActionListener(control);
 		panelGrande.getPestanas().getBaloto().getFormulario().getManual().addActionListener(control);
 		panelGrande.getPestanas().getBaloto().getFormulario().getGenerarNumeros().addActionListener(control);
+		factura.getOperaciones().getOk().addActionListener(control);
 		
 		panelGrande.getPestanas().getBaloto().getOperaciones().getApostar().addActionListener(control);
 		panelGrande.getPestanas().getBaloto().getOperaciones().getDescartar().addActionListener(control);
@@ -96,5 +99,9 @@ public class InterfazGUI extends JFrame
 	public AboutUs getAboutus() {
 		return aboutus;
 	}
+	public DialogFactura getFactura() {
+		return factura;
+	}
+	
 	
 }
