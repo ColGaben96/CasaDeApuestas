@@ -14,18 +14,20 @@ public class PanelSedes extends JPanel{
 	private JLabel labEntrada;
 	private JLabel labEntrada2;
 	private JLabel labEntrada3;
+	private JLabel labEntrada4;
 	public JTextField txtUbicacion;
 	public JTextField txtNumEmp;
 	public JButton butGuardar;
 	public JButton butCargar;
-	public static final String CARGAR = "Cargar";
-	public static final String GUARDAR = "Guardar";
+	public static final String CARGAR = "Cargar2";
+	public static final String GUARDAR = "Guardar2";
 	
 	public PanelSedes() {
 		
-		setLayout(new GridLayout(4,2));
+		setLayout(new GridLayout(6,2));
 		labEntrada=new JLabel("Ubicacion");
 		labEntrada2=new JLabel("Numero de empleados");
+		labEntrada4=new JLabel("");
 		txtUbicacion= new JTextField("");
 		txtNumEmp= new JTextField("");
 		txtUbicacion.setForeground(Color.BLACK);
@@ -42,6 +44,12 @@ public class PanelSedes extends JPanel{
 		add(labEntrada2); add(txtNumEmp);
 		
 		add(butGuardar); add(butCargar);
+		
+		add(labEntrada4);add(labEntrada4);
+		
+		add(labEntrada4);add(labEntrada4);
+		
+		add(labEntrada4);add(labEntrada4);
 	}
 	
 	public JButton getGuardar() {

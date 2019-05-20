@@ -19,7 +19,7 @@ public class BalotoOperaciones extends JPanel
 	 * Creación de botones "Apostar" y "Descartar".
 	 */
 	private JButton apostar, descartar;
-	public static final String APOSTAR = "Apostar", DESCARTAR = "Descartar";
+	public static final String APOSTAR = "Apostar2", DESCARTAR = "Descartar2";
 	
 	public BalotoOperaciones()
 	{

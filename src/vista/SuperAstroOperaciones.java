@@ -7,7 +7,7 @@ public class SuperAstroOperaciones extends JPanel
 {
 	private static final long serialVersionUID = 1L;
 	private JButton apostar, descartar;
-	public static final String APOSTAR = "Apostar", DESCARTAR = "Descartar";
+	public static final String APOSTAR = "Apostar1", DESCARTAR = "Descartar1";
 	
 	public SuperAstroOperaciones()
 	{

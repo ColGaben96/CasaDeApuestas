@@ -19,7 +19,7 @@ public class OhPollaOperaciones extends JPanel
 	 * Crea los respectivos botones de apostar y descartar.
 	 */
 	private JButton apostar, descartar;
-	public static final String APOSTAR = "Apostar", DESCARTAR = "Descartar";
+	public static final String APOSTAR = "Apostar3", DESCARTAR = "Descartar3";
 	
 	public OhPollaOperaciones()
 	{
