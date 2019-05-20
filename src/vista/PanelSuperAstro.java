@@ -28,13 +28,11 @@ public class PanelSuperAstro extends JPanel
 	{
 		/**
 		 * @param PanelSuperAstro: Constructor del panel Super Astro.
-		 * setLayout(new GridLayout(2, 1)): Crea el panel grande y los botones en cuadricula (2 filas, 1 columna).
 		 * formulario = new SuperAstroFormulario(): Crea nuevo formulario.
 		 * add(formulario): Agrega el formulario a la interfaz.
 		 * operaciones = new SuperAstroOperaciones(): Crea nuevo panel de operaciones.
 		 * add(operaciones): Agrega el panel a la interfaz.
 		 */
-		setLayout(new GridLayout(2, 1));
 		formulario = new SuperAstroFormulario();
 		add(formulario, BorderLayout.CENTER);
 		operaciones = new SuperAstroOperaciones();
