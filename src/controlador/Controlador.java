@@ -81,20 +81,54 @@ public class Controlador implements ActionListener
 			vista.getAboutus().setVisible(true);
 		}
 		
-		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOAUTOMATICO)
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOAUTOMATICO))
 		{
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getManual().setSelected(false);
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setEditable(false);
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setText("");
 		}
-		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOMANUAL)
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOMANUAL))
 		{
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getAutomatico().setSelected(false);
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setEditable(true);
 		}
-		if(evento.getActionCommand() == vista.getPanelGrande().getPestanas().getBaloto().getFormulario().GENERAR)
+		if(evento.getActionCommand() .equals( vista.getPanelGrande().getPestanas().getBaloto().getFormulario().GENERAR))
 		{
-			
+			/* Generar balotas de manera random */
+		}
+		
+		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getBaloto().getOperaciones().APOSTAR))
+		{
+			/* Capturar datos y usar un generador de pdf*/
+		}
+		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getSuperAstro().getOperaciones().APOSTAR))
+		{
+			/* Capturar datos y usar un generador de pdf*/
+		}
+		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getOhPolla().getOperaciones().APOSTAR))
+		{
+			/* Capturar datos y usar un generador de pdf*/
+		}
+		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getBaloto().getOperaciones().DESCARTAR))
+		{
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getManual().setSelected(true);
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getAutomatico().setSelected(false);
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setEditable(true);
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getRevancha().setSelected(false);
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setText("");
+		}
+		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getSuperAstro().getOperaciones().DESCARTAR))
+		{
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getListAstro().setSelectedIndex(0);
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxIDCliente().setText("");
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber().setText("");
+		}
+		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getOhPolla().getOperaciones().DESCARTAR))
+		{
+			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getListEquipoA().setSelectedIndex(0);
+			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getListEquipoB().setSelectedIndex(0);
+			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxMarcadorA().setText("Ej. 3");
+			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxMarcadorB().setText("Ej. 1");
 		}
 		
 	}
