@@ -2,7 +2,8 @@ package modelo;
 
 import java.util.LinkedList;
 
-public class ApuestaBaloto {
+public class ApuestaBaloto extends Apuestas
+{
 	
 	public void Automatico(){
 		
