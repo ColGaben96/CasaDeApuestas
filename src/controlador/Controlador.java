@@ -88,9 +88,10 @@ public class Controlador implements ActionListener
 		
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOAUTOMATICO))
 		{
+			
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getManual().setSelected(false);
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setEditable(false);
-			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setText("");
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setText(null);
 		}
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOMANUAL))
 		{
@@ -99,7 +100,8 @@ public class Controlador implements ActionListener
 		}
 		if(evento.getActionCommand() .equals( vista.getPanelGrande().getPestanas().getBaloto().getFormulario().GENERAR))
 		{
-			/* Generar balotas de manera random */
+			//modelo.getAb().Automatico();/* Generar balotas de manera random */
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setText(modelo.getAb().Automatico());
 		}
 		
 		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getBaloto().getOperaciones().APOSTAR))
@@ -126,6 +128,7 @@ public class Controlador implements ActionListener
 			vista.getFactura().setVisible(true);
 			vista.getStatusBar().getStatus().setText("Saving Invoice...");
 			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxFactura().getText());
+			modelo.getAsa().Astro();
 		}
 		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getOhPolla().getOperaciones().APOSTAR))
 		{

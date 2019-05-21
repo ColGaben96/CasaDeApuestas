@@ -1,37 +1,32 @@
 package modelo;
 
-import java.util.LinkedList;
 
 public class ApuestaBaloto extends Apuestas
 {
 	
-	public void Automatico(){
+	public String Automatico(){
 		
-	//	LinkedList <Integer> lista = new LinkedList();
+		int a = 0, b = 0, c = 0 , d = 0 , e=0 , f=0; 
+		String num=" ";
 		
-	//	for (int i = 0; i < 45; i++) {
-			
-	//		lista.add(i);
-			
-	//	}
+		a = (int)(Math.rint(44)*Math.random());
+		b = (int)(Math.rint(44)*Math.random());
+		c = (int)(Math.rint(44)*Math.random());
+		d = (int)(Math.rint(44)*Math.random());
+		e = (int)(Math.rint(44)*Math.random());
+		f = (int)(Math.rint(44)*Math.random());
 		
-		int a = 0, b = 0, c = 0 , d = 0 , e=0; 
+		num= ( Integer.toString(a) + Integer.toString(b) + Integer.toString(c) + Integer.toString(d) + Integer.toString(e) +Integer.toString(f));
 		
-		a = (int)((int)Math.random()*Math.rint(45));
-		b = (int)((int)Math.random()*Math.rint(45));
-		c = (int)((int)Math.random()*Math.rint(45));
-		d = (int)((int)Math.random()*Math.rint(45));
-		d = (int)((int)Math.random()*Math.rint(45));
-		
-	//	int x = 0 , y = 0;
-		
-	//	x =lista.get(a);
-	//	lista.remove(a);
-		
-	//	x =lista.get(b);
-	//	lista.remove(b);
+	
+		return num;
 		
 		
+	}
+	
+	public void Manual() {
+		
+		int a = 0, b = 0, c = 0 , d = 0 , e=0 , f=0; 
 		
 	}
 
