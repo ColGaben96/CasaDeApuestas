@@ -1,10 +1,9 @@
 package modelo;
 
-
 public class ApuestaBaloto extends Apuestas
 {
 	
-	public String Automatico(){
+	public String BalotoAutomatico(){
 		
 		int a = 0, b = 0, c = 0 , d = 0 , e=0 , f=0; 
 		String num=" ";
@@ -16,17 +15,16 @@ public class ApuestaBaloto extends Apuestas
 		e = (int)(Math.rint(44)*Math.random());
 		f = (int)(Math.rint(44)*Math.random());
 		
-		num= ( Integer.toString(a) + Integer.toString(b) + Integer.toString(c) + Integer.toString(d) + Integer.toString(e) +Integer.toString(f));
-		
+		num= (Integer.toString(a) + Integer.toString(b) + Integer.toString(c) + Integer.toString(d) + Integer.toString(e) +Integer.toString(f));
 	
 		return num;
 		
 		
 	}
 	
-	public void Manual() {
+	public void BalotoManual() {
 		
-		int a = 0, b = 0, c = 0 , d = 0 , e=0 , f=0; 
+		
 		
 	}
 
