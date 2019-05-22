@@ -1,7 +1,10 @@
 package controlador;
 
+import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URI;
 
 import modelo.Mundo;
 import vista.InterfazGUI;
@@ -99,29 +102,6 @@ public class Controlador implements ActionListener
 		{
 			vista.getAboutus().setVisible(true);
 		}
-		
-		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getSuperAstro().getOperaciones().APOSTAR))
-		{
-			modelo.getA().escribirSuperAstro(modelo.getA().getSede(), modelo.getA().getCedula(),
-			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxIDCliente().getText()+"\n "+
-			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getListAstro().getSelectedItem()+"\n"+
-			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber().getText());
-			modelo.getApuestas().sumarCantidad();
-		}
-		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getOperaciones().APOSTAR))
-		{
-			modelo.getA().escribirBaloto(modelo.getA().getSede(), modelo.getA().getCedula(), 
-			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().getText());
-			modelo.getApuestas().sumarCantidad();
-			
-		}
-		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getOhPolla().getOperaciones().APOSTAR))
-		{
-			modelo.getA().escribirOhPolla(modelo.getA().getSede(), modelo.getA().getCedula(), 
-			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxEquipoA().getText());
-			modelo.getApuestas().sumarCantidad();
-			
-		}
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOAUTOMATICO))
 		{
 			
@@ -144,35 +124,36 @@ public class Controlador implements ActionListener
 		{
 			/* Capturar datos y usar un generador de pdf*/
 			vista.getFactura().setVisible(true);
-			vista.getStatusBar().getStatus().setText("Saving Invoice...");
+			vista.getStatusBar().getStatus().setText("Making...");
 			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxFactura().getText());
 			if(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getRevancha().isSelected())
 			{
-				Object[][] data = new Object[2][3];
-				vista.getFactura().getFactura().getModel().addRow(data);
+				//Object[][] data = new Object[2][3];
+				//vista.getFactura().getFactura().getModel().addRow(data);
+				vista.getFactura().getOperaciones().getValortotal().setText("$ 7800");
 				
 			}
 			else
 			{
-				Object[][] data = new Object[1][3];
-				vista.getFactura().getFactura().getModel().addRow(data);
+				//Object[][] data = new Object[1][3];
+				//vista.getFactura().getFactura().getModel().addRow(data);
+				vista.getFactura().getOperaciones().getValortotal().setText("$ 5400");
 			}
 		}
 		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getSuperAstro().getOperaciones().APOSTAR))
-		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().GENERAR))
 		{
-			/* Capturar datos y usar un generador de pdf*/
 			vista.getFactura().setVisible(true);
-			vista.getStatusBar().getStatus().setText("Saving Invoice...");
+			vista.getStatusBar().getStatus().setText("Making Invoice...");
 			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxFactura().getText());
-			
 		}
-		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getOhPolla().getOperaciones().APOSTAR))
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getOhPolla().getOperaciones().APOSTAR))
 		{
-			/* Capturar datos y usar un generador de pdf*/
-			vista.getFactura().setVisible(true);
-			vista.getStatusBar().getStatus().setText("Saving Invoice...");
-			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxFactura().getText());
+			vista.getStatusBar().getStatus().setText("Making Invoice...");
+			modelo.getA().escribirOhPolla(modelo.getA().getSede(), modelo.getA().getCedula(), 
+			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getListEquipoA().getToolTipText()+
+			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getListEquipoB().getToolTipText());
+			modelo.getApuestas().sumarCantidad();
+			vista.getFactura().getOperaciones().getValortotal().setText("$" + String.valueOf(modelo.getApuestas().getCantidad()));
 		}
 		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getBaloto().getOperaciones().DESCARTAR))
 		{
@@ -199,6 +180,49 @@ public class Controlador implements ActionListener
 			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxMarcadorB().setText("Ej. 1");
 			modelo.getF().hacerFactura();
 			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
+		}
+		if(evento.getActionCommand().equals(vista.getFactura().getOperaciones().OK))
+		{
+			if (vista.getFactura().getOperaciones().getImprimirFactura().isSelected()) 
+			{
+				modelo.getA().imprimirFactura("");
+			}
+			if (vista.getFactura().getOperaciones().getEnviaracorreo().isSelected())
+			{
+				try 
+				{
+					Desktop desktop = Desktop.getDesktop();
+					String message = "mailto:ventas@ohdelivery.co?subject=Tu factura de Oh! Delivery";
+					URI uri = URI.create(message);
+					desktop.mail(uri);
+					vista.getStatusBar().getStatus().setText("Printing Invoice...");
+				} 
+				catch (IOException e) 
+				{
+					// TODO Bloque catch generado automáticamente
+					e.printStackTrace();
+				}
+			}
+			if (vista.getFactura().getOperaciones().getImprimirFactura().isSelected() && vista.getFactura().getOperaciones().getEnviaracorreo().isSelected())
+			{
+				modelo.getA().imprimirFactura("");
+				try 
+				{
+					Desktop desktop = Desktop.getDesktop();
+					String message = "mailto:ventas@ohdelivery.co?subject=Tu factura de Oh! Delivery";
+					URI uri = URI.create(message);
+					desktop.mail(uri);
+					vista.getStatusBar().getStatus().setText("Printing and Sending Email...");
+				} 
+				catch (IOException e) 
+				{
+					// TODO Bloque catch generado automáticamente
+					e.printStackTrace();
+				}
+			}
+			
+			vista.getFactura().setVisible(false);
+			vista.getStatusBar().getStatus().setText("Ready...");
 		}
 		
 	}
