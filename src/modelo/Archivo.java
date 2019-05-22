@@ -22,6 +22,7 @@ public String nombre;
 public String sede;
 public String celular;
 public String cedula;
+public String presupuesto;
 		   
 	  public void leerArchivoSedes() {
 			
@@ -57,6 +58,55 @@ public String cedula;
 			         }  
 			}
 			
+			public void escribirArchivoJuegos() {
+			 	 try (FileOutputStream output = new FileOutputStream("Juegos.dat")) {
+			     		DataOutputStream dstream = new DataOutputStream(output); 
+
+			     		dstream.writeUTF("Nombre: SuperAstro"); 
+			    		dstream.writeUTF("Tipo: Loteria");
+			    		dstream.writeUTF("13000");
+			    		dstream.writeUTF("Nombre: Baloto"); 
+			    		dstream.writeUTF("Tipo: Loteria");
+			    		dstream.writeUTF("13000");
+			    		dstream.writeUTF("Nombre: OhPolla"); 
+			    		dstream.writeUTF("Tipo: Deportes");
+			    		dstream.writeUTF("13000");
+			    		
+			     		dstream.close();
+			     		output.close(); 
+
+			         } catch (IOException io) {
+			             io.printStackTrace();
+			             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+			         }  
+			}
+			  public void leerArchivoJuegos() {
+					
+			        try (FileInputStream input = new FileInputStream("juegos.dat")) {
+
+			    		DataInputStream idstream = new DataInputStream(input); 
+
+			            int suma=0;
+			            idstream.readUTF();
+			            idstream.readUTF();
+			    		suma=suma+Integer.parseInt(idstream.readUTF());
+			    		idstream.readUTF();
+			    		idstream.readUTF();
+			            suma=suma+Integer.parseInt(idstream.readUTF());		 
+			            idstream.readUTF();
+			            idstream.readUTF();
+			            suma=suma+Integer.parseInt(idstream.readUTF());         
+			            presupuesto=Integer.toString(suma);
+			            suma=0;
+			    		idstream.close();
+			    		input.close(); 
+
+			        } catch (IOException ex) {
+			            ex.printStackTrace();
+			            JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+			        }
+
+					}
 			
 			 public void leerArchivoApostador() {
 					
@@ -99,6 +149,63 @@ public String cedula;
 					             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 					         }  
 					}
+					public void escribirSuperAstro(String pNombre, String pCedula, String pDatos) {
+					 	 try (FileOutputStream output = new FileOutputStream("apuestas-superastro-"+pNombre+".dat")) {
+					     		DataOutputStream dstream = new DataOutputStream(output); 
+
+					     		dstream.writeUTF(pNombre); 
+					    		dstream.writeUTF(pCedula);
+					     		dstream.writeUTF("Lunes"); 
+					    		dstream.writeUTF("1300");
+					    		dstream.writeUTF(pDatos);
+					    		
+					     		dstream.close();
+					     		output.close(); 
+					          
+					         } catch (IOException io) {
+					             io.printStackTrace();
+					             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+					         }  
+					}
+					public void escribirBaloto(String pNombre, String pCedula, String pDatos) {
+					 	 try (FileOutputStream output = new FileOutputStream("apuestas-baloto-"+pNombre+".dat")) {
+					     		DataOutputStream dstream = new DataOutputStream(output); 
+
+					     		dstream.writeUTF(pNombre); 
+					    		dstream.writeUTF(pCedula);
+					     		dstream.writeUTF("Lunes"); 
+					    		dstream.writeUTF("1300");
+					    		dstream.writeUTF(pDatos);
+					    		
+					     		dstream.close();
+					     		output.close(); 
+					          
+					         } catch (IOException io) {
+					             io.printStackTrace();
+					             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+					         }  
+					}
+					public void escribirOhPolla(String pNombre, String pCedula, String pDatos) {
+					 	 try (FileOutputStream output = new FileOutputStream("apuestas-marcadores-"+pNombre+".dat")) {
+					     		DataOutputStream dstream = new DataOutputStream(output); 
+
+					     		dstream.writeUTF(pNombre); 
+					    		dstream.writeUTF(pCedula);
+					     		dstream.writeUTF("Lunes"); 
+					    		dstream.writeUTF("1300");
+					    		dstream.writeUTF(pDatos);
+					    		
+					     		dstream.close();
+					     		output.close(); 
+					          
+					         } catch (IOException io) {
+					             io.printStackTrace();
+					             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+					         }  
+					}
+					
+					
+					
 			public String getUbicacion() {
 						return ubicacion;
 			}
@@ -119,6 +226,9 @@ public String cedula;
 			}
 			public String getCelular() {
 				return celular;
+			}
+			public String getPresupuesto() {
+				return presupuesto;
 			}
 			
 	

@@ -1,6 +1,7 @@
 package vista;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,18 +27,20 @@ public class PanelParametros extends JPanel{
 	private JLabel labEntrada;
 	private JLabel labEntrada2;
 	private JLabel labEntrada3;
+	private JLabel labEntrada4;
 	public JTextField txtCasa;
 	public JTextField txtSedes;
 	public JTextField txtPresupuesto;
 	public JButton butGuardar;
 	public JButton butCargar;
-	public static final String CARGAR = "Cargar";
-	public static final String GUARDAR = "Guardar";
+	public static final String CARGAR = "Cargar1";
+	public static final String GUARDAR = "Guardar1";
 	public PanelParametros() {
-		setLayout(new GridLayout(4,2));
+		setLayout(new GridLayout(6,2));
 		labEntrada=new JLabel("Nombre de la casa");
 		labEntrada2=new JLabel("Numero de sedes");
 		labEntrada3=new JLabel("Presupuesto total");
+		labEntrada4=new JLabel("");
 		txtCasa= new JTextField("");
 		txtSedes= new JTextField("");
 		txtPresupuesto= new JTextField("");
@@ -51,6 +54,7 @@ public class PanelParametros extends JPanel{
 		butGuardar.setActionCommand(GUARDAR);
 		butCargar = new JButton("Cargar datos");
 		butCargar.setActionCommand(CARGAR);
+	
 		
 		add(labEntrada); add(txtCasa);
 		
@@ -59,6 +63,12 @@ public class PanelParametros extends JPanel{
 		add(labEntrada3); add(txtPresupuesto);
 		
 		add(butGuardar); add(butCargar);
+		
+		add(labEntrada4); add(labEntrada4);
+
+		add(labEntrada4); add(labEntrada4);
+		
+		add(labEntrada4); add(labEntrada4);
 	}
 	
 	public JButton getGuardar() {
@@ -76,5 +86,5 @@ public class PanelParametros extends JPanel{
 	public JTextField getPresupuesto() {
 		return txtPresupuesto;
 	}
-	
+
 }

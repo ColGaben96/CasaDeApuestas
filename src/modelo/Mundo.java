@@ -8,6 +8,8 @@ public class Mundo
 	private Propiedades p;
 	private Archivo a;
 	private Facturacion f;
+	private Apuestas ap;
+	private Clientes cli;
 	
 	public Mundo()
 	{
@@ -17,6 +19,8 @@ public class Mundo
 		p = new Propiedades();
 		a = new Archivo();
 		f = new Facturacion();
+		ap= new Apuestas();
+		cli = new Clientes();
 	}
 
 	public ApuestaBaloto getAb() 
@@ -48,4 +52,12 @@ public class Mundo
 		return f;
 	}
 	
+	
+	public Apuestas getApuestas() {
+		return ap;
+	}
+	
+	public Clientes getClientes() {
+		return cli;
+	}
 }

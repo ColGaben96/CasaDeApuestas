@@ -70,6 +70,9 @@ public class InterfazGUI extends JFrame
 		panelGrande.getPestanas().getOhPolla().getOperaciones().getDescartar().addActionListener(control);
 		panelGrande.getPestanas().getSuperAstro().getOperaciones().getApostar().addActionListener(control);
 		panelGrande.getPestanas().getSuperAstro().getOperaciones().getDescartar().addActionListener(control);
+		panelGrande.getOperaciones().getDetallesPunto().addActionListener(control);
+		panelGrande.getOperaciones().getCrearReporte().addActionListener(control);
+		
 		add(tooltip, BorderLayout.NORTH);
 		add(panelGrande, BorderLayout.CENTER);
 		add(statusBar, BorderLayout.SOUTH);

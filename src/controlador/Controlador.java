@@ -6,12 +6,14 @@ import java.awt.event.ActionListener;
 import modelo.Mundo;
 import vista.InterfazGUI;
 import vista.VentanaDetalles;
+import vista.VentanaReporte;
 
 public class Controlador implements ActionListener
 {
 	private Mundo modelo;
 	private InterfazGUI vista;
 	private VentanaDetalles detalles;
+	private VentanaReporte repo;
 	public Controlador()
 	{
 		modelo = new Mundo();
@@ -26,6 +28,8 @@ public class Controlador implements ActionListener
 		vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
 		vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
 		vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
+		
+	
 	}
 
 
@@ -40,13 +44,20 @@ public class Controlador implements ActionListener
 		}
 		
 		if(evento.getActionCommand().equals(detalles.getParametros().GUARDAR)) {
+			modelo.getA().leerArchivoJuegos();
 			modelo.getP().escribirPropiedades(detalles.getParametros().getCasa().getText(), 
 		    detalles.getParametros().getSedes().getText(), 
-		    detalles.getParametros().getPresupuesto().getText());
+		    detalles.getParametros().getPresupuesto().getText(), modelo.getA().getPresupuesto());
 		}
 		
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getOperaciones().DETALLES)) {
 			detalles.setVisible(true);
+		}
+		
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getOperaciones().REPORTE)) {
+			repo = new VentanaReporte(("Total de apuestas:" + Integer.toString(modelo.getApuestas().getCantidad()) + 
+					"\n \n" + modelo.getClientes().getClientes()));
+			repo.setVisible(true);
 		}
 		
 		if(evento.getActionCommand().equals(detalles.getSedes().CARGAR)) {
@@ -58,7 +69,7 @@ public class Controlador implements ActionListener
 			modelo.getA().escribirArchivoSedes(detalles.getSedes().getUbicacion().getText(), 
 					detalles.getSedes().getNumEmp().getText());
 		}
-		if(evento.getActionCommand().equals(detalles.getParametros().CARGAR)) {
+		if(evento.getActionCommand().equals(detalles.getApostador().CARGAR)) {
 			modelo.getA().leerArchivoApostador();
 			detalles.getApostador().getNombre().setText(modelo.getA().getNombre());
 			detalles.getApostador().getCedula().setText(modelo.getA().getCedula());
@@ -67,12 +78,15 @@ public class Controlador implements ActionListener
 			detalles.getApostador().getCelular().setText(modelo.getA().getCelular());
 		}
 		
-		if(evento.getActionCommand().equals(detalles.getParametros().GUARDAR)) {
+		if(evento.getActionCommand().equals(detalles.getApostador().GUARDAR)) {
 			modelo.getA().escribirArchivoApostador(detalles.getApostador().getNombre().getText(), 
 		    detalles.getApostador().getCedula().getText(), 
 		    detalles.getApostador().getSede().getText(),
 		    detalles.getApostador().getDireccion().getText(), 
 		    detalles.getApostador().getCelular().getText());
+			modelo.getClientes().setClientes("nombre:"+modelo.getA().getNombre()+  " cedula:" +
+		    modelo.getA().getCedula() +" sede:" +modelo.getA().getSede() + " direccion:" +
+		    modelo.getA().getDireccion() + " celular:" + modelo.getA().getCelular());
 		}
 		
 		
@@ -86,6 +100,28 @@ public class Controlador implements ActionListener
 			vista.getAboutus().setVisible(true);
 		}
 		
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getSuperAstro().getOperaciones().APOSTAR))
+		{
+			modelo.getA().escribirSuperAstro(modelo.getA().getSede(), modelo.getA().getCedula(),
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxIDCliente().getText()+"\n "+
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getListAstro().getSelectedItem()+"\n"+
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber().getText());
+			modelo.getApuestas().sumarCantidad();
+		}
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getOperaciones().APOSTAR))
+		{
+			modelo.getA().escribirBaloto(modelo.getA().getSede(), modelo.getA().getCedula(), 
+			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().getText());
+			modelo.getApuestas().sumarCantidad();
+			
+		}
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getOhPolla().getOperaciones().APOSTAR))
+		{
+			modelo.getA().escribirOhPolla(modelo.getA().getSede(), modelo.getA().getCedula(), 
+			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxEquipoA().getText());
+			modelo.getApuestas().sumarCantidad();
+			
+		}
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOAUTOMATICO))
 		{
 			
@@ -123,6 +159,7 @@ public class Controlador implements ActionListener
 			}
 		}
 		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getSuperAstro().getOperaciones().APOSTAR))
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().GENERAR))
 		{
 			/* Capturar datos y usar un generador de pdf*/
 			vista.getFactura().setVisible(true);

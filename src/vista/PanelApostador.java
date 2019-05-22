@@ -22,8 +22,8 @@ public class PanelApostador extends JPanel{
 	public JTextField txtCelular;
 	public JButton butGuardar;
 	public JButton butCargar;
-	public static final String CARGAR = "Cargar";
-	public static final String GUARDAR = "Guardar";
+	public static final String CARGAR = "Cargar3";
+	public static final String GUARDAR = "Guardar3";
 	
 public PanelApostador() {
 		

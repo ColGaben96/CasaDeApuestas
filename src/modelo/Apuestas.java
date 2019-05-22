@@ -23,4 +23,14 @@ public class Apuestas implements CasasDeApuestas
 		return presupuestoPunto;
 	}
 
+	public int cantidad=0;
+	
+	public void sumarCantidad() {
+		cantidad=cantidad +1;
+	}
+	
+	public int getCantidad() {
+		return cantidad;
+	}
+	
 }

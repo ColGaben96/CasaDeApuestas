@@ -16,6 +16,7 @@ public class PanelOperaciones extends JPanel
 	 */
 	private JButton generarExtractos, crearReporte, imprimirFacturas, detallesPunto;
 	public static final String DETALLES = "Detalles";
+	public static final String REPORTE = "Reporte";
 	public PanelOperaciones()
 	{
 		/**
@@ -36,6 +37,7 @@ public class PanelOperaciones extends JPanel
 		imprimirFacturas = new JButton("Imprimir Facturas");
 		detallesPunto = new JButton("Detalles del Punto");
 		detallesPunto.setActionCommand(DETALLES);
+		crearReporte.setActionCommand(REPORTE);
 		add(generarExtractos);
 		add(crearReporte);
 		add(imprimirFacturas);
