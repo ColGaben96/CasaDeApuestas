@@ -7,6 +7,8 @@ public class Mundo
 	private ApuestaOhPolla aohp;
 	private Propiedades p;
 	private Archivo a;
+	private Apuestas ap;
+	private Clientes cli;
 	
 	public Mundo()
 	{
@@ -15,6 +17,8 @@ public class Mundo
 		aohp = new ApuestaOhPolla();
 		p = new Propiedades();
 		a = new Archivo();
+		ap= new Apuestas();
+		cli = new Clientes();
 	}
 
 	public ApuestaBaloto getAb() 
@@ -40,5 +44,13 @@ public class Mundo
 	public Archivo getA() 
 	{
 		return a;
+	}
+	
+	public Apuestas getApuestas() {
+		return ap;
+	}
+	
+	public Clientes getClientes() {
+		return cli;
 	}
 }

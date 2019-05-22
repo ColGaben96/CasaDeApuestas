@@ -6,17 +6,20 @@ import java.awt.event.ActionListener;
 import modelo.Mundo;
 import vista.InterfazGUI;
 import vista.VentanaDetalles;
+import vista.VentanaReporte;
 
 public class Controlador implements ActionListener
 {
 	private Mundo modelo;
 	private InterfazGUI vista;
 	private VentanaDetalles detalles;
+	private VentanaReporte repo;
 	public Controlador()
 	{
 		modelo = new Mundo();
 		vista = new InterfazGUI(this);
 		detalles = new VentanaDetalles(this);
+		
 	
 	}
 
@@ -40,6 +43,12 @@ public class Controlador implements ActionListener
 		
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getOperaciones().DETALLES)) {
 			detalles.setVisible(true);
+		}
+		
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getOperaciones().REPORTE)) {
+			repo = new VentanaReporte(("Total de apuestas:" + Integer.toString(modelo.getApuestas().getCantidad()) + 
+					"\n \n" + modelo.getClientes().getClientes()));
+			repo.setVisible(true);
 		}
 		
 		if(evento.getActionCommand().equals(detalles.getSedes().CARGAR)) {
@@ -66,6 +75,9 @@ public class Controlador implements ActionListener
 		    detalles.getApostador().getSede().getText(),
 		    detalles.getApostador().getDireccion().getText(), 
 		    detalles.getApostador().getCelular().getText());
+			modelo.getClientes().setClientes("nombre:"+modelo.getA().getNombre()+  " cedula:" +
+		    modelo.getA().getCedula() +" sede:" +modelo.getA().getSede() + " direccion:" +
+		    modelo.getA().getDireccion() + " celular:" + modelo.getA().getCelular());
 		}
 		
 		if(evento.getActionCommand().equals(vista.getTooltip().CERRAR))
@@ -83,18 +95,20 @@ public class Controlador implements ActionListener
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxIDCliente().getText()+"\n "+
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getListAstro().getSelectedItem()+"\n"+
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber().getText());
-			
+			modelo.getApuestas().sumarCantidad();
 		}
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getOperaciones().APOSTAR))
 		{
 			modelo.getA().escribirBaloto(modelo.getA().getSede(), modelo.getA().getCedula(), 
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().getText());
+			modelo.getApuestas().sumarCantidad();
 			
 		}
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getOhPolla().getOperaciones().APOSTAR))
 		{
 			modelo.getA().escribirOhPolla(modelo.getA().getSede(), modelo.getA().getCedula(), 
 			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxEquipoA().getText());
+			modelo.getApuestas().sumarCantidad();
 			
 		}
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOAUTOMATICO))
