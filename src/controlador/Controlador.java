@@ -307,8 +307,8 @@ public class Controlador implements ActionListener
 				}
 			}
 			
-			vista.getFactura().setVisible(false);
-			vista.getStatusBar().getStatus().setText("Ready...");
+					vista.getFactura().setVisible(false);
+					vista.getStatusBar().getStatus().setText("Ready...");
 		}
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getOperaciones().EXTRACTOS))
 		{
@@ -331,9 +331,8 @@ public class Controlador implements ActionListener
 		{
 			vista.getImagenReporte().getOperaciones().setVisible(false);
 		}
-		
-	
+			
+		}
+		}
 	}
-}}
-
 }
