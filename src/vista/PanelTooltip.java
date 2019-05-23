@@ -6,27 +6,57 @@ import java.awt.event.KeyEvent;
 import javax.swing.*;
 
 /**
- * Panel de la barra de arriba
- * @author Gabe
+ * @author Oh! Enterprises.
+ * Clase dedicada al panel superior de la interfaz.
+ * 
  */
 public class PanelTooltip extends JPanel
 {
 	/*
-	 * Serial del panel
+	 * Serial por defecto.
 	 */
 	private static final long serialVersionUID = 1L;
 	/*
-	 * Atributos
+	 * Barra de herramientas superior.
 	 */
 	private JMenuBar tooltip;
-	private JMenu mArchivo, mAyuda;
-	private JMenuItem marCerrar, mayAcercaDe;
-	public final static String CERRAR = "Cerrar", ACERCADE = "AcercaDe";
 	/**
-	 * Método constructor
+	 * Menu de archivo y de ayuda.
 	 */
+	private JMenu mArchivo, mAyuda;
+	/**
+	 * Desplegables de Cerrar y Acerca De.
+	 */
+	private JMenuItem marCerrar, mayAcercaDe;
+	/**
+	 * Botones estaticos de Cerrar y Acerca De.
+	 */
+	public final static String CERRAR = "Cerrar", ACERCADE = "AcercaDe";
 	public PanelTooltip()
 	{
+		/**
+		 * @param PanelTooltip: Constructor para la barra de herramientas superior en la interfaz.
+		 * setLayout(new FlowLayout(FlowLayout.LEADING)): Crea nuevo panel en la parte superior de la interfaz.
+		 * 
+		 * tooltip = new JMenuBar(): Crea nueva barra de herramientas.
+		 * tooltip.setSize(getMaximumSize()): Alcanza el maximo tamano permitido.
+		 * add(tooltip): Agrega la barra a la interfaz.
+		 * 
+		 * mArchivo = new JMenu("Archivo"): Crea el menu "Archivo".
+		 * tooltip.add(mArchivo): Agrega archivo a la interfaz.
+		 * 
+		 * mAyuda = new JMenu("Ayuda"): Crea el menu "Ayuda".
+		 * tooltip.add(mAyuda): Agrega ayuda a la interfaz.
+		 * 
+		 * marCerrar = new JMenuItem("Cerrar"): Al desplegar archivo, crea un boton de "Cerrar".
+		 * marCerrar.setActionCommand(CERRAR): Asigna un comando a Cerrar.
+		 * marCerrar.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4, ActionEvent.ALT_MASK)): Asigna evento del comando por teclado.
+		 * mArchivo.add(marCerrar): Agrega el boton a la interfaz
+		 * 
+		 * mayAcercaDe = new JMenuItem("Acerca De"): Al desplegar ayuda, crea un boton de "Acerca De".
+		 * mayAcercaDe.setActionCommand(ACERCADE): Asigna un comando a Acerca De.
+		 * mAyuda.add(mayAcercaDe): Agrega el boton a la interfaz. 
+		 */
 		setLayout(new FlowLayout(FlowLayout.LEADING));
 		
 		tooltip = new JMenuBar();
@@ -50,39 +80,39 @@ public class PanelTooltip extends JPanel
 	}
 	
 	/*
-	 * Métodos getter & setter generados por usuario con Eclipse IDE
+	 * Mï¿½todos getter & setter generados por usuario con Eclipse IDE
 	 */
 	
 	/**
-	 * Método de obtención de Tooltip
+	 * Mï¿½todo de obtenciï¿½n de Tooltip
 	 * @param tooltip
 	 */
 	public JMenuBar getTooltip() {
 		return tooltip;
 	}
 	/**
-	 * Método de obtención de Tooltip
+	 * Mï¿½todo de obtenciï¿½n de Tooltip
 	 * @param archivo
 	 */
 	public JMenu getmArchivo() {
 		return mArchivo;
 	}
 	/**
-	 * Método de obtención de Tooltip
+	 * Mï¿½todo de obtenciï¿½n de Tooltip
 	 * @param ayuda
 	 */
 	public JMenu getmAyuda() {
 		return mAyuda;
 	}
 	/**
-	 * Método de obtención de Tooltip
+	 * Mï¿½todo de obtenciï¿½n de Tooltip
 	 * @param cerrar
 	 */
 	public JMenuItem getMarCerrar() {
 		return marCerrar;
 	}
 	/**
-	 * Método de obtención de Tooltip
+	 * Mï¿½todo de obtenciï¿½n de Tooltip
 	 * @param acercade
 	 */
 	public JMenuItem getMayAcercaDe() {
