@@ -224,7 +224,27 @@ public class Controlador implements ActionListener
 			vista.getFactura().setVisible(false);
 			vista.getStatusBar().getStatus().setText("Ready...");
 		}
-		
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getOperaciones().EXTRACTOS))
+		{
+			vista.getReporteExtractos().setVisible(true);
+		}
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getOperaciones().REPORTE))
+		{
+			vista.getImagenReporte().setVisible(true);
+			vista.getImagenReporte().getChart().getFrame().setVisible(true);
+		}
+		if(evento.getActionCommand().equals(vista.getPanelGrande().getOperaciones().FACTURAS)) 
+		{
+			vista.NotAvailableYet();
+		}
+		if (evento.getActionCommand().equals(vista.getReporteExtractos().getOperaciones().CANCEL)) 
+		{
+			vista.getReporteExtractos().setVisible(false);
+		}
+		if (evento.getActionCommand().equals(vista.getImagenReporte().getOperaciones().CANCEL))
+		{
+			vista.getImagenReporte().getOperaciones().setVisible(false);
+		}
 	}
 
 
