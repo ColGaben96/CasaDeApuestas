@@ -130,6 +130,7 @@ public class Controlador implements ActionListener
 			{
 				//Object[][] data = new Object[2][3];
 				//vista.getFactura().getFactura().getModel().addRow(data);
+				modelo.getAb().BalotoManual();
 				vista.getFactura().getOperaciones().getValortotal().setText("$ 7800");
 				
 			}
@@ -137,7 +138,9 @@ public class Controlador implements ActionListener
 			{
 				//Object[][] data = new Object[1][3];
 				//vista.getFactura().getFactura().getModel().addRow(data);
+				modelo.getAb().BalotoManual();
 				vista.getFactura().getOperaciones().getValortotal().setText("$ 5400");
+				
 			}
 		}
 		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getSuperAstro().getOperaciones().APOSTAR))
