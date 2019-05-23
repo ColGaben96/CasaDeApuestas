@@ -33,6 +33,7 @@ public class PanelSuperAstro extends JPanel
 		 * operaciones = new SuperAstroOperaciones(): Crea nuevo panel de operaciones.
 		 * add(operaciones): Agrega el panel a la interfaz.
 		 */
+		setLayout(new BorderLayout());
 		formulario = new SuperAstroFormulario();
 		add(formulario, BorderLayout.CENTER);
 		operaciones = new SuperAstroOperaciones();
