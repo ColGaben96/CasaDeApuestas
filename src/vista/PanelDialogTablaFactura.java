@@ -2,8 +2,6 @@ package vista;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-
-import java.awt.*;
 import java.util.Vector;
 
 public class PanelDialogTablaFactura extends JPanel

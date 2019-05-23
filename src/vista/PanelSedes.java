@@ -13,7 +13,6 @@ public class PanelSedes extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private JLabel labEntrada;
 	private JLabel labEntrada2;
-	private JLabel labEntrada3;
 	private JLabel labEntrada4;
 	public JTextField txtUbicacion;
 	public JTextField txtNumEmp;

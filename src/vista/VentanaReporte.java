@@ -1,15 +1,11 @@
 package vista;
 
-import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
-
-import controlador.Controlador;
 
 public class VentanaReporte extends JFrame{
 
