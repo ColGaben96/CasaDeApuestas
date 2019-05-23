@@ -17,14 +17,19 @@ public class VentanaReporte extends JFrame{
 	private static final long serialVersionUID = 1L;
 
 public String dato;
+JPanel Panel;
+
+public JTextArea ta;
 	
-	public VentanaReporte(String dato) {
+	public VentanaReporte() {
 		
 		setLayout(new GridLayout(1 , 1));
 		
-	    JPanel Panel = new JPanel();
+		Panel = new JPanel();
+			  
+	    ta = new JTextArea( 40, 70);
 	  
-	    JTextArea ta = new JTextArea(dato, 40, 70);
+	    ta = new JTextArea( 40, 70);
 	    ta.setLineWrap(true);
 	    ta.setWrapStyleWord(true);
 	    Panel.add(new JScrollPane(ta));
@@ -37,6 +42,6 @@ public String dato;
 		
 	
 }
-	
+
 	
 }

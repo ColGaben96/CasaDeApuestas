@@ -123,7 +123,7 @@ public String presupuesto;
 			            
 			    		idstream.close();
 			    		input.close(); 
-			            JOptionPane.showMessageDialog(null, "EXITOSO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+			          
 			        } catch (IOException ex) {
 			            ex.printStackTrace();
 			            JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
