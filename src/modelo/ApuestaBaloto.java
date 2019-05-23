@@ -2,10 +2,10 @@ package modelo;
 
 public class ApuestaBaloto extends Apuestas
 {
+	int a = 0, b = 0, c = 0 , d = 0 , e=0 , f=0; 
 	
 	public String BalotoAutomatico(){
 		
-		int a = 0, b = 0, c = 0 , d = 0 , e=0 , f=0; 
 		String num=" ";
 		
 		a = (int)(Math.rint(44)*Math.random());
@@ -22,10 +22,13 @@ public class ApuestaBaloto extends Apuestas
 		
 	}
 	
-	public void BalotoManual() {
-		
-		
-		
+	public int BalotoManual() {
+			
+			int num;
+			num = a+b+c+d+e+f;
+			return (num);
 	}
-
+		
+		
 }
+

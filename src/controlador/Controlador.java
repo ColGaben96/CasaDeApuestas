@@ -116,7 +116,7 @@ public class Controlador implements ActionListener
 		}
 		if(evento.getActionCommand() .equals( vista.getPanelGrande().getPestanas().getBaloto().getFormulario().GENERAR))
 		{
-			//modelo.getAb().Automatico();/* Generar balotas de manera random */
+			/* Generar balotas de manera random */
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setText(modelo.getAb().BalotoAutomatico());
 		}
 		
@@ -142,9 +142,11 @@ public class Controlador implements ActionListener
 		}
 		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getSuperAstro().getOperaciones().APOSTAR))
 		{
+			
 			vista.getFactura().setVisible(true);
 			vista.getStatusBar().getStatus().setText("Making Invoice...");
 			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxFactura().getText());
+			modelo.getAsa().SuperAstro();
 		}
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getOhPolla().getOperaciones().APOSTAR))
 		{
@@ -245,6 +247,8 @@ public class Controlador implements ActionListener
 		{
 			vista.getImagenReporte().getOperaciones().setVisible(false);
 		}
+		
+	
 	}
 
 
