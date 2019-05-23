@@ -6,11 +6,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
-
-import javax.swing.border.TitledBorder;
-
-import modelo.Propiedades;
 /**
  * 
  * @author Oh! Enterprises.

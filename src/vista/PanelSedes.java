@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
 /**
  * 
  * @author Oh! Enterprises.
@@ -31,7 +32,6 @@ public class PanelSedes extends JPanel
 	/**
 	 * Etiqueta de entrada 3.
 	 */
-	private JLabel labEntrada3;
 	/**
 	 * Campo de texto de ubicacion.
 	 */
