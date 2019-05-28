@@ -37,7 +37,7 @@ public class PanelDialogFacturaOperaciones extends JPanel
 
 	public JCheckBox getEnviaracorreo() {
 		return enviaracorreo;
-	}
+	}   
 
 	public JLabel getValortotal() {
 		return valortotal;

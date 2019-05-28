@@ -6,38 +6,16 @@ import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
 import controlador.Controlador;
-/**
- * 
- * @author Oh! Enterprises.
- * VentanaDetalles: Clase dedicada a la impresion de la Ventana detalles.
- *
- */
-public class VentanaDetalles extends JFrame
-{
-	/**
-	 * Serial por defecto.
-	 */
+
+public class VentanaDetalles extends JFrame{
+	
 	private static final long serialVersionUID = 1L;
-	/**
-	 * Panel pestanas.
-	 */
 	private JTabbedPane pestanas;
-	/**
-	 * Panel parametros.
-	 */
 	private PanelParametros para;
-	/**
-	 * Panel sedes.
-	 */
 	private PanelSedes sede;
-	/**
-	 * Panel apostador.
-	 */
 	private PanelApostador apos;
 	
 	public VentanaDetalles(Controlador control) {
-		
-		setLayout(new BorderLayout());
 		/**
 		 * @param VentanaDetalles: Constructor de la ventana detalles.
 		 * setLayout(new GridLayout()): Crea un panel grande, sin cuadricula.
@@ -51,7 +29,8 @@ public class VentanaDetalles extends JFrame
 		 * pestanas.addTab("Apostador", apos): Agrega una pestana de "apostador".
 		 * setSize(800, 400): Tamano de la interfaz 800,600.
 		 */
-		//setLayout(new GridLayout());
+		
+		setLayout(new BorderLayout());
 		pestanas = new JTabbedPane();
 		para = new PanelParametros();
 		sede = new PanelSedes();
@@ -70,24 +49,12 @@ public class VentanaDetalles extends JFrame
 		
 		
 	}
-	/**
-	 * Obtener panel parametros.
-	 * @return para.
-	 */
 	public PanelParametros getParametros() {
 		return para;
 	}
-	/**
-	 * Obtener panel sedes.
-	 * @return sede.
-	 */
 	public PanelSedes getSedes() {
 		return sede;
 	}
-	/**
-	 * Obtener panel apostador.
-	 * @return apos.
-	 */
 	public PanelApostador getApostador() {
 		return apos;
 	}

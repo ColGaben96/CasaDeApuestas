@@ -39,7 +39,7 @@ public class BalotoFormulario extends JPanel
 	/**
 	 * Boton para generar numeros aleatorios para el juego.
 	 */
-	private JButton generarNumeros;
+	private JButton generarNumeros;	
 	public static final String RADIOAUTOMATICO = "RadioAutomatico", RADIOMANUAL = "RadioManual", GENERAR = "Generar";
 	
 	public BalotoFormulario()

@@ -1,8 +1,8 @@
 package vista;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.util.Vector;
+
+import java.awt.GridLayout;
 
 public class PanelDialogTablaFactura extends JPanel
 {
@@ -11,65 +11,69 @@ public class PanelDialogTablaFactura extends JPanel
 	 * Se declaran los atributos de PanelTabla
 	 */
 	private static final long serialVersionUID = 1L; //El serial predeterminado que ayuda a funcionar el programa
-	private String[] nombreColumnas;
-	private int filas;
-	private int columnas;
-	private JTable table;
-	private Object[][] data;
-	private DefaultTableModel model;
-	private Vector<Object> row;
-	private JScrollPane scroll;
+	private JLabel id, item, valor, id1, id2, item1, item2, valor1, valor2;
 	
 	/*
 	 * Se declara el constructor de PanelTabla
 	 */
 	public PanelDialogTablaFactura()
 	{
-		nombreColumnas = new String[] {"Item #", "Concepto", "Valor"};
-		data = new Object[][] {{"0", "0", "0"}};
-		table = new JTable(data, nombreColumnas);
-		model = new DefaultTableModel();
-		row = new Vector<Object>();
-		table.setFillsViewportHeight(true);
-		table.setVisible(true);
-		scroll = new JScrollPane(table);
-		model.setColumnCount(columnas);
-		model.setRowCount(filas);
-		model.addRow(row);
-		add(scroll);
+		setLayout(new GridLayout(3, 9));
+		id = new JLabel("ID");
+		item = new JLabel("Item");
+		valor = new JLabel("Valor");
+		add(id);
+		add(item);
+		add(valor);
+		
+		id1 = new JLabel("");
+		item1 = new JLabel("");
+		valor1 = new JLabel("");
+		add(id1);
+		add(item1);
+		add(valor1);
+		
+		id2 = new JLabel("");
+		item2 = new JLabel("");
+		valor2 = new JLabel("");
+		add(id2);
+		add(item2);
+		add(valor2);
 	}
 
-	public String[] getNombreColumnas() {
-		return nombreColumnas;
+	public JLabel getId() {
+		return id;
 	}
 
-	public int getFilas() {
-		return filas;
+	public JLabel getItem() {
+		return item;
 	}
 
-	public int getColumnas() {
-		return columnas;
+	public JLabel getValor() {
+		return valor;
 	}
 
-	public JTable getTable() {
-		return table;
+	public JLabel getId1() {
+		return id1;
 	}
 
-	public Object[][] getData() {
-		return data;
+	public JLabel getId2() {
+		return id2;
 	}
 
-	public DefaultTableModel getModel() {
-		return model;
+	public JLabel getItem1() {
+		return item1;
 	}
 
-	public Vector<Object> getRow() {
-		return row;
+	public JLabel getItem2() {
+		return item2;
 	}
 
-	public JScrollPane getScroll() {
-		return scroll;
+	public JLabel getValor1() {
+		return valor1;
 	}
-	
 
+	public JLabel getValor2() {
+		return valor2;
+	}
 }
