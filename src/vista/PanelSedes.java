@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -14,7 +15,7 @@ public class PanelSedes extends JPanel{
 	private JLabel labEntrada;
 	private JLabel labEntrada2;
 	private JLabel labEntrada4;
-	public JTextField txtUbicacion;
+	public JComboBox<String> listUbicacion;
 	public JTextField txtNumEmp;
 	public JButton butGuardar;
 	public JButton butCargar;
@@ -27,18 +28,17 @@ public class PanelSedes extends JPanel{
 		labEntrada=new JLabel("Ubicacion");
 		labEntrada2=new JLabel("Numero de empleados");
 		labEntrada4=new JLabel("");
-		txtUbicacion= new JTextField("");
+		String[] panUbicacion= {"SELECCIONAR:", "Usaquen", "Chapinero", "Santa Fe", "San Cristobal", "Usme", "Tunjuelito", "Bosa", "Kennedy", "Fontibon", "Engativa", "Suba", "Barrios Unidos", "Teusaquillo", "Los Martires", "Antonio Narino", "Puente Aranda", "La Candelaria", "Rafael Uribe Uribe", "Ciudad Bolivar", "Sumapaz"};
 		txtNumEmp= new JTextField("");
-		txtUbicacion.setForeground(Color.BLACK);
-		txtUbicacion.setBackground(Color.WHITE);
 		txtNumEmp.setForeground(Color.BLACK);
 		txtNumEmp.setBackground(Color.WHITE);
 		butGuardar = new JButton("Modificar datos");
 		butGuardar.setActionCommand(GUARDAR);
 		butCargar = new JButton("Cargar datos");
 		butCargar.setActionCommand(CARGAR);
+		listUbicacion = new JComboBox<String>(panUbicacion);
 		
-		add(labEntrada); add(txtUbicacion);
+		add(labEntrada); add(listUbicacion);
 		
 		add(labEntrada2); add(txtNumEmp);
 		
@@ -57,8 +57,8 @@ public class PanelSedes extends JPanel{
 	public JButton getCargar() {
 		return butCargar;
 	}
-	public JTextField getUbicacion() {
-		return txtUbicacion;
+	public JComboBox<String> listUbicacion() {
+		return listUbicacion;
 	}
 	public JTextField getNumEmp() {
 		return txtNumEmp;
