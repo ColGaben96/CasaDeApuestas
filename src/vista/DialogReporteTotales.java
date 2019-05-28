@@ -12,7 +12,7 @@ public class DialogReporteTotales extends JPanel
 	public DialogReporteTotales()
 	{
 		setLayout(new GridLayout(2, 2));
-		labelIngresos = new JLabel("Ingreos: ");
+		labelIngresos = new JLabel("Ingresos: ");
 		txIngresos = new JTextField("$ - ");
 		add(labelIngresos);
 		add(txIngresos);
