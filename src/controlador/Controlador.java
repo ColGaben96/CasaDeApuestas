@@ -123,25 +123,45 @@ public class Controlador implements ActionListener
 		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getBaloto().getOperaciones().APOSTAR))
 		{
 			/* Capturar datos y usar un generador de pdf*/
-			vista.getFactura().setVisible(true);
 			vista.getStatusBar().getStatus().setText("Making...");
 			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxFactura().getText());
 			if(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getRevancha().isSelected())
 			{
-				//Object[][] data = new Object[2][3];
-				//vista.getFactura().getFactura().getModel().addRow(data);
+				vista.getFactura().getFactura().getId1().setVisible(true);
+				vista.getFactura().getFactura().getItem1().setVisible(true);
+				vista.getFactura().getFactura().getValor1().setVisible(true);
+				vista.getFactura().getFactura().getId2().setVisible(true);
+				vista.getFactura().getFactura().getItem2().setVisible(true);
+				vista.getFactura().getFactura().getValor2().setVisible(true);
+				vista.getFactura().getFactura().getId1().setText("0001");
+				vista.getFactura().getFactura().getItem1().setText("Juego Baloto");
+				vista.getFactura().getFactura().getValor1().setText("5400");
+				vista.getFactura().getFactura().getId2().setText("0001a");
+				vista.getFactura().getFactura().getItem2().setText("Adición Revancha");
+				vista.getFactura().getFactura().getValor2().setText("2500");
+				int valor1 = Integer.parseInt(vista.getFactura().getFactura().getValor1().getText());
+				int valor2 = Integer.parseInt(vista.getFactura().getFactura().getValor2().getText());
 				modelo.getAb().BalotoManual();
-				vista.getFactura().getOperaciones().getValortotal().setText("$ 7800");
-				
+				vista.getFactura().getOperaciones().getValortotal().setText("$ "+String.valueOf(valor1+valor2));
 			}
 			else
 			{
-				//Object[][] data = new Object[1][3];
-				//vista.getFactura().getFactura().getModel().addRow(data);
+				vista.getFactura().getFactura().getId1().setVisible(true);
+				vista.getFactura().getFactura().getItem1().setVisible(true);
+				vista.getFactura().getFactura().getValor1().setVisible(true);
+				vista.getFactura().getFactura().getId2().setVisible(false);
+				vista.getFactura().getFactura().getItem2().setVisible(false);
+				vista.getFactura().getFactura().getValor2().setVisible(false);
+				vista.getFactura().getFactura().getId1().setText("0001");
+				vista.getFactura().getFactura().getItem1().setText("Juego Baloto");
+				vista.getFactura().getFactura().getValor1().setText("5400");
+				int valor1 = Integer.parseInt(vista.getFactura().getFactura().getValor1().getText());
 				modelo.getAb().BalotoManual();
-				vista.getFactura().getOperaciones().getValortotal().setText("$ 5400");
+				vista.getFactura().getOperaciones().getValortotal().setText("$ "+String.valueOf(valor1));
 				
 			}
+			vista.getFactura().setVisible(true);
+			vista.getFactura().validate();
 		}
 		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getSuperAstro().getOperaciones().APOSTAR))
 		{
@@ -149,6 +169,19 @@ public class Controlador implements ActionListener
 			vista.getFactura().setVisible(true);
 			vista.getStatusBar().getStatus().setText("Making Invoice...");
 			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxFactura().getText());
+			vista.getFactura().getFactura().getId1().setVisible(true);
+			vista.getFactura().getFactura().getItem1().setVisible(true);
+			vista.getFactura().getFactura().getValor1().setVisible(true);
+			vista.getFactura().getFactura().getId2().setVisible(false);
+			vista.getFactura().getFactura().getItem2().setVisible(false);
+			vista.getFactura().getFactura().getValor2().setVisible(false);
+			vista.getFactura().getFactura().getId1().setText("0002");
+			vista.getFactura().getFactura().getItem1().setText("Juego SuperAstro");
+			vista.getFactura().getFactura().getValor1().setText("3500");
+			int valor1 = Integer.parseInt(vista.getFactura().getFactura().getValor1().getText());
+			vista.getFactura().getOperaciones().getValortotal().setText("$ "+String.valueOf(valor1));
+			vista.getFactura().setVisible(true);
+			vista.getFactura().validate();
 			modelo.getAsa().SuperAstro();
 		}
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getOhPolla().getOperaciones().APOSTAR))
@@ -158,7 +191,19 @@ public class Controlador implements ActionListener
 			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getListEquipoA().getToolTipText()+
 			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getListEquipoB().getToolTipText());
 			modelo.getApuestas().sumarCantidad();
-			vista.getFactura().getOperaciones().getValortotal().setText("$" + String.valueOf(modelo.getApuestas().getCantidad()));
+			vista.getFactura().getFactura().getId1().setVisible(true);
+			vista.getFactura().getFactura().getItem1().setVisible(true);
+			vista.getFactura().getFactura().getValor1().setVisible(true);
+			vista.getFactura().getFactura().getId2().setVisible(false);
+			vista.getFactura().getFactura().getItem2().setVisible(false);
+			vista.getFactura().getFactura().getValor2().setVisible(false);
+			vista.getFactura().getFactura().getId1().setText("0003");
+			vista.getFactura().getFactura().getItem1().setText("Juego Oh! Polla");
+			vista.getFactura().getFactura().getValor1().setText("2300");
+			int valor1 = Integer.parseInt(vista.getFactura().getFactura().getValor1().getText());
+			vista.getFactura().getOperaciones().getValortotal().setText("$ "+String.valueOf(valor1));
+			vista.getFactura().setVisible(true);
+			vista.getFactura().validate();
 		}
 		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getBaloto().getOperaciones().DESCARTAR))
 		{
