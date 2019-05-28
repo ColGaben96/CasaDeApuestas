@@ -22,6 +22,7 @@ public class PanelPestanas extends JPanel
 		pestanas.addTab("SuperAstro", superAstro);
 		pestanas.addTab("Baloto", baloto);
 		pestanas.addTab("Marcardor Oh!Polla", ohPolla);
+		setBackground(Color.WHITE);
 	}
 
 	public PanelSuperAstro getSuperAstro() {
