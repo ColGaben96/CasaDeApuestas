@@ -16,6 +16,19 @@ public class VentanaDetalles extends JFrame{
 	private PanelApostador apos;
 	
 	public VentanaDetalles(Controlador control) {
+		/**
+		 * @param VentanaDetalles: Constructor de la ventana detalles.
+		 * setLayout(new GridLayout()): Crea un panel grande, sin cuadricula.
+		 * pestanas = new JTabbedPane(): Crea el panel especial de pestanas.
+		 * para = new PanelParametros(): Crea el panel especial de parametros.
+		 * sede = new PanelSedes(): Crea el panel especial de sedes.
+		 * apos= new PanelApostador(): Crea el panel de apostador.
+		 * add(pestanas): Agrega las pestanas a la interfaz.
+		 * pestanas.addTab("Parametrizacion", para): Agrega una pestana de "parametrizacion".
+		 * pestanas.addTab("Sede", sede): Agrega una pestana de "sede".
+		 * pestanas.addTab("Apostador", apos): Agrega una pestana de "apostador".
+		 * setSize(800, 400): Tamano de la interfaz 800,600.
+		 */
 		
 		setLayout(new BorderLayout());
 		pestanas = new JTabbedPane();
