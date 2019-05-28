@@ -2,11 +2,12 @@ package modelo;
 
 public class ApuestaBaloto extends Apuestas
 {
-	int a = 0, b = 0, c = 0 , d = 0 , e=0 , f=0; 
+	int 
+	a = 0, b = 0, c = 0 , d = 0 , e=0 , f=0; 
+	String num=" ";
 	
 	public String BalotoAutomatico(){
 		
-		String num=" ";
 		int a = 0, b = 0, c = 0 , d = 0 , e=0 , f=0; 
 	
 		while(a<40) {
@@ -55,6 +56,10 @@ public class ApuestaBaloto extends Apuestas
 			int num;
 			num = a+b+c+d+e+f;
 			return (num);
+	}
+	
+	public String getNumeroFact() {
+		return num;
 	}
 		
 		

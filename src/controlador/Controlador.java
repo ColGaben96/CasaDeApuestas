@@ -85,7 +85,7 @@ public class Controlador implements ActionListener
 		if(evento.getActionCommand().equals(detalles.getApostador().GUARDAR)) {
 			modelo.getA().escribirArchivoApostador(detalles.getApostador().getNombre().getText(), 
 		    detalles.getApostador().getCedula().getText(), 
-		    detalles.getApostador().listSede().getToolTipText(),
+		    detalles.getApostador().listSede().getSelectedItem().toString(),
 		    detalles.getApostador().getDireccion().getText(), 
 		    detalles.getApostador().getCelular().getText());
 			modelo.getClientes().setClientes("nombre:"+modelo.getA().getNombre()+  " cedula:" +
@@ -130,6 +130,7 @@ public class Controlador implements ActionListener
 			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxFactura().getText());
 			if(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getRevancha().isSelected())
 			{
+				
 				vista.getFactura().getFactura().getId1().setVisible(true);
 				vista.getFactura().getFactura().getItem1().setVisible(true);
 				vista.getFactura().getFactura().getValor1().setVisible(true);
@@ -145,10 +146,11 @@ public class Controlador implements ActionListener
 				int valor1 = Integer.parseInt(vista.getFactura().getFactura().getValor1().getText());
 				int valor2 = Integer.parseInt(vista.getFactura().getFactura().getValor2().getText());
 				modelo.getAb().BalotoManual();
-				vista.getFactura().getOperaciones().getValortotal().setText("$ "+String.valueOf(valor1+valor2));
+				vista.getFactura().getOperaciones().getValortotal().setText("$ "+String.valueOf(valor1+valor2) );
 			}
 			else
-			{
+			{	
+			
 				vista.getFactura().getFactura().getId1().setVisible(true);
 				vista.getFactura().getFactura().getItem1().setVisible(true);
 				vista.getFactura().getFactura().getValor1().setVisible(true);
@@ -156,7 +158,7 @@ public class Controlador implements ActionListener
 				vista.getFactura().getFactura().getItem2().setVisible(false);
 				vista.getFactura().getFactura().getValor2().setVisible(false);
 				vista.getFactura().getFactura().getId1().setText("0001");
-				vista.getFactura().getFactura().getItem1().setText("Juego Baloto");
+				vista.getFactura().getFactura().getItem1().setText("Juego Baloto : Numero Apostado" + modelo.getAb().getNumeroFact());
 				vista.getFactura().getFactura().getValor1().setText("5400");
 				int valor1 = Integer.parseInt(vista.getFactura().getFactura().getValor1().getText());
 				modelo.getAb().BalotoManual();
