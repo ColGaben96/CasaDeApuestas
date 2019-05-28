@@ -130,6 +130,7 @@ public class Controlador implements ActionListener
 			{
 				//Object[][] data = new Object[2][3];
 				//vista.getFactura().getFactura().getModel().addRow(data);
+				modelo.getAb().BalotoAutomatico();
 				modelo.getAb().BalotoManual();
 				vista.getFactura().getOperaciones().getValortotal().setText("$ 7800");
 				
