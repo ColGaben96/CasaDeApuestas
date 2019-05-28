@@ -12,7 +12,7 @@ public class DialogReporteBaloto extends JPanel
 	public DialogReporteBaloto()
 	{
 		setLayout(new GridLayout(2, 2));
-		labelIngresos = new JLabel("Ingreos: ");
+		labelIngresos = new JLabel("Ingresos: ");
 		txIngresos = new JTextField("$ - ");
 		add(labelIngresos);
 		add(txIngresos);
