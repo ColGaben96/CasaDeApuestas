@@ -51,7 +51,7 @@ public class VentanaDetalles extends JFrame
 		 * pestanas.addTab("Apostador", apos): Agrega una pestana de "apostador".
 		 * setSize(800, 400): Tamano de la interfaz 800,600.
 		 */
-		setLayout(new GridLayout());
+		//setLayout(new GridLayout());
 		pestanas = new JTabbedPane();
 		para = new PanelParametros();
 		sede = new PanelSedes();
