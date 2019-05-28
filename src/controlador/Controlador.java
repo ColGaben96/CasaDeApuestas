@@ -127,11 +127,6 @@ public class Controlador implements ActionListener
 			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxFactura().getText());
 			if(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getRevancha().isSelected())
 			{
-
-				//Object[][] data = new Object[2][3];
-				//vista.getFactura().getFactura().getModel().addRow(data);
-				modelo.getAb().BalotoAutomatico();
-
 				vista.getFactura().getFactura().getId1().setVisible(true);
 				vista.getFactura().getFactura().getItem1().setVisible(true);
 				vista.getFactura().getFactura().getValor1().setVisible(true);
@@ -146,7 +141,6 @@ public class Controlador implements ActionListener
 				vista.getFactura().getFactura().getValor2().setText("2500");
 				int valor1 = Integer.parseInt(vista.getFactura().getFactura().getValor1().getText());
 				int valor2 = Integer.parseInt(vista.getFactura().getFactura().getValor2().getText());
-
 				modelo.getAb().BalotoManual();
 				vista.getFactura().getOperaciones().getValortotal().setText("$ "+String.valueOf(valor1+valor2));
 			}
