@@ -28,17 +28,17 @@ public class Propiedades {
          casa=prop.getProperty("casa");
          sedes=prop.getProperty("sedes");
          presupuesto=prop.getProperty("presupuesto");
-         JOptionPane.showMessageDialog(null, "EXITOSO", "T�tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+    
      } catch (IOException ex) {
          ex.printStackTrace();
-         JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "T�tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Titulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
      }
 
 	}
 	public void escribirPropiedades(String pCasa, String pSedes, String pPresupuesto, String pJuegospre) {
 		
-		if(Integer.parseInt(pPresupuesto)!=Integer.parseInt(pJuegospre)) {
-			JOptionPane.showMessageDialog(null, "ERROR: el presupuesto no es igual", "T�tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+		if(Integer.parseInt(pPresupuesto)<Integer.parseInt(pJuegospre)) {
+			JOptionPane.showMessageDialog(null, "ERROR: el presupuesto no es igual o es menor", "Titulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 		}
 		else {
 	 try (OutputStream output = new FileOutputStream("config.properties")) {
@@ -55,11 +55,11 @@ public class Propiedades {
          // save properties to project root folder
          prop.store(output, null);
          
-         JOptionPane.showMessageDialog(null, "EXITOSO", "T�tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(null, "EXITOSO", "Titulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 
      } catch (IOException io) {
          io.printStackTrace();
-         JOptionPane.showMessageDialog(null, "ERROR", "T�tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(null, "ERROR", "Titulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
      }  
 		}
 	}

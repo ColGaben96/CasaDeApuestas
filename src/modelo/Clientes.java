@@ -1,18 +1,26 @@
 package modelo;
 
+import java.util.ArrayList;
+
 public class Clientes {
 
-	public String clientes="";
-	
+	public ArrayList<String> clientes = new ArrayList<String>();
+	public String info="";
 
 	public void setClientes(String pCliente) {
 		
-		clientes = clientes + pCliente + "\n";
+		clientes.add(pCliente);
 		
 	}
 	
 	public String getClientes(){
-		return clientes;
+  
+		 for(String name:clientes) {
+	         info+=name + "\n";
+	        }
+		System.out.println(info);
+		 
+		return info;
 	}
 	
 }

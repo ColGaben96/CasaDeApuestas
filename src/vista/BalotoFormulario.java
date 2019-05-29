@@ -39,7 +39,7 @@ public class BalotoFormulario extends JPanel
 	/**
 	 * Boton para generar numeros aleatorios para el juego.
 	 */
-	private JButton generarNumeros;
+	private JButton generarNumeros;	
 	public static final String RADIOAUTOMATICO = "RadioAutomatico", RADIOMANUAL = "RadioManual", GENERAR = "Generar";
 	
 	public BalotoFormulario()
@@ -76,7 +76,7 @@ public class BalotoFormulario extends JPanel
 		 *
 		 */
 		setLayout(new GridLayout(5, 2));
-		idFactura = new JLabel("ID Factura Nº");
+		idFactura = new JLabel("ID Factura N.");
 		txFactura = new JTextField("0000");
 		txFactura.setEditable(false);
 		txFactura.setForeground(Color.RED);

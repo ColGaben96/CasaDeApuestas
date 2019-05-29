@@ -41,6 +41,7 @@ public class PanelGrande extends JPanel
 		add(pestanas, BorderLayout.CENTER);
 		operaciones = new PanelOperaciones();
 		add(operaciones, BorderLayout.EAST);
+		
 	}
 
 	/**

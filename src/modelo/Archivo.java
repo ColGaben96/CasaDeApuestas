@@ -1,28 +1,136 @@
 package modelo;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.Properties;
-
 import javax.swing.JOptionPane;
 
-public class Archivo {
+import java.awt.Graphics;
+import java.awt.HeadlessException;
+import java.awt.print.*;
 
-public String ubicacion;
-public String numemp;
-public String direccion;
-public String nombre;
-public String sede;
-public String celular;
-public String cedula;
-public String presupuesto;
+public class Archivo implements Printable
+{
+
+private String ubicacion;
+private String numemp;
+private String direccion;
+private String nombre;
+private String sede;
+private String celular;
+private String cedula;
+private String presupuesto;
+private PrinterJob pjob;
+private PageFormat pf;
+
+
+	public Archivo()
+	{
+		ubicacion = new String();
+		numemp = new String();
+		direccion = new String();
+		nombre = new String();
+		sede = new String();
+		celular = new String();
+		cedula = new String();
+		presupuesto = new String();
+		pf = new PageFormat();
+		pjob = new PrinterJob() 
+		{
+			
+			@Override
+			public PageFormat validatePage(PageFormat page) {
+				// TODO Apéndice de método generado automáticamente
+				return null;
+			}
+			
+			@Override
+			public void setPrintable(Printable painter, PageFormat format) {
+				// TODO Apéndice de método generado automáticamente
+				
+			}
+			
+			@Override
+			public void setPrintable(Printable painter) {
+				// TODO Apéndice de método generado automáticamente
+				
+			}
+			
+			@Override
+			public void setPageable(Pageable document) throws NullPointerException {
+				// TODO Apéndice de método generado automáticamente
+				
+			}
+			
+			@Override
+			public void setJobName(String jobName) {
+				// TODO Apéndice de método generado automáticamente
+				
+			}
+			
+			@Override
+			public void setCopies(int copies) {
+				// TODO Apéndice de método generado automáticamente
+				
+			}
+			
+			@Override
+			public boolean printDialog() throws HeadlessException {
+				// TODO Apéndice de método generado automáticamente
+				return false;
+			}
+			
+			@Override
+			public void print() throws PrinterException {
+				// TODO Apéndice de método generado automáticamente
+				
+			}
+			
+			@Override
+			public PageFormat pageDialog(PageFormat page) throws HeadlessException {
+				// TODO Apéndice de método generado automáticamente
+				return null;
+			}
+			
+			@Override
+			public boolean isCancelled() {
+				// TODO Apéndice de método generado automáticamente
+				return false;
+			}
+			
+			@Override
+			public String getUserName() {
+				// TODO Apéndice de método generado automáticamente
+				return null;
+			}
+			
+			@Override
+			public String getJobName() {
+				// TODO Apéndice de método generado automáticamente
+				return null;
+			}
+			
+			@Override
+			public int getCopies() {
+				// TODO Apéndice de método generado automáticamente
+				return 0;
+			}
+			
+			@Override
+			public PageFormat defaultPage(PageFormat page) {
+				// TODO Apéndice de método generado automáticamente
+				return null;
+			}
+			
+			@Override
+			public void cancel() {
+				// TODO Apéndice de método generado automáticamente
+				
+			}
+		};
+	}
 		   
 	  public void leerArchivoSedes() {
 			
@@ -35,7 +143,7 @@ public String presupuesto;
 	            
 	    		idstream.close();
 	    		input.close(); 
-	            JOptionPane.showMessageDialog(null, "EXITOSO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+	      
 	        } catch (IOException ex) {
 	            ex.printStackTrace();
 	            JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
@@ -51,7 +159,7 @@ public String presupuesto;
 			    		
 			     		dstream.close();
 			     		output.close(); 
-			            JOptionPane.showMessageDialog(null, "EXITOSO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+			     	      JOptionPane.showMessageDialog(null, "EXITOSO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 			         } catch (IOException io) {
 			             io.printStackTrace();
 			             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
@@ -59,22 +167,22 @@ public String presupuesto;
 			}
 			
 			public void escribirArchivoJuegos() {
-			 	 try (FileOutputStream output = new FileOutputStream("Juegos.dat")) {
+			 	 try (FileOutputStream output = new FileOutputStream("juegos.dat")) {
 			     		DataOutputStream dstream = new DataOutputStream(output); 
 
 			     		dstream.writeUTF("Nombre: SuperAstro"); 
 			    		dstream.writeUTF("Tipo: Loteria");
-			    		dstream.writeUTF("13000");
+			    		dstream.writeUTF("0");
 			    		dstream.writeUTF("Nombre: Baloto"); 
 			    		dstream.writeUTF("Tipo: Loteria");
-			    		dstream.writeUTF("13000");
+			    		dstream.writeUTF("0");
 			    		dstream.writeUTF("Nombre: OhPolla"); 
 			    		dstream.writeUTF("Tipo: Deportes");
-			    		dstream.writeUTF("13000");
+			    		dstream.writeUTF("0");
 			    		
 			     		dstream.close();
 			     		output.close(); 
-
+			     	      JOptionPane.showMessageDialog(null, "EXITOSO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 			         } catch (IOException io) {
 			             io.printStackTrace();
 			             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
@@ -131,7 +239,11 @@ public String presupuesto;
 
 					}
 					public void escribirArchivoApostador(String pNombre, String pCedula, String pSede, String pDireccion, String pCelular) {
-					 	 try (FileOutputStream output = new FileOutputStream("apostadores.dat")) {
+					 	if(pNombre.equals("")|| pCedula.equals("") || pSede.equals("SELECCIONAR:") || pDireccion.equals("") || pCelular.equals("")){
+					 		 JOptionPane.showMessageDialog(null, "ERROR: UNO O VARIOS DE LOS CAMPOS ESTAN VACIOS", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+					 	}
+					 	else {
+						try (FileOutputStream output = new FileOutputStream("apostadores.dat")) {
 					     		DataOutputStream dstream = new DataOutputStream(output); 
 
 					     		dstream.writeUTF(pNombre); 
@@ -147,7 +259,8 @@ public String presupuesto;
 					         } catch (IOException io) {
 					             io.printStackTrace();
 					             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
-					         }  
+					         } 
+					 	}
 					}
 					public void escribirSuperAstro(String pNombre, String pCedula, String pDatos) {
 					 	 try (FileOutputStream output = new FileOutputStream("apuestas-superastro-"+pNombre+".dat")) {
@@ -164,7 +277,7 @@ public String presupuesto;
 					          
 					         } catch (IOException io) {
 					             io.printStackTrace();
-					             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+					         
 					         }  
 					}
 					public void escribirBaloto(String pNombre, String pCedula, String pDatos) {
@@ -182,7 +295,7 @@ public String presupuesto;
 					          
 					         } catch (IOException io) {
 					             io.printStackTrace();
-					             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+					            
 					         }  
 					}
 					public void escribirOhPolla(String pNombre, String pCedula, String pDatos) {
@@ -200,8 +313,27 @@ public String presupuesto;
 					          
 					         } catch (IOException io) {
 					             io.printStackTrace();
-					             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+					            
 					         }  
+					}
+					
+					public void imprimirFactura(String pInsertWhatToPrint)
+					{
+						pjob = PrinterJob.getPrinterJob();
+						pf = pjob.defaultPage();
+						pjob.setPrintable(null, pf);
+						if(pjob.printDialog())
+						{
+							try 
+							{
+								pjob.print();
+							} 
+							catch (PrinterException e) 
+							{
+								// TODO Bloque catch generado automáticamente
+								e.printStackTrace();
+							}
+						}
 					}
 					
 					
@@ -229,6 +361,12 @@ public String presupuesto;
 			}
 			public String getPresupuesto() {
 				return presupuesto;
+			}
+
+			@Override
+			public int print(Graphics arg0, PageFormat arg1, int arg2) throws PrinterException {
+				// TODO Apéndice de método generado automáticamente
+				return 0;
 			}
 			
 	

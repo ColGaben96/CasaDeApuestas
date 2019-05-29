@@ -28,16 +28,24 @@ public class PanelTooltip extends JPanel
 	public PanelTooltip()
 	{
 		setLayout(new FlowLayout(FlowLayout.LEADING));
+		setBackground(Color.WHITE);
+		setForeground(Color.BLACK);
 		
 		tooltip = new JMenuBar();
 		tooltip.setSize(getMaximumSize());
 		add(tooltip);
+		tooltip.setBackground(Color.WHITE);
+		tooltip.setForeground(Color.BLACK);
 		
 		mArchivo = new JMenu("Archivo");
 		tooltip.add(mArchivo);
+		mArchivo.setBackground(Color.WHITE);
+		mArchivo.setForeground(Color.BLACK);
 		
 		mAyuda = new JMenu("Ayuda");
 		tooltip.add(mAyuda);
+		mAyuda.setBackground(Color.WHITE);
+		mAyuda.setForeground(Color.BLACK);
 		
 		marCerrar = new JMenuItem("Cerrar");
 		marCerrar.setActionCommand(CERRAR);

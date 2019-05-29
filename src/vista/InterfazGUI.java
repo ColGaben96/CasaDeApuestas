@@ -24,6 +24,9 @@ public class InterfazGUI extends JFrame
 	private PanelGrande panelGrande;
 	private PanelStatusBar statusBar;
 	private AboutUs aboutus;
+	private DialogFactura factura;
+	private DialogReporte reporteExtractos;
+	private DialogChartReporte imagenReporte;
 
 	public InterfazGUI(Controlador control)
 	{
@@ -47,6 +50,9 @@ public class InterfazGUI extends JFrame
 		panelGrande = new PanelGrande();
 		statusBar = new PanelStatusBar();
 		aboutus = new AboutUs();
+		factura = new DialogFactura();
+		reporteExtractos = new DialogReporte();
+		imagenReporte = new DialogChartReporte();
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());
@@ -60,6 +66,7 @@ public class InterfazGUI extends JFrame
 		panelGrande.getPestanas().getBaloto().getFormulario().getAutomatico().addActionListener(control);
 		panelGrande.getPestanas().getBaloto().getFormulario().getManual().addActionListener(control);
 		panelGrande.getPestanas().getBaloto().getFormulario().getGenerarNumeros().addActionListener(control);
+		factura.getOperaciones().getOk().addActionListener(control);
 		
 		panelGrande.getPestanas().getBaloto().getOperaciones().getApostar().addActionListener(control);
 		panelGrande.getPestanas().getBaloto().getOperaciones().getDescartar().addActionListener(control);
@@ -69,6 +76,14 @@ public class InterfazGUI extends JFrame
 		panelGrande.getPestanas().getSuperAstro().getOperaciones().getDescartar().addActionListener(control);
 		panelGrande.getOperaciones().getDetallesPunto().addActionListener(control);
 		panelGrande.getOperaciones().getCrearReporte().addActionListener(control);
+		panelGrande.getOperaciones().getGenerarExtractos().addActionListener(control);
+		panelGrande.getOperaciones().getImprimirFacturas().addActionListener(control);
+		
+		reporteExtractos.getOperaciones().getOk().addActionListener(control);
+		reporteExtractos.getOperaciones().getCancel().addActionListener(control);
+		
+		imagenReporte.getOperaciones().getOk().addActionListener(control);
+		imagenReporte.getOperaciones().getCancel().addActionListener(control);
 		
 		add(tooltip, BorderLayout.NORTH);
 		add(panelGrande, BorderLayout.CENTER);
@@ -98,6 +113,20 @@ public class InterfazGUI extends JFrame
 
 	public AboutUs getAboutus() {
 		return aboutus;
+	}
+	public DialogFactura getFactura() {
+		return factura;
+	}
+	public DialogReporte getReporteExtractos() {
+		return reporteExtractos;
+	}
+	public DialogChartReporte getImagenReporte() {
+		return imagenReporte;
+	}
+	
+	public void NotAvailableYet()
+	{
+		JOptionPane.showMessageDialog(null, "Esta funcion aun no esta disponible.", "ERROR", JOptionPane.ERROR_MESSAGE);
 	}
 	
 }
