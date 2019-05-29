@@ -8,12 +8,12 @@ public class SuperAstroFormulario extends JPanel
 {
 	private static final long serialVersionUID = 1L;
 	private JLabel idFactura, idCliente, selectAstro, selectNumber;
-	private JTextField txIDCliente, txNumber, txFactura;
+	private JTextField txIDCliente, txNumber1,txNumber2,txNumber3,txNumber4, txFactura;
 	private JComboBox<String> listAstro;
 	
 	public SuperAstroFormulario()
 	{
-		setLayout(new GridLayout(4, 2));
+		setLayout(new GridLayout(4, 4));
 		String[] listSignos = {"SELECCIONAR", "Acuario", "Piscis", "Aries", "Tauro", "Geminis", "Cancer", "Leo", "Virgo", "Libra", "Escorpio", "Sagitario", "Capricornio"};
 		
 		idFactura = new JLabel("ID Factura N.");
@@ -37,9 +37,25 @@ public class SuperAstroFormulario extends JPanel
 		add(listAstro);
 		
 		selectNumber = new JLabel("Numero a Jugar");
-		txNumber = new JTextField();
+		selectNumber.setBounds(20,30,200,30);
 		add(selectNumber);
-		add(txNumber);
+		
+		txNumber1 = new JTextField();
+		txNumber1.setBounds(230, 30, 200, 30); 
+		add(txNumber1);
+		
+		txNumber2 = new JTextField();
+		txNumber2.setBounds(230, 30, 200, 30); 
+		add(txNumber2);
+		
+		txNumber3 = new JTextField();
+		txNumber3.setBounds(230, 30, 200, 30); 
+		add(txNumber3);
+		
+		txNumber4 = new JTextField();
+		txNumber4.setBounds(230, 30, 200, 30); 
+		add(txNumber4);
+		
 	}
 
 	public JLabel getIdFactura() {
@@ -62,8 +78,20 @@ public class SuperAstroFormulario extends JPanel
 		return txIDCliente;
 	}
 
-	public JTextField getTxNumber() {
-		return txNumber;
+	public JTextField getTxNumber1() {
+		return txNumber1;
+	}
+	
+	public JTextField getTxNumber2() {
+		return txNumber2;
+	}
+	
+	public JTextField getTxNumber3() {
+		return txNumber3;
+	}
+	
+	public JTextField getTxNumber4() {
+		return txNumber4;
 	}
 
 	public JTextField getTxFactura() {
