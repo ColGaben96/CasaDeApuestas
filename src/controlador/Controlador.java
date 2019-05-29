@@ -224,10 +224,10 @@ public class Controlador implements ActionListener
 		{
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getListAstro().setSelectedIndex(0);
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxIDCliente().setText("");
-			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber1().setText("1");
-			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber2().setText("2");
-			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber3().setText("3");
-			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber4().setText("4");
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber1().setText("");
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber2().setText("");
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber3().setText("");
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber4().setText("");
 			modelo.getF().hacerFactura();
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
 		}

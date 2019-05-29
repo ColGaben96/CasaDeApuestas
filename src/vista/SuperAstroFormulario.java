@@ -13,7 +13,7 @@ public class SuperAstroFormulario extends JPanel
 	
 	public SuperAstroFormulario()
 	{
-		setLayout(new GridLayout(4, 4));
+		setLayout(new GridLayout(6, 3));
 		String[] listSignos = {"SELECCIONAR", "Acuario", "Piscis", "Aries", "Tauro", "Geminis", "Cancer", "Leo", "Virgo", "Libra", "Escorpio", "Sagitario", "Capricornio"};
 		
 		idFactura = new JLabel("ID Factura N.");
