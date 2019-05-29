@@ -3,6 +3,8 @@ package controlador;
 import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.io.IOException;
 import java.net.URI;
 
@@ -32,8 +34,7 @@ public class Controlador implements ActionListener
 		vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
 		vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
 		vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getGenerarNumeros().setEnabled(false);
-		
-	
+		vista.setTitle(vista.getTitle()+" - Tienda sin seleccionar");
 	}
 
 
@@ -67,7 +68,7 @@ public class Controlador implements ActionListener
 		if(evento.getActionCommand().equals(detalles.getSedes().CARGAR)) {
 			modelo.getA().leerArchivoSedes();
 			detalles.getSedes().getUbicacion().setText(modelo.getA().getUbicacion());
-			detalles.getSedes().getNumEmp().setText(modelo.getA().getNumEmp());
+			detalles.getSedes().getNumEmp().setText(modelo.getA().getNumemp());
 		}
 		if(evento.getActionCommand().equals(detalles.getSedes().GUARDAR)) {
 			modelo.getA().escribirArchivoSedes(detalles.getSedes().getUbicacion().getText(), 
@@ -236,10 +237,17 @@ public class Controlador implements ActionListener
 		}
 		if(evento.getActionCommand().equals(vista.getFactura().getOperaciones().OK))
 		{
-			if (vista.getFactura().getOperaciones().getImprimirFactura().isSelected()) 
+			if(vista.getFactura().getOperaciones().getImprimirFactura().isSelected())
 			{
-				modelo.getA().imprimirFactura("");
+				modelo.getA().imprimirFactura("Oh! Apuestas\n" +
+						"Tienda: "+modelo.getA().getSede()+"\n"
+						+"Factura Numero: "+vista.getFactura().getDetalles().getTxFactura().getText()+"\n"
+						+"Nombre e Identificacion: "+modelo.getA().getCedula()+" "+modelo.getA().getNombre()+"\n"
+						+"---------------------------------------------------------------------------------\n"
+						+"												FACTURA								\n"
+						+"---------------------------------------------------------------------------------\n");
 			}
+			
 			if (vista.getFactura().getOperaciones().getEnviaracorreo().isSelected())
 			{
 				try 
@@ -258,7 +266,13 @@ public class Controlador implements ActionListener
 			}
 			if (vista.getFactura().getOperaciones().getImprimirFactura().isSelected() && vista.getFactura().getOperaciones().getEnviaracorreo().isSelected())
 			{
-				modelo.getA().imprimirFactura("");
+				modelo.getA().imprimirFactura("Oh! Apuestas" +
+						"\n "+ "Tienda: "+modelo.getA().getSede()+
+						"\n " + "Factura Numero: "+vista.getFactura().getDetalles().getTxFactura().getText() +
+						"\n " + "Nombre e Identificacion: "+modelo.getA().getCedula()+" "+modelo.getA().getNombre()+
+						"\n " + "---------------------------------------------------------------------------------"+
+						"\n " + "											FACTURA								"+
+						"\n " + "---------------------------------------------------------------------------------");
 				try 
 				{
 					Desktop desktop = Desktop.getDesktop();

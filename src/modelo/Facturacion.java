@@ -7,6 +7,7 @@ public class Facturacion
 	public Facturacion()
 	{
 		factura = Math.random();
+		factura = Double.longBitsToDouble(0);
 		
 	}
 	public void hacerFactura()

@@ -7,7 +7,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
+import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.HeadlessException;
 import java.awt.print.*;
 
@@ -24,7 +27,7 @@ private String cedula;
 private String presupuesto;
 private PrinterJob pjob;
 private PageFormat pf;
-
+private String line;
 
 	public Archivo()
 	{
@@ -37,13 +40,13 @@ private PageFormat pf;
 		cedula = new String();
 		presupuesto = new String();
 		pf = new PageFormat();
-		pjob = new PrinterJob() 
-		{
+		line = new String();
+		pjob = new PrinterJob() {
 			
 			@Override
 			public PageFormat validatePage(PageFormat page) {
 				// TODO Apéndice de método generado automáticamente
-				return null;
+				return pf;
 			}
 			
 			@Override
@@ -91,7 +94,7 @@ private PageFormat pf;
 			@Override
 			public PageFormat pageDialog(PageFormat page) throws HeadlessException {
 				// TODO Apéndice de método generado automáticamente
-				return null;
+				return pf;
 			}
 			
 			@Override
@@ -103,13 +106,13 @@ private PageFormat pf;
 			@Override
 			public String getUserName() {
 				// TODO Apéndice de método generado automáticamente
-				return null;
+				return ubicacion;
 			}
 			
 			@Override
 			public String getJobName() {
 				// TODO Apéndice de método generado automáticamente
-				return null;
+				return nombre;
 			}
 			
 			@Override
@@ -121,7 +124,7 @@ private PageFormat pf;
 			@Override
 			public PageFormat defaultPage(PageFormat page) {
 				// TODO Apéndice de método generado automáticamente
-				return null;
+				return pf;
 			}
 			
 			@Override
@@ -312,57 +315,131 @@ private PageFormat pf;
 					         }  
 					}
 					
-					public void imprimirFactura(String pInsertWhatToPrint)
+					
+					public String imprimirFactura(String pInsertWhatTheFuck)
 					{
-						pjob = PrinterJob.getPrinterJob();
-						pf = pjob.defaultPage();
-						pjob.setPrintable(null, pf);
-						if(pjob.printDialog())
-						{
-							try 
-							{
-								pjob.print();
-							} 
-							catch (PrinterException e) 
-							{
-								// TODO Bloque catch generado automáticamente
-								e.printStackTrace();
-							}
+						
+						setLine(pInsertWhatTheFuck);
+						PrinterJob job = PrinterJob.getPrinterJob();
+				         job.setPrintable(this);
+				         boolean ok = job.printDialog();
+				         if (ok) {
+				             try {
+				                  job.print();
+				             } catch (PrinterException ex) {
+				              /* The job did not successfully complete */
+				             }
+				         }
+						return line;
+					}
+
+					@Override
+					public int print(Graphics g, PageFormat pf, int page) throws
+                    PrinterException 
+					{
+
+						if (page > 0) { /* We have only one page, and 'page' is zero-based */
+						return NO_SUCH_PAGE;
 						}
+						
+						/* User (0,0) is typically outside the imageable area, so we must
+						* translate by the X and Y values in the PageFormat to avoid clipping
+						*/
+						Graphics2D g2d = (Graphics2D)g;
+						g2d.translate(pf.getImageableX(), pf.getImageableY());
+						
+						/* Now we perform our rendering */
+						g.drawString(imprimirFactura(line), 100, 100);
+						
+						/* tell the caller that this page is part of the printed document */
+						return PAGE_EXISTS;
+					}
+
+					public String getUbicacion() {
+						return ubicacion;
+					}
+
+					public void setUbicacion(String ubicacion) {
+						this.ubicacion = ubicacion;
+					}
+
+					public String getNumemp() {
+						return numemp;
+					}
+
+					public void setNumemp(String numemp) {
+						this.numemp = numemp;
+					}
+
+					public String getDireccion() {
+						return direccion;
+					}
+
+					public void setDireccion(String direccion) {
+						this.direccion = direccion;
+					}
+
+					public String getNombre() {
+						return nombre;
+					}
+
+					public void setNombre(String nombre) {
+						this.nombre = nombre;
+					}
+
+					public String getSede() {
+						return sede;
+					}
+
+					public void setSede(String sede) {
+						this.sede = sede;
+					}
+
+					public String getCelular() {
+						return celular;
+					}
+
+					public void setCelular(String celular) {
+						this.celular = celular;
+					}
+
+					public String getCedula() {
+						return cedula;
+					}
+
+					public void setCedula(String cedula) {
+						this.cedula = cedula;
+					}
+
+					public String getPresupuesto() {
+						return presupuesto;
+					}
+
+					public void setPresupuesto(String presupuesto) {
+						this.presupuesto = presupuesto;
+					}
+
+					public PrinterJob getPjob() {
+						return pjob;
+					}
+
+					public void setPjob(PrinterJob pjob) {
+						this.pjob = pjob;
+					}
+
+					public PageFormat getPf() {
+						return pf;
+					}
+
+					public void setPf(PageFormat pf) {
+						this.pf = pf;
+					}
+
+					public void setLine(String line) {
+						this.line = line;
 					}
 					
 					
-					
-			public String getUbicacion() {
-						return ubicacion;
-			}
-			public String getNumEmp() {
-						return numemp;
-			}
-			public String getNombre() {
-				return nombre;
-			}
-			public String getCedula() {
-				return cedula;
-			}
-			public String getSede() {
-				return sede;
-			}
-			public String getDireccion() {
-				return direccion;
-			}
-			public String getCelular() {
-				return celular;
-			}
-			public String getPresupuesto() {
-				return presupuesto;
-			}
-
-			@Override
-			public int print(Graphics arg0, PageFormat arg1, int arg2) throws PrinterException {
-				// TODO Apéndice de método generado automáticamente
-				return 0;
-			}
 			
 	
 }
