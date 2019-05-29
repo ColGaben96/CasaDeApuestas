@@ -158,7 +158,7 @@ public class Controlador implements ActionListener
 				vista.getFactura().getFactura().getItem2().setVisible(false);
 				vista.getFactura().getFactura().getValor2().setVisible(false);
 				vista.getFactura().getFactura().getId1().setText("0001");
-				vista.getFactura().getFactura().getItem1().setText("Juego Baloto : Numero Apostado" + modelo.getAb().getNumeroFact());
+				vista.getFactura().getFactura().getItem1().setText("Juego Baloto"  + modelo.getAb().getNumeroFact());
 				vista.getFactura().getFactura().getValor1().setText("5400");
 				int valor1 = Integer.parseInt(vista.getFactura().getFactura().getValor1().getText());
 				modelo.getAb().BalotoManual();
@@ -181,7 +181,7 @@ public class Controlador implements ActionListener
 			vista.getFactura().getFactura().getItem2().setVisible(false);
 			vista.getFactura().getFactura().getValor2().setVisible(false);
 			vista.getFactura().getFactura().getId1().setText("0002");
-			vista.getFactura().getFactura().getItem1().setText("Juego SuperAstro");
+			vista.getFactura().getFactura().getItem1().setText("Juego SuperAstro" + modelo.getAsa().SuperAstro());
 			vista.getFactura().getFactura().getValor1().setText("3500");
 			int valor1 = Integer.parseInt(vista.getFactura().getFactura().getValor1().getText());
 			vista.getFactura().getOperaciones().getValortotal().setText("$ "+String.valueOf(valor1));
