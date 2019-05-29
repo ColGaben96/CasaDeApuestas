@@ -68,7 +68,7 @@ public class Controlador implements ActionListener
 		if(evento.getActionCommand().equals(detalles.getSedes().CARGAR)) {
 			modelo.getA().leerArchivoSedes();
 			detalles.getSedes().listUbicacion().setToolTipText(modelo.getA().getUbicacion());
-			detalles.getSedes().getNumEmp().setText(modelo.getA().getNumEmp());
+			detalles.getSedes().getNumEmp().setText(modelo.getA().getNumemp());
 		}
 		if(evento.getActionCommand().equals(detalles.getSedes().GUARDAR)) {
 			modelo.getA().escribirArchivoSedes(detalles.getSedes().listUbicacion().getToolTipText(), 
@@ -159,7 +159,7 @@ public class Controlador implements ActionListener
 				vista.getFactura().getFactura().getItem2().setVisible(false);
 				vista.getFactura().getFactura().getValor2().setVisible(false);
 				vista.getFactura().getFactura().getId1().setText("0001");
-				vista.getFactura().getFactura().getItem1().setText("Juego Baloto"  + modelo.getAb().getNumeroFact());
+				vista.getFactura().getFactura().getItem1().setText("Juego Baloto \n " + modelo.getAb().getNumeroFact());
 				vista.getFactura().getFactura().getValor1().setText("5400");
 				int valor1 = Integer.parseInt(vista.getFactura().getFactura().getValor1().getText());
 				modelo.getAb().BalotoManual();
@@ -182,7 +182,7 @@ public class Controlador implements ActionListener
 			vista.getFactura().getFactura().getItem2().setVisible(false);
 			vista.getFactura().getFactura().getValor2().setVisible(false);
 			vista.getFactura().getFactura().getId1().setText("0002");
-			vista.getFactura().getFactura().getItem1().setText("Juego SuperAstro" + modelo.getAsa().SuperAstro());
+			vista.getFactura().getFactura().getItem1().setText("Juego SuperAstro");
 			vista.getFactura().getFactura().getValor1().setText("3500");
 			int valor1 = Integer.parseInt(vista.getFactura().getFactura().getValor1().getText());
 			vista.getFactura().getOperaciones().getValortotal().setText("$ "+String.valueOf(valor1));
@@ -224,7 +224,10 @@ public class Controlador implements ActionListener
 		{
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getListAstro().setSelectedIndex(0);
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxIDCliente().setText("");
-			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber().setText("");
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber1().setText("1");
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber2().setText("2");
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber3().setText("3");
+			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber4().setText("4");
 			modelo.getF().hacerFactura();
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
 		}
@@ -232,8 +235,8 @@ public class Controlador implements ActionListener
 		{
 			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getListEquipoA().setSelectedIndex(0);
 			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getListEquipoB().setSelectedIndex(0);
-			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxMarcadorA().setText("Ej. 3");
-			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxMarcadorB().setText("Ej. 1");
+			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxMarcadorA().setText("");
+			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxMarcadorB().setText("");
 			modelo.getF().hacerFactura();
 			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
 		}
