@@ -67,18 +67,18 @@ public class Controlador implements ActionListener
 		
 		if(evento.getActionCommand().equals(detalles.getSedes().CARGAR)) {
 			modelo.getA().leerArchivoSedes();
-			detalles.getSedes().getUbicacion().setText(modelo.getA().getUbicacion());
-			detalles.getSedes().getNumEmp().setText(modelo.getA().getNumemp());
+			detalles.getSedes().listUbicacion().setToolTipText(modelo.getA().getUbicacion());
+			detalles.getSedes().getNumEmp().setText(modelo.getA().getNumEmp());
 		}
 		if(evento.getActionCommand().equals(detalles.getSedes().GUARDAR)) {
-			modelo.getA().escribirArchivoSedes(detalles.getSedes().getUbicacion().getText(), 
+			modelo.getA().escribirArchivoSedes(detalles.getSedes().listUbicacion().getToolTipText(), 
 					detalles.getSedes().getNumEmp().getText());
 		}
 		if(evento.getActionCommand().equals(detalles.getApostador().CARGAR)) {
 			modelo.getA().leerArchivoApostador();
 			detalles.getApostador().getNombre().setText(modelo.getA().getNombre());
 			detalles.getApostador().getCedula().setText(modelo.getA().getCedula());
-			detalles.getApostador().getSede().setText(modelo.getA().getSede());
+			detalles.getApostador().listSede().setToolTipText(modelo.getA().getSede());
 			detalles.getApostador().getDireccion().setText(modelo.getA().getDireccion());
 			detalles.getApostador().getCelular().setText(modelo.getA().getCelular());
 		}
@@ -86,7 +86,7 @@ public class Controlador implements ActionListener
 		if(evento.getActionCommand().equals(detalles.getApostador().GUARDAR)) {
 			modelo.getA().escribirArchivoApostador(detalles.getApostador().getNombre().getText(), 
 		    detalles.getApostador().getCedula().getText(), 
-		    detalles.getApostador().getSede().getText(),
+		    detalles.getApostador().listSede().getSelectedItem().toString(),
 		    detalles.getApostador().getDireccion().getText(), 
 		    detalles.getApostador().getCelular().getText());
 			modelo.getClientes().setClientes("nombre:"+modelo.getA().getNombre()+  " cedula:" +
@@ -131,6 +131,7 @@ public class Controlador implements ActionListener
 			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxFactura().getText());
 			if(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getRevancha().isSelected())
 			{
+				
 				vista.getFactura().getFactura().getId1().setVisible(true);
 				vista.getFactura().getFactura().getItem1().setVisible(true);
 				vista.getFactura().getFactura().getValor1().setVisible(true);
@@ -141,15 +142,16 @@ public class Controlador implements ActionListener
 				vista.getFactura().getFactura().getItem1().setText("Juego Baloto");
 				vista.getFactura().getFactura().getValor1().setText("5400");
 				vista.getFactura().getFactura().getId2().setText("0001a");
-				vista.getFactura().getFactura().getItem2().setText("Adición Revancha");
+				vista.getFactura().getFactura().getItem2().setText("Adiciï¿½n Revancha");
 				vista.getFactura().getFactura().getValor2().setText("2500");
 				int valor1 = Integer.parseInt(vista.getFactura().getFactura().getValor1().getText());
 				int valor2 = Integer.parseInt(vista.getFactura().getFactura().getValor2().getText());
 				modelo.getAb().BalotoManual();
-				vista.getFactura().getOperaciones().getValortotal().setText("$ "+String.valueOf(valor1+valor2));
+				vista.getFactura().getOperaciones().getValortotal().setText("$ "+String.valueOf(valor1+valor2) );
 			}
 			else
-			{
+			{	
+			
 				vista.getFactura().getFactura().getId1().setVisible(true);
 				vista.getFactura().getFactura().getItem1().setVisible(true);
 				vista.getFactura().getFactura().getValor1().setVisible(true);
@@ -157,7 +159,7 @@ public class Controlador implements ActionListener
 				vista.getFactura().getFactura().getItem2().setVisible(false);
 				vista.getFactura().getFactura().getValor2().setVisible(false);
 				vista.getFactura().getFactura().getId1().setText("0001");
-				vista.getFactura().getFactura().getItem1().setText("Juego Baloto");
+				vista.getFactura().getFactura().getItem1().setText("Juego Baloto"  + modelo.getAb().getNumeroFact());
 				vista.getFactura().getFactura().getValor1().setText("5400");
 				int valor1 = Integer.parseInt(vista.getFactura().getFactura().getValor1().getText());
 				modelo.getAb().BalotoManual();
@@ -180,7 +182,7 @@ public class Controlador implements ActionListener
 			vista.getFactura().getFactura().getItem2().setVisible(false);
 			vista.getFactura().getFactura().getValor2().setVisible(false);
 			vista.getFactura().getFactura().getId1().setText("0002");
-			vista.getFactura().getFactura().getItem1().setText("Juego SuperAstro");
+			vista.getFactura().getFactura().getItem1().setText("Juego SuperAstro" + modelo.getAsa().SuperAstro());
 			vista.getFactura().getFactura().getValor1().setText("3500");
 			int valor1 = Integer.parseInt(vista.getFactura().getFactura().getValor1().getText());
 			vista.getFactura().getOperaciones().getValortotal().setText("$ "+String.valueOf(valor1));
@@ -260,7 +262,7 @@ public class Controlador implements ActionListener
 				} 
 				catch (IOException e) 
 				{
-					// TODO Bloque catch generado automáticamente
+					// TODO Bloque catch generado automï¿½ticamente
 					e.printStackTrace();
 				}
 			}
@@ -283,7 +285,7 @@ public class Controlador implements ActionListener
 				} 
 				catch (IOException e) 
 				{
-					// TODO Bloque catch generado automáticamente
+					// TODO Bloque catch generado automï¿½ticamente
 					e.printStackTrace();
 				}
 			}
