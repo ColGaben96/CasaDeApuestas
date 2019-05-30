@@ -353,7 +353,6 @@ public class Controlador implements ActionListener
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getOperaciones().REPORTE))
 		{
 			vista.getImagenReporte().setVisible(true);
-			vista.getImagenReporte().getChart().getFrame().setVisible(true);
 		}
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getOperaciones().FACTURAS)) 
 		{
@@ -365,7 +364,7 @@ public class Controlador implements ActionListener
 		}
 		if (evento.getActionCommand().equals(vista.getImagenReporte().getOperaciones().CANCEL))
 		{
-			vista.getImagenReporte().getOperaciones().setVisible(false);
+			vista.getImagenReporte().setVisible(false);
 		}
 	}
 }

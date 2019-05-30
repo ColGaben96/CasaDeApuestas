@@ -3,7 +3,7 @@ package vista;
 import javax.swing.*;
 
 import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartFrame;
+import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 
@@ -12,7 +12,7 @@ public class DialogChartImagen extends JPanel
 	private static final long serialVersionUID = 1L;
 	private DefaultPieDataset data;
 	private JFreeChart chart;
-	private ChartFrame frame;
+	private ChartPanel panel;
 	public DialogChartImagen()
 	{
 		data = new DefaultPieDataset();
@@ -28,9 +28,8 @@ public class DialogChartImagen extends JPanel
 				false // URLs?
 				);
 		// create and display a frame...
-		frame = new ChartFrame("Proporción de Venta", chart);
-		frame.pack();
-		frame.setVisible(false);
+		panel = new ChartPanel(chart);
+		add(panel);
 	}
 	public DefaultPieDataset getData() {
 		return data;
@@ -38,8 +37,7 @@ public class DialogChartImagen extends JPanel
 	public JFreeChart getChart() {
 		return chart;
 	}
-	public ChartFrame getFrame() {
-		return frame;
+	public ChartPanel getPanel() {
+		return panel;
 	}
-	
 }
