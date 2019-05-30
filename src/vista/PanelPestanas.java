@@ -24,7 +24,7 @@ public class PanelPestanas extends JPanel
 		pestanas.addTab("Baloto", baloto);
 		pestanas.addTab("Marcardor Oh!Polla", ohPolla);
 		setBackground(Color.WHITE);
-		selectedTab = new String(String.valueOf(pestanas.getSelectedIndex()));
+		selectedTab = new String();
 	}
 
 	public PanelSuperAstro getSuperAstro() {
@@ -41,6 +41,10 @@ public class PanelPestanas extends JPanel
 
 	public String getSelectedTab() {
 		return selectedTab;
+	}
+
+	public void setSelectedTab(String selectedTab) {
+		this.selectedTab = selectedTab;
 	}
 	
 	

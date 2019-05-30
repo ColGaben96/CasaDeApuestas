@@ -40,6 +40,8 @@ public class BalotoFormulario extends JPanel
 	 * Boton para generar numeros aleatorios para el juego.
 	 */
 	private JButton generarNumeros;	
+	
+	private String selectedGame;
 	public static final String RADIOAUTOMATICO = "RadioAutomatico", RADIOMANUAL = "RadioManual", GENERAR = "Generar";
 	
 	public BalotoFormulario()
@@ -103,6 +105,7 @@ public class BalotoFormulario extends JPanel
 		automatico.setActionCommand(RADIOAUTOMATICO);
 		manual.setActionCommand(RADIOMANUAL);
 		generarNumeros.setActionCommand(GENERAR);
+		selectedGame = new String();
 		
 	}
 
@@ -140,6 +143,14 @@ public class BalotoFormulario extends JPanel
 
 	public JButton getGenerarNumeros() {
 		return generarNumeros;
+	}
+
+	public String getSelectedGame() {
+		return selectedGame;
+	}
+
+	public void setSelectedGame(String selectedGame) {
+		this.selectedGame = selectedGame;
 	}
 	
 	
