@@ -73,4 +73,20 @@ public class PanelParametros extends JPanel{
 		return txtPresupuesto;
 	}
 
+	public JTextField getTxtPresupuesto() {
+		return txtPresupuesto;
+	}
+
+	public void setTxtPresupuesto(JTextField txtPresupuesto) {
+		this.txtPresupuesto = txtPresupuesto;
+	}
+
+	public JTextField getTxtCasa() {
+		return txtCasa;
+	}
+
+	public JTextField getTxtSedes() {
+		return txtSedes;
+	}
+
 }

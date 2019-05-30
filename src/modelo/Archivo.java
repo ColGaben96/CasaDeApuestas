@@ -6,8 +6,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import javax.swing.JOptionPane;
-import java.awt.Font;
-import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.HeadlessException;
@@ -26,6 +24,7 @@ private String cedula;
 private String presupuesto;
 private PrinterJob pjob;
 private PageFormat pf;
+private String casa;
 
 private String line;
 
@@ -40,7 +39,7 @@ private String line;
 		cedula = new String();
 		presupuesto = new String();
 		pf = new PageFormat();
-
+		casa = new String();
 		line = new String();
 		pjob = new PrinterJob() {
 
@@ -470,6 +469,14 @@ private String line;
 
 					public void setLine(String line) {
 						this.line = line;
+					}
+
+					public String getCasa() {
+						return casa;
+					}
+
+					public void setCasa(String casa) {
+						this.casa = casa;
 					}
 					
 					
