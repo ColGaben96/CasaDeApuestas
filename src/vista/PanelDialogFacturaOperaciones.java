@@ -17,7 +17,7 @@ public class PanelDialogFacturaOperaciones extends JPanel
 		ok = new JButton("Cerrar y guardar");
 		imprimirFactura = new JCheckBox("Imprimir factura");
 		enviaracorreo = new JCheckBox("Enviar al correo");
-		valortotal = new JLabel("$ 0");
+		valortotal = new JLabel("0");
 		
 		add(imprimirFactura);
 		add(enviaracorreo);

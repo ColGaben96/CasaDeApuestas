@@ -2,12 +2,12 @@ package vista;
 
 import java.awt.BorderLayout;
 
-import javax.swing.JFrame;
+import javax.swing.JDialog;
 import javax.swing.JTabbedPane;
 
 import controlador.Controlador;
 
-public class VentanaDetalles extends JFrame{
+public class VentanaDetalles extends JDialog{
 	
 	private static final long serialVersionUID = 1L;
 	private JTabbedPane pestanas;

@@ -13,12 +13,16 @@ public class DialogChartImagen extends JPanel
 	private DefaultPieDataset data;
 	private JFreeChart chart;
 	private ChartPanel panel;
+	private double superastro, baloto, ohpolla;
 	public DialogChartImagen()
 	{
+		superastro = 0.0;
+		baloto = 0.0;
+		ohpolla = 0.0;
 		data = new DefaultPieDataset();
-		data.setValue("Categoria 1", 43.2);
-		data.setValue("Categoria 2", 27.9);
-		data.setValue("Categoria 3", 79.5);
+		data.setValue("SuperAstro", superastro);
+		data.setValue("Baloto", baloto);
+		data.setValue("Oh! Polla", ohpolla);
 		// create a chart...
 		chart = ChartFactory.createPieChart(
 				"Sample Pie Chart",
@@ -39,5 +43,23 @@ public class DialogChartImagen extends JPanel
 	}
 	public ChartPanel getPanel() {
 		return panel;
+	}
+	public double getSuperastro() {
+		return superastro;
+	}
+	public void setSuperastro(double superastro) {
+		this.superastro = superastro;
+	}
+	public double getBaloto() {
+		return baloto;
+	}
+	public void setBaloto(double baloto) {
+		this.baloto = baloto;
+	}
+	public double getOhpolla() {
+		return ohpolla;
+	}
+	public void setOhpolla(double ohpolla) {
+		this.ohpolla = ohpolla;
 	}
 }
