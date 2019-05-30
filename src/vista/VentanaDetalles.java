@@ -31,6 +31,7 @@ public class VentanaDetalles extends JDialog{
 		 */
 		
 		setLayout(new BorderLayout());
+		setTitle("Configuracion del Punto");
 		pestanas = new JTabbedPane();
 		para = new PanelParametros();
 		sede = new PanelSedes();
