@@ -16,9 +16,9 @@ public class DialogChartImagen extends JPanel
 	private double superastro, baloto, ohpolla;
 	public DialogChartImagen()
 	{
-		superastro = 0.0;
-		baloto = 0.0;
-		ohpolla = 0.0;
+		superastro += 0.0;
+		baloto += 0.0;
+		ohpolla += 0.0;
 		data = new DefaultPieDataset();
 		data.setValue("SuperAstro", superastro);
 		data.setValue("Baloto", baloto);
@@ -33,6 +33,7 @@ public class DialogChartImagen extends JPanel
 				);
 		// create and display a frame...
 		panel = new ChartPanel(chart);
+		panel.validate();
 		add(panel);
 	}
 	public DefaultPieDataset getData() {
