@@ -23,12 +23,14 @@ public class PanelApostador extends JPanel{
 	public JTextField txtCelular;
 	public JButton butGuardar;
 	public JButton butCargar;
+	public JButton butAgregar;
 	public static final String CARGAR = "Cargar3";
 	public static final String GUARDAR = "Guardar3";
+	public static final String AGREGAR = "Agregar";
 	
 public PanelApostador() {
 		
-		setLayout(new GridLayout(6,2));
+		setLayout(new GridLayout(7,2));
 		labEntrada=new JLabel("Nombre");
 		labEntrada2=new JLabel("Cedula");
 		labEntrada3=new JLabel("Sede");
@@ -51,6 +53,9 @@ public PanelApostador() {
 		butGuardar.setActionCommand(GUARDAR);
 		butCargar = new JButton("Cargar datos del apostador actual");
 		butCargar.setActionCommand(CARGAR);
+		butAgregar = new JButton("Agregar Apostador");
+		butAgregar.setActionCommand(AGREGAR);
+
 		listSede = new JComboBox<String>(panSede);
 		
 		add(labEntrada); add(txtNombre);
@@ -64,6 +69,8 @@ public PanelApostador() {
         add(labEntrada5); add(txtCelular);
 			
 		add(butGuardar); add(butCargar);
+		
+		add(butAgregar);
 	}
 	
 	public JButton getGuardar() {
@@ -71,6 +78,9 @@ public PanelApostador() {
 	}
 	public JButton getCargar() {
 		return butCargar;
+	}
+	public JButton getAgregarr() {
+		return butAgregar;
 	}
 	public JTextField getNombre() {
 		return txtNombre;

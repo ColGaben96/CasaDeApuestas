@@ -1,21 +1,26 @@
 package modelo;
 
+import java.util.Random;
 
 public class Facturacion 
 {
-	private double factura;
+	private int realfactura;
 	public Facturacion()
 	{
-		factura = Math.random();
-		factura = Double.longBitsToDouble(0);
+
+		Random r = new Random();
+		realfactura = r.nextInt(99999*10);
+
+
 		
 	}
 	public void hacerFactura()
 	{
-		factura = Math.random();
+		Random r = new Random();
+		realfactura = r.nextInt(99999*10);
 	}
-	public double getFactura() {
-		return factura;
+	public int getFactura() {
+		return realfactura;
 	}
 	
 }

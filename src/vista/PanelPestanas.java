@@ -10,6 +10,7 @@ public class PanelPestanas extends JPanel
 	private PanelSuperAstro superAstro;
 	private PanelBaloto baloto;
 	private PanelOhPolla ohPolla;
+	private String selectedTab;
 	
 	public PanelPestanas()
 	{
@@ -23,6 +24,7 @@ public class PanelPestanas extends JPanel
 		pestanas.addTab("Baloto", baloto);
 		pestanas.addTab("Marcardor Oh!Polla", ohPolla);
 		setBackground(Color.WHITE);
+		selectedTab = new String(String.valueOf(pestanas.getSelectedIndex()));
 	}
 
 	public PanelSuperAstro getSuperAstro() {
@@ -36,6 +38,10 @@ public class PanelPestanas extends JPanel
 	public PanelOhPolla getOhPolla() {
 		return ohPolla;
 	}
-	
 
+	public String getSelectedTab() {
+		return selectedTab;
+	}
+	
+	
 }

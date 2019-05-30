@@ -9,11 +9,13 @@ public class DialogChartReporte extends JDialog
 	
 	private DialogChartImagen chart;
 	private DialogChartOperaciones operaciones;
+	private VentanaReporte repo;
 	
 	public DialogChartReporte()
 	{
 		chart = new DialogChartImagen();
 		operaciones = new DialogChartOperaciones();
+		repo = new VentanaReporte("Total de Apuestas: ");
 		
 		setLayout(new BorderLayout());
 		setTitle("Reporte");
@@ -21,6 +23,7 @@ public class DialogChartReporte extends JDialog
 		setVisible(false);
 		
 		add(chart, BorderLayout.CENTER);
+		add(repo, BorderLayout.NORTH);
 		add(operaciones, BorderLayout.SOUTH);
 	}
 
@@ -30,6 +33,10 @@ public class DialogChartReporte extends JDialog
 
 	public DialogChartOperaciones getOperaciones() {
 		return operaciones;
+	}
+
+	public VentanaReporte getRepo() {
+		return repo;
 	}
 
 }

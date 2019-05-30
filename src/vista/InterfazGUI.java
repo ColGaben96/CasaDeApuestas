@@ -27,6 +27,8 @@ public class InterfazGUI extends JFrame
 	private DialogFactura factura;
 	private DialogReporte reporteExtractos;
 	private DialogChartReporte imagenReporte;
+	private VentanaDetalles detalles;
+	
 
 	public InterfazGUI(Controlador control)
 	{
@@ -53,6 +55,8 @@ public class InterfazGUI extends JFrame
 		factura = new DialogFactura();
 		reporteExtractos = new DialogReporte();
 		imagenReporte = new DialogChartReporte();
+		detalles = new VentanaDetalles(control);
+		
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());
@@ -84,6 +88,7 @@ public class InterfazGUI extends JFrame
 		
 		imagenReporte.getOperaciones().getOk().addActionListener(control);
 		imagenReporte.getOperaciones().getCancel().addActionListener(control);
+		detalles.getParametros().getCargar().addActionListener(control);
 		
 		add(tooltip, BorderLayout.NORTH);
 		add(panelGrande, BorderLayout.CENTER);
@@ -102,6 +107,9 @@ public class InterfazGUI extends JFrame
 	 */
 	public PanelGrande getPanelGrande() {
 		return panelGrande;
+	}
+	public VentanaDetalles getDetalles() {
+		return detalles;
 	}
 	/**
 	 * Obtener StatusBar.

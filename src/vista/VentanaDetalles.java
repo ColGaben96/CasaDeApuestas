@@ -2,12 +2,12 @@ package vista;
 
 import java.awt.BorderLayout;
 
-import javax.swing.JFrame;
+import javax.swing.JDialog;
 import javax.swing.JTabbedPane;
 
 import controlador.Controlador;
 
-public class VentanaDetalles extends JFrame{
+public class VentanaDetalles extends JDialog{
 	
 	private static final long serialVersionUID = 1L;
 	private JTabbedPane pestanas;
@@ -31,6 +31,7 @@ public class VentanaDetalles extends JFrame{
 		 */
 		
 		setLayout(new BorderLayout());
+		setTitle("Configuracion del Punto");
 		pestanas = new JTabbedPane();
 		para = new PanelParametros();
 		sede = new PanelSedes();
@@ -41,6 +42,7 @@ public class VentanaDetalles extends JFrame{
 		sede.getGuardar().addActionListener(control);
 		apos.getCargar().addActionListener(control);
 		apos.getGuardar().addActionListener(control);
+		apos.getAgregarr().addActionListener(control);
 		add(pestanas);
 		pestanas.addTab("Parametrizacion", para);
 		pestanas.addTab("Sede", sede);

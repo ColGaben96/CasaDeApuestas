@@ -2,27 +2,27 @@ package vista;
 
 import java.awt.GridLayout;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
-public class VentanaReporte extends JFrame{
+public class VentanaReporte extends JPanel{
 
 	
 	private static final long serialVersionUID = 1L;
 
 public String dato;
+public int apuestasquant;
 	
 	public VentanaReporte(String dato) {
 		
 		setLayout(new GridLayout(1 , 1));
+		apuestasquant = 0;
 		
 	    JPanel Panel = new JPanel();
 	  
-	    JTextArea ta = new JTextArea(dato, 40, 70);
-	    ta.setLineWrap(true);
-	    ta.setWrapStyleWord(true);
+	    JTextField ta = new JTextField(dato +" "+apuestasquant);
+	    ta.setEditable(false);
 	    Panel.add(new JScrollPane(ta));
 
 		
@@ -33,6 +33,14 @@ public String dato;
 		
 	
 }
+
+	public int getApuestasquant() {
+		return apuestasquant;
+	}
+
+	public void setApuestasquant(int apuestasquant) {
+		this.apuestasquant = apuestasquant;
+	}
 	
 	
 }

@@ -37,7 +37,7 @@ public class PanelOperaciones extends JPanel
 		generarExtractos = new JButton("Generar Extractos");
 		crearReporte = new JButton("Crear Reporte");
 		imprimirFacturas = new JButton("Imprimir Facturas");
-		detallesPunto = new JButton("Detalles del Punto");
+		detallesPunto = new JButton("Configuracion del Punto");
 		detallesPunto.setActionCommand(DETALLES);
 		crearReporte.setActionCommand(REPORTE);
 		generarExtractos.setActionCommand(EXTRACTOS);
