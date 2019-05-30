@@ -244,13 +244,19 @@ public class Controlador implements ActionListener
 		{
 			if(vista.getFactura().getOperaciones().getImprimirFactura().isSelected())
 			{
-				modelo.getA().imprimirFactura("Oh! Apuestas\n" +
-						"Tienda: "+modelo.getA().getSede()+"\n"
+				vista.getStatusBar().getStatus().setText("Printing...");
+				modelo.getA().imprimirFactura("Tienda: "+modelo.getA().getSede()+"\n"
 						+"Factura Numero: "+vista.getFactura().getDetalles().getTxFactura().getText()+"\n"
-						+"Nombre e Identificacion: "+modelo.getA().getCedula()+" "+modelo.getA().getNombre()+"\n"
+						+"Cliente: "+modelo.getA().getNombre()+"\n"
+						+"Cedula: "+modelo.getA().getCedula()+"\n"
 						+"---------------------------------------------------------------------------------\n"
-						+"												FACTURA								\n"
-						+"---------------------------------------------------------------------------------\n");
+						+"                                     FACTURA\n"
+						+"---------------------------------------------------------------------------------\n"
+						+ vista.getFactura().getFactura().getId().getText().toString()+"	  \t	  "+vista.getFactura().getFactura().getItem().getText().toString()+"	  \t	  "+vista.getFactura().getFactura().getValor().getText().toString()+"\n"
+						+ vista.getFactura().getFactura().getId1().getText().toString()+"	  \t	  "+vista.getFactura().getFactura().getItem1().getText().toString()+"	  \t	  "+vista.getFactura().getFactura().getValor1().getText().toString()+"\n"
+						+ vista.getFactura().getFactura().getId2().getText().toString()+"	  \t	  "+vista.getFactura().getFactura().getItem2().getText().toString()+"	  \t	  "+vista.getFactura().getFactura().getValor2().getText().toString()+"\n"
+						+ "Gran Total: "+vista.getFactura().getOperaciones().getValortotal().getText().toString()+"\n"
+						+"\nGracias por utilizar nuestros servicios! Estamos a tu disposición para una próxima vez.");
 			}
 			
 			if (vista.getFactura().getOperaciones().getEnviaracorreo().isSelected())
@@ -261,7 +267,7 @@ public class Controlador implements ActionListener
 					String message = "mailto:ventas@ohdelivery.co?subject=Tu factura de Oh! Delivery";
 					URI uri = URI.create(message);
 					desktop.mail(uri);
-					vista.getStatusBar().getStatus().setText("Printing Invoice...");
+					vista.getStatusBar().getStatus().setText("Sending Email...");
 				} 
 				catch (IOException e) 
 				{
@@ -271,13 +277,18 @@ public class Controlador implements ActionListener
 			}
 			if (vista.getFactura().getOperaciones().getImprimirFactura().isSelected() && vista.getFactura().getOperaciones().getEnviaracorreo().isSelected())
 			{
-				modelo.getA().imprimirFactura("Oh! Apuestas");
-				modelo.getA().imprimirFactura("Tienda: "+modelo.getA().getSede());
-				modelo.getA().imprimirFactura("Factura Numero: "+vista.getFactura().getDetalles().getTxFactura().getText() +
-						"\n " + "Nombre e Identificacion: "+modelo.getA().getCedula()+" "+modelo.getA().getNombre()+
-						"\n " + "---------------------------------------------------------------------------------"+
-						"\n " + "											FACTURA								"+
-						"\n " + "---------------------------------------------------------------------------------");
+				modelo.getA().imprimirFactura("Tienda: "+modelo.getA().getSede()+"\n"
+						+"Factura Numero: "+vista.getFactura().getDetalles().getTxFactura().getText()+"\n"
+						+"Cliente: "+modelo.getA().getNombre()+"\n"
+						+"Cedula: "+modelo.getA().getCedula()+"\n"
+						+"---------------------------------------------------------------------------------\n"
+						+"                                     FACTURA\n"
+						+"---------------------------------------------------------------------------------\n"
+						+ vista.getFactura().getFactura().getId().getText().toString()+"	  \t	  "+vista.getFactura().getFactura().getItem().getText().toString()+"	  \t	  "+vista.getFactura().getFactura().getValor().getText().toString()+"\n"
+						+ vista.getFactura().getFactura().getId1().getText().toString()+"	  \t	  "+vista.getFactura().getFactura().getItem1().getText().toString()+"	  \t	  "+vista.getFactura().getFactura().getValor1().getText().toString()+"\n"
+						+ vista.getFactura().getFactura().getId2().getText().toString()+"	  \t	  "+vista.getFactura().getFactura().getItem2().getText().toString()+"	  \t	  "+vista.getFactura().getFactura().getValor2().getText().toString()+"\n"
+						+ "Gran Total: "+vista.getFactura().getOperaciones().getValortotal().getText().toString()+"\n"
+						+"\nGracias por utilizar nuestros servicios! Estamos a tu disposición para una próxima vez.");
 				try 
 				{
 					Desktop desktop = Desktop.getDesktop();

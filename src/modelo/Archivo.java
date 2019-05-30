@@ -319,7 +319,7 @@ private String line;
 					public String imprimirFactura(String pInsertWhatTheFuck)
 					{
 						
-						setLine(pInsertWhatTheFuck+"\n");
+						setLine(pInsertWhatTheFuck);
 						PrinterJob job = PrinterJob.getPrinterJob();
 				         job.setPrintable(this);
 				         boolean ok = job.printDialog();
@@ -349,7 +349,15 @@ private String line;
 						g2d.translate(pf.getImageableX(), pf.getImageableY());
 						
 						/* Now we perform our rendering */
-						g.drawString(imprimirFactura(line), 100, 100);
+						int startX = 100, startY = 100;
+						g.drawString("Oh! Apuestas by Oh! Delivery", startX, startY);
+						String[] facturacion = line.split("\n");
+						for (int i = 0; i < facturacion.length; i++) 
+						{
+							facturacion[i].trim();
+							startX += 0; startY +=30;
+							g.drawString(facturacion[i], startX, startY);
+						}
 						
 						/* tell the caller that this page is part of the printed document */
 						return PAGE_EXISTS;
