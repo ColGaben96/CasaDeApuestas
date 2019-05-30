@@ -319,7 +319,7 @@ private String line;
 					public String imprimirFactura(String pInsertWhatTheFuck)
 					{
 						
-						setLine(pInsertWhatTheFuck);
+						setLine(pInsertWhatTheFuck+"\n");
 						PrinterJob job = PrinterJob.getPrinterJob();
 				         job.setPrintable(this);
 				         boolean ok = job.printDialog();
