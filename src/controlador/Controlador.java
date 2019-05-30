@@ -3,8 +3,10 @@ package controlador;
 import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
+
 import java.io.IOException;
 import java.net.URI;
 
@@ -24,17 +26,13 @@ public class Controlador implements ActionListener
 		modelo = new Mundo();
 		vista = new InterfazGUI(this);
 		detalles = new VentanaDetalles(this);
-		vista.getPanelGrande().getOperaciones().getDetallesPunto().addActionListener(this);
-		detalles.getParametros().getGuardar().addActionListener(this);
-		detalles.getParametros().getCargar().addActionListener(this);
-		detalles.getSedes().getGuardar().addActionListener(this);
-		detalles.getSedes().getCargar().addActionListener(this);
+
 		modelo.getF().hacerFactura();
 		vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
 		vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
 		vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
 		vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getGenerarNumeros().setEnabled(false);
-		vista.setTitle(vista.getTitle()+" - Tienda sin seleccionar");
+
 	}
 
 
@@ -67,18 +65,22 @@ public class Controlador implements ActionListener
 		
 		if(evento.getActionCommand().equals(detalles.getSedes().CARGAR)) {
 			modelo.getA().leerArchivoSedes();
-			detalles.getSedes().listUbicacion().setToolTipText(modelo.getA().getUbicacion());
+
+			detalles.getSedes().listUbicacion().setSelectedItem(modelo.getA().getUbicacion());
 			detalles.getSedes().getNumEmp().setText(modelo.getA().getNumemp());
 		}
 		if(evento.getActionCommand().equals(detalles.getSedes().GUARDAR)) {
-			modelo.getA().escribirArchivoSedes(detalles.getSedes().listUbicacion().getToolTipText(), 
+			modelo.getA().escribirArchivoSedes(detalles.getSedes().listUbicacion().getSelectedItem().toString(), 
+
 					detalles.getSedes().getNumEmp().getText());
 		}
 		if(evento.getActionCommand().equals(detalles.getApostador().CARGAR)) {
 			modelo.getA().leerArchivoApostador();
 			detalles.getApostador().getNombre().setText(modelo.getA().getNombre());
 			detalles.getApostador().getCedula().setText(modelo.getA().getCedula());
-			detalles.getApostador().listSede().setToolTipText(modelo.getA().getSede());
+
+			detalles.getApostador().listSede().setSelectedItem(modelo.getA().getSede());
+
 			detalles.getApostador().getDireccion().setText(modelo.getA().getDireccion());
 			detalles.getApostador().getCelular().setText(modelo.getA().getCelular());
 		}
@@ -89,9 +91,13 @@ public class Controlador implements ActionListener
 		    detalles.getApostador().listSede().getSelectedItem().toString(),
 		    detalles.getApostador().getDireccion().getText(), 
 		    detalles.getApostador().getCelular().getText());
+		}
+		
+		if(evento.getActionCommand().equals(detalles.getApostador().AGREGAR)) {
+			modelo.getA().leerArchivoApostador();
 			modelo.getClientes().setClientes("nombre:"+modelo.getA().getNombre()+  " cedula:" +
-		    modelo.getA().getCedula() +" sede:" +modelo.getA().getSede() + " direccion:" +
-		    modelo.getA().getDireccion() + " celular:" + modelo.getA().getCelular());
+				    modelo.getA().getCedula() +" sede:" +modelo.getA().getSede() + " direccion:" +
+				    modelo.getA().getDireccion() + " celular:" + modelo.getA().getCelular());
 		}
 		
 		
@@ -111,6 +117,7 @@ public class Controlador implements ActionListener
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setEditable(false);
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().setText(null);
 			vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getGenerarNumeros().setEnabled(true);
+
 		}
 		if(evento.getActionCommand().equals(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().RADIOMANUAL))
 		{
@@ -172,6 +179,8 @@ public class Controlador implements ActionListener
 		if(evento.getActionCommand().equals( vista.getPanelGrande().getPestanas().getSuperAstro().getOperaciones().APOSTAR))
 		{
 			
+
+
 			vista.getFactura().setVisible(true);
 			vista.getStatusBar().getStatus().setText("Making Invoice...");
 			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxFactura().getText());
@@ -224,10 +233,12 @@ public class Controlador implements ActionListener
 		{
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getListAstro().setSelectedIndex(0);
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxIDCliente().setText("");
+
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber1().setText("");
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber2().setText("");
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber3().setText("");
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber4().setText("");
+
 			modelo.getF().hacerFactura();
 			vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
 		}
@@ -235,13 +246,16 @@ public class Controlador implements ActionListener
 		{
 			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getListEquipoA().setSelectedIndex(0);
 			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getListEquipoB().setSelectedIndex(0);
+
 			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxMarcadorA().setText("");
 			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxMarcadorB().setText("");
+
 			modelo.getF().hacerFactura();
 			vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxFactura().setText("10233432"+String.valueOf(modelo.getF().getFactura()));
 		}
 		if(evento.getActionCommand().equals(vista.getFactura().getOperaciones().OK))
 		{
+
 			if(vista.getFactura().getOperaciones().getImprimirFactura().isSelected())
 			{
 				modelo.getA().imprimirFactura("Oh! Apuestas\n" +
@@ -293,6 +307,7 @@ public class Controlador implements ActionListener
 				}
 			}
 			
+
 			vista.getFactura().setVisible(false);
 			vista.getStatusBar().getStatus().setText("Ready...");
 		}

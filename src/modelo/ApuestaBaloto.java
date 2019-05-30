@@ -2,7 +2,9 @@ package modelo;
 
 public class ApuestaBaloto extends Apuestas
 {
+
 	int a = 0, b = 0, c = 0 , d = 0 , e=0 , f=0; 
+
 	String num=" ";
 	
 	public String BalotoAutomatico(){
@@ -11,14 +13,16 @@ public class ApuestaBaloto extends Apuestas
 	
 		while(a<40) {
 			
+
 			a = (int)(Math.rint(46)*Math.random());
 			
 		}
 		while(b<30) {
-			
+
 			b = (int)(Math.rint(40)*Math.random());
 			
 		}
+
 		while(c<20) {
 			
 			c = (int)(Math.rint(30)*Math.random());
@@ -40,6 +44,7 @@ public class ApuestaBaloto extends Apuestas
 		num= (Integer.toString(a) +"-"+  Integer.toString(b) +"-"+ Integer.toString(c) +"-"+ Integer.toString(d) +"-"+ Integer.toString(e) +"-"+Integer.toString(f));
 	
 		return num;
+
 	}
 	
 	public int BalotoManual() {

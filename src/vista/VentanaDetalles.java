@@ -41,6 +41,7 @@ public class VentanaDetalles extends JFrame{
 		sede.getGuardar().addActionListener(control);
 		apos.getCargar().addActionListener(control);
 		apos.getGuardar().addActionListener(control);
+		apos.getAgregarr().addActionListener(control);
 		add(pestanas);
 		pestanas.addTab("Parametrizacion", para);
 		pestanas.addTab("Sede", sede);

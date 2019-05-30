@@ -1,7 +1,7 @@
 package modelo;
 
 public class ApuestaSuperAstro {
-	
+
 	
 	String num=" ";
 	public String SuperAstro() {
@@ -22,5 +22,6 @@ public class ApuestaSuperAstro {
 		return num;
 	}
 		
+
 	
 }
