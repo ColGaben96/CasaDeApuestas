@@ -32,7 +32,7 @@ public class PanelSedes extends JPanel{
 		txtNumEmp= new JTextField("");
 		txtNumEmp.setForeground(Color.BLACK);
 		txtNumEmp.setBackground(Color.WHITE);
-		butGuardar = new JButton("Modificar datos");
+		butGuardar = new JButton("Agregar / Modificar datos");
 		butGuardar.setActionCommand(GUARDAR);
 		butCargar = new JButton("Cargar datos");
 		butCargar.setActionCommand(CARGAR);
