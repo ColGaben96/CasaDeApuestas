@@ -7,8 +7,12 @@ public class Facturacion
 	private int realfactura;
 	public Facturacion()
 	{
-		Random r = new Random();
-		realfactura = r.nextInt(99999*10);
+
+		double factura = Math.random();
+
+		factura = Double.longBitsToDouble(0);
+
+
 		
 	}
 	public void hacerFactura()

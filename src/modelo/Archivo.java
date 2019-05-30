@@ -6,7 +6,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
@@ -27,6 +26,7 @@ private String cedula;
 private String presupuesto;
 private PrinterJob pjob;
 private PageFormat pf;
+
 private String line;
 
 	public Archivo()
@@ -40,13 +40,18 @@ private String line;
 		cedula = new String();
 		presupuesto = new String();
 		pf = new PageFormat();
+
 		line = new String();
 		pjob = new PrinterJob() {
+
 			
 			@Override
 			public PageFormat validatePage(PageFormat page) {
 				// TODO Apéndice de método generado automáticamente
+
 				return pf;
+
+
 			}
 			
 			@Override
@@ -94,7 +99,9 @@ private String line;
 			@Override
 			public PageFormat pageDialog(PageFormat page) throws HeadlessException {
 				// TODO Apéndice de método generado automáticamente
+
 				return pf;
+
 			}
 			
 			@Override
@@ -106,13 +113,21 @@ private String line;
 			@Override
 			public String getUserName() {
 				// TODO Apéndice de método generado automáticamente
+
 				return ubicacion;
+
+		
+
 			}
 			
 			@Override
 			public String getJobName() {
 				// TODO Apéndice de método generado automáticamente
+
 				return nombre;
+
+		
+
 			}
 			
 			@Override
@@ -124,7 +139,9 @@ private String line;
 			@Override
 			public PageFormat defaultPage(PageFormat page) {
 				// TODO Apéndice de método generado automáticamente
+
 				return pf;
+
 			}
 			
 			@Override
@@ -146,7 +163,7 @@ private String line;
 	            
 	    		idstream.close();
 	    		input.close(); 
-	            JOptionPane.showMessageDialog(null, "EXITOSO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+	      
 	        } catch (IOException ex) {
 	            ex.printStackTrace();
 	            JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
@@ -162,7 +179,7 @@ private String line;
 			    		
 			     		dstream.close();
 			     		output.close(); 
-			            JOptionPane.showMessageDialog(null, "EXITOSO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+			     	      JOptionPane.showMessageDialog(null, "EXITOSO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 			         } catch (IOException io) {
 			             io.printStackTrace();
 			             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
@@ -170,22 +187,22 @@ private String line;
 			}
 			
 			public void escribirArchivoJuegos() {
-			 	 try (FileOutputStream output = new FileOutputStream("Juegos.dat")) {
+			 	 try (FileOutputStream output = new FileOutputStream("juegos.dat")) {
 			     		DataOutputStream dstream = new DataOutputStream(output); 
 
 			     		dstream.writeUTF("Nombre: SuperAstro"); 
 			    		dstream.writeUTF("Tipo: Loteria");
-			    		dstream.writeUTF("13000");
+			    		dstream.writeUTF("0");
 			    		dstream.writeUTF("Nombre: Baloto"); 
 			    		dstream.writeUTF("Tipo: Loteria");
-			    		dstream.writeUTF("13000");
+			    		dstream.writeUTF("0");
 			    		dstream.writeUTF("Nombre: OhPolla"); 
 			    		dstream.writeUTF("Tipo: Deportes");
-			    		dstream.writeUTF("13000");
+			    		dstream.writeUTF("0");
 			    		
 			     		dstream.close();
 			     		output.close(); 
-
+			     	      JOptionPane.showMessageDialog(null, "EXITOSO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 			         } catch (IOException io) {
 			             io.printStackTrace();
 			             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
@@ -234,7 +251,7 @@ private String line;
 			            
 			    		idstream.close();
 			    		input.close(); 
-			            JOptionPane.showMessageDialog(null, "EXITOSO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+			          
 			        } catch (IOException ex) {
 			            ex.printStackTrace();
 			            JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
@@ -242,7 +259,11 @@ private String line;
 
 					}
 					public void escribirArchivoApostador(String pNombre, String pCedula, String pSede, String pDireccion, String pCelular) {
-					 	 try (FileOutputStream output = new FileOutputStream("apostadores.dat")) {
+					 	if(pNombre.equals("")|| pCedula.equals("") || pSede.equals("SELECCIONAR:") || pDireccion.equals("") || pCelular.equals("")){
+					 		 JOptionPane.showMessageDialog(null, "ERROR: UNO O VARIOS DE LOS CAMPOS ESTAN VACIOS", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+					 	}
+					 	else {
+						try (FileOutputStream output = new FileOutputStream("apostadores.dat")) {
 					     		DataOutputStream dstream = new DataOutputStream(output); 
 
 					     		dstream.writeUTF(pNombre); 
@@ -258,7 +279,8 @@ private String line;
 					         } catch (IOException io) {
 					             io.printStackTrace();
 					             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
-					         }  
+					         } 
+					 	}
 					}
 					public void escribirSuperAstro(String pNombre, String pCedula, String pDatos) {
 					 	 try (FileOutputStream output = new FileOutputStream("apuestas-superastro-"+pNombre+".dat")) {
@@ -275,7 +297,7 @@ private String line;
 					          
 					         } catch (IOException io) {
 					             io.printStackTrace();
-					             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+					         
 					         }  
 					}
 					public void escribirBaloto(String pNombre, String pCedula, String pDatos) {
@@ -293,7 +315,7 @@ private String line;
 					          
 					         } catch (IOException io) {
 					             io.printStackTrace();
-					             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+					            
 					         }  
 					}
 					public void escribirOhPolla(String pNombre, String pCedula, String pDatos) {
@@ -311,9 +333,11 @@ private String line;
 					          
 					         } catch (IOException io) {
 					             io.printStackTrace();
-					             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "Título del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+					            
 					         }  
 					}
+					
+				
 					
 					
 					public String imprimirFactura(String pInsertWhatTheFuck)
@@ -373,6 +397,7 @@ private String line;
 
 					public String getNumemp() {
 						return numemp;
+
 					}
 
 					public void setNumemp(String numemp) {
@@ -448,6 +473,9 @@ private String line;
 					}
 					
 					
+
+
+
 			
 	
 }
