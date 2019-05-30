@@ -12,8 +12,9 @@ public class SuperAstroFormulario extends JPanel
 	private JComboBox<String> listAstro;
 	
 	public SuperAstroFormulario()
-	{
-		setLayout(new GridLayout(6, 3));
+	{	
+	setLayout(new GridLayout (6,3));
+	
 		String[] listSignos = {"SELECCIONAR", "Acuario", "Piscis", "Aries", "Tauro", "Geminis", "Cancer", "Leo", "Virgo", "Libra", "Escorpio", "Sagitario", "Capricornio"};
 		
 		idFactura = new JLabel("ID Factura N.");
@@ -41,22 +42,24 @@ public class SuperAstroFormulario extends JPanel
 		add(selectNumber);
 		
 		txNumber1 = new JTextField();
-		txNumber1.setBounds(230, 30, 200, 30); 
+		txNumber1.setBounds(10, 10, 100, 30); 
+		txNumber1.setEditable(true);
 		add(txNumber1);
 		
 		txNumber2 = new JTextField();
-		txNumber2.setBounds(230, 30, 200, 30); 
+		txNumber2.setBounds(10, 10, 100, 30); 
 		add(txNumber2);
 		
 		txNumber3 = new JTextField();
-		txNumber3.setBounds(230, 30, 200, 30); 
+		txNumber3.setBounds(10, 10, 100, 30); 
 		add(txNumber3);
 		
 		txNumber4 = new JTextField();
-		txNumber4.setBounds(230, 30, 200, 30); 
+		txNumber4.setBounds(10, 10, 100, 30); 
 		add(txNumber4);
 		
 	}
+
 
 	public JLabel getIdFactura() {
 		return idFactura;
