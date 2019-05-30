@@ -36,7 +36,7 @@ public class PanelParametros extends JPanel{
 		txtSedes.setBackground(Color.WHITE);
 		txtPresupuesto.setForeground(Color.BLACK);
 		txtPresupuesto.setBackground(Color.WHITE);
-		butGuardar = new JButton("Modificar datos");
+		butGuardar = new JButton("Agregar / Modificar datos");
 		butGuardar.setActionCommand(GUARDAR);
 		butCargar = new JButton("Cargar datos");
 		butCargar.setActionCommand(CARGAR);
