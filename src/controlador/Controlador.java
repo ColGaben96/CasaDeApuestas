@@ -285,9 +285,9 @@ public class Controlador implements ActionListener
 			}
 			if (vista.getFactura().getOperaciones().getImprimirFactura().isSelected() && vista.getFactura().getOperaciones().getEnviaracorreo().isSelected())
 			{
-				modelo.getA().imprimirFactura("Oh! Apuestas" +
-						"\n "+ "Tienda: "+modelo.getA().getSede()+
-						"\n " + "Factura Numero: "+vista.getFactura().getDetalles().getTxFactura().getText() +
+				modelo.getA().imprimirFactura("Oh! Apuestas");
+				modelo.getA().imprimirFactura("Tienda: "+modelo.getA().getSede());
+				modelo.getA().imprimirFactura("Factura Numero: "+vista.getFactura().getDetalles().getTxFactura().getText() +
 						"\n " + "Nombre e Identificacion: "+modelo.getA().getCedula()+" "+modelo.getA().getNombre()+
 						"\n " + "---------------------------------------------------------------------------------"+
 						"\n " + "											FACTURA								"+
