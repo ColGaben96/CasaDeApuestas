@@ -13,7 +13,7 @@ public class SuperAstroFormulario extends JPanel
 	
 	public SuperAstroFormulario()
 	{	
-	setLayout(new GridLayout (6,3));
+	setLayout(new GridLayout (4,4));
 	
 		String[] listSignos = {"SELECCIONAR", "Acuario", "Piscis", "Aries", "Tauro", "Geminis", "Cancer", "Leo", "Virgo", "Libra", "Escorpio", "Sagitario", "Capricornio"};
 		
@@ -46,17 +46,17 @@ public class SuperAstroFormulario extends JPanel
 		txNumber1.setEditable(true);
 		add(txNumber1);
 		
-		txNumber2 = new JTextField();
-		txNumber2.setBounds(10, 10, 100, 30); 
-		add(txNumber2);
+//		txNumber2 = new JTextField();
+//		txNumber2.setBounds(10, 10, 100, 30); 
+//		add(txNumber2);
 		
-		txNumber3 = new JTextField();
-		txNumber3.setBounds(10, 10, 100, 30); 
-		add(txNumber3);
+//		txNumber3 = new JTextField();
+//		txNumber3.setBounds(10, 10, 100, 30); 
+//		add(txNumber3);
 		
-		txNumber4 = new JTextField();
-		txNumber4.setBounds(10, 10, 100, 30); 
-		add(txNumber4);
+//		txNumber4 = new JTextField();
+//		txNumber4.setBounds(10, 10, 100, 30); 
+//		add(txNumber4);
 		
 	}
 
