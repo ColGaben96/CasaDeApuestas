@@ -7,13 +7,13 @@ public class DialogChartReporte extends JDialog
 {
 	private static final long serialVersionUID = 1L;
 	
-	private DialogChartImagen chart;
+	//private DialogChartImagen chart;
 	private DialogChartOperaciones operaciones;
 	private VentanaReporte repo;
 	
 	public DialogChartReporte()
 	{
-		chart = new DialogChartImagen();
+		//chart = new DialogChartImagen();
 		operaciones = new DialogChartOperaciones();
 		repo = new VentanaReporte("Total de Apuestas: ");
 		
@@ -22,14 +22,14 @@ public class DialogChartReporte extends JDialog
 		setSize(1024, 768);
 		setVisible(false);
 		
-		add(chart, BorderLayout.CENTER);
+		//add(chart, BorderLayout.CENTER);
 		add(repo, BorderLayout.NORTH);
 		add(operaciones, BorderLayout.SOUTH);
 	}
 
-	public DialogChartImagen getChart() {
+	/*public DialogChartImagen getChart() {
 		return chart;
-	}
+	}*/
 
 	public DialogChartOperaciones getOperaciones() {
 		return operaciones;
