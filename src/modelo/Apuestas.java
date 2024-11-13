@@ -7,19 +7,19 @@ public class Apuestas implements CasasDeApuestas
 
 	@Override
 	public String nombrePunto() {
-		// TODO ApÈndice de mÈtodo generado autom·ticamente
+		// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 		return nombrePunto;
 	}
 
 	@Override
 	public String direccion() {
-		// TODO ApÈndice de mÈtodo generado autom·ticamente
+		// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 		return direccion;
 	}
 
 	@Override
 	public double presupuestoPunto() {
-		// TODO ApÈndice de mÈtodo generado autom·ticamente
+		// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 		return presupuestoPunto;
 	}
 

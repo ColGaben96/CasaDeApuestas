@@ -137,7 +137,7 @@ public class Controlador implements ActionListener
 				valorinicial = 0;
 			/* Capturar datos y usar un generador de pdf*/
 			vista.getStatusBar().getStatus().setText("Making Invoice...");
-			vista.getImagenReporte().getChart().setBaloto(vista.getImagenReporte().getChart().getBaloto()+1.0);
+			//vista.getImagenReporte().getChart().setBaloto(vista.getImagenReporte().getChart().getBaloto()+1.0);
 			vista.getImagenReporte().getRepo().setApuestasquant(vista.getImagenReporte().getRepo().getApuestasquant()+1);
 			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxFactura().getText());
 			if(vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getRevancha().isSelected())
@@ -188,7 +188,7 @@ public class Controlador implements ActionListener
 			int valorinicial = Integer.parseInt(vista.getFactura().getOperaciones().getValortotal().getText());
 			if(vista.getFactura().getOperaciones().getValortotal().getText() == null)
 				valorinicial = 0;
-			vista.getImagenReporte().getChart().setSuperastro(vista.getImagenReporte().getChart().getSuperastro()+1.0);
+			//vista.getImagenReporte().getChart().setSuperastro(vista.getImagenReporte().getChart().getSuperastro()+1.0);
 			vista.getImagenReporte().getRepo().setApuestasquant(vista.getImagenReporte().getRepo().getApuestasquant()+1);
 			vista.getStatusBar().getStatus().setText("Making Invoice...");
 			vista.getFactura().getDetalles().getTxFactura().setText(vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxFactura().getText());
@@ -215,7 +215,7 @@ public class Controlador implements ActionListener
 			int valorinicial = Integer.parseInt(vista.getFactura().getOperaciones().getValortotal().getText());
 			if(vista.getFactura().getOperaciones().getValortotal().getText() == null)
 				valorinicial = 0;
-			vista.getImagenReporte().getChart().setOhpolla(vista.getImagenReporte().getChart().getOhpolla()+1.0);
+			//vista.getImagenReporte().getChart().setOhpolla(vista.getImagenReporte().getChart().getOhpolla()+1.0);
 			vista.getImagenReporte().getRepo().setApuestasquant(vista.getImagenReporte().getRepo().getApuestasquant()+1);
 			vista.getStatusBar().getStatus().setText("Making Invoice...");
 			modelo.getA().escribirOhPolla(modelo.getA().getSede(), modelo.getA().getCedula(), 
@@ -289,7 +289,7 @@ public class Controlador implements ActionListener
 							+"Signo Zodiacal: "+vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getListAstro().getSelectedItem().toString()+"\n"
 							+"Numero a Apostar: "+vista.getPanelGrande().getPestanas().getSuperAstro().getFormulario().getTxNumber1().getText().toString()+"\n"
 							+"\nMucha suerte!\n"
-							+"\nGracias por utilizar nuestros servicios! Estamos a tu disposición para una próxima vez.");
+							+"\nGracias por utilizar nuestros servicios! Estamos a tu disposiciï¿½n para una prï¿½xima vez.");
 				}
 				if(vista.getPanelGrande().getPestanas().getSelectedTab() == "Baloto") 
 				{
@@ -310,7 +310,7 @@ public class Controlador implements ActionListener
 							+"Tipo de juego: "+vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getSelectedGame()+"\n"
 							+"Balotas: "+vista.getPanelGrande().getPestanas().getBaloto().getFormulario().getTxBalotas().getText().toString()+"\n"
 							+"\nMucha suerte!\n"
-							+"\nGracias por utilizar nuestros servicios! Estamos a tu disposición para una próxima vez.");
+							+"\nGracias por utilizar nuestros servicios! Estamos a tu disposiciï¿½n para una prï¿½xima vez.");
 				}
 				if(vista.getPanelGrande().getPestanas().getSelectedTab() == "OhPolla") 
 				{
@@ -333,7 +333,7 @@ public class Controlador implements ActionListener
 							+vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getListEquipoB().getSelectedItem().toString()+" "
 							+vista.getPanelGrande().getPestanas().getOhPolla().getFormulario().getTxMarcadorB().getText().toString()+"\n"
 							+"\nMucha suerte!\n"
-							+"\nGracias por utilizar nuestros servicios! Estamos a tu disposición para una próxima vez.");
+							+"\nGracias por utilizar nuestros servicios! Estamos a tu disposiciï¿½n para una prï¿½xima vez.");
 				}
 				vista.getFactura().setVisible(false);
 				vista.getStatusBar().getStatus().setText("Ready...");
@@ -415,7 +415,7 @@ public class Controlador implements ActionListener
 					+"---------------------------------------------------------------------------------\n"
 					+"                                     JUEGO\n"
 					+"---------------------------------------------------------------------------------\n"
-					+"\nGracias por utilizar nuestros servicios! Estamos a tu disposición para una próxima vez.");
+					+"\nGracias por utilizar nuestros servicios! Estamos a tu disposiciï¿½n para una prï¿½xima vez.");
 			try 
 			{
 				Desktop desktop = Desktop.getDesktop();

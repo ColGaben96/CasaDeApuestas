@@ -46,7 +46,7 @@ private String line;
 			
 			@Override
 			public PageFormat validatePage(PageFormat page) {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 
 				return pf;
 
@@ -55,49 +55,49 @@ private String line;
 			
 			@Override
 			public void setPrintable(Printable painter, PageFormat format) {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 				
 			}
 			
 			@Override
 			public void setPrintable(Printable painter) {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 				
 			}
 			
 			@Override
 			public void setPageable(Pageable document) throws NullPointerException {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 				
 			}
 			
 			@Override
 			public void setJobName(String jobName) {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 				
 			}
 			
 			@Override
 			public void setCopies(int copies) {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 				
 			}
 			
 			@Override
 			public boolean printDialog() throws HeadlessException {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 				return false;
 			}
 			
 			@Override
 			public void print() throws PrinterException {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 				
 			}
 			
 			@Override
 			public PageFormat pageDialog(PageFormat page) throws HeadlessException {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 
 				return pf;
 
@@ -105,13 +105,13 @@ private String line;
 			
 			@Override
 			public boolean isCancelled() {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 				return false;
 			}
 			
 			@Override
 			public String getUserName() {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 
 				return ubicacion;
 
@@ -121,7 +121,7 @@ private String line;
 			
 			@Override
 			public String getJobName() {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 
 				return nombre;
 
@@ -131,13 +131,13 @@ private String line;
 			
 			@Override
 			public int getCopies() {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 				return 0;
 			}
 			
 			@Override
 			public PageFormat defaultPage(PageFormat page) {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 
 				return pf;
 
@@ -145,7 +145,7 @@ private String line;
 			
 			@Override
 			public void cancel() {
-				// TODO ApÈndice de mÈtodo generado autom·ticamente
+				// TODO Ap√©ndice de m√©todo generado autom√°ticamente
 				
 			}
 		};
@@ -165,7 +165,7 @@ private String line;
 	      
 	        } catch (IOException ex) {
 	            ex.printStackTrace();
-	            JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "TÌtulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+	            JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "T√≠tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 	        }
 
 			}
@@ -178,10 +178,10 @@ private String line;
 			    		
 			     		dstream.close();
 			     		output.close(); 
-			     	      JOptionPane.showMessageDialog(null, "EXITOSO", "TÌtulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+			     	      JOptionPane.showMessageDialog(null, "EXITOSO", "T√≠tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 			         } catch (IOException io) {
 			             io.printStackTrace();
-			             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "TÌtulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+			             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "T√≠tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 			         }  
 			}
 			
@@ -201,10 +201,10 @@ private String line;
 			    		
 			     		dstream.close();
 			     		output.close(); 
-			     	      JOptionPane.showMessageDialog(null, "EXITOSO", "TÌtulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+			     	      JOptionPane.showMessageDialog(null, "EXITOSO", "T√≠tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 			         } catch (IOException io) {
 			             io.printStackTrace();
-			             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "TÌtulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+			             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "T√≠tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 			         }  
 			}
 			  public void leerArchivoJuegos() {
@@ -230,7 +230,7 @@ private String line;
 
 			        } catch (IOException ex) {
 			            ex.printStackTrace();
-			            JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "TÌtulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+			            JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "T√≠tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 			        }
 
 					}
@@ -253,13 +253,13 @@ private String line;
 			          
 			        } catch (IOException ex) {
 			            ex.printStackTrace();
-			            JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "TÌtulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+			            JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "T√≠tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 			        }
 
 					}
 					public void escribirArchivoApostador(String pNombre, String pCedula, String pSede, String pDireccion, String pCelular) {
 					 	if(pNombre.equals("")|| pCedula.equals("") || pSede.equals("SELECCIONAR:") || pDireccion.equals("") || pCelular.equals("")){
-					 		 JOptionPane.showMessageDialog(null, "ERROR: UNO O VARIOS DE LOS CAMPOS ESTAN VACIOS", "TÌtulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+					 		 JOptionPane.showMessageDialog(null, "ERROR: UNO O VARIOS DE LOS CAMPOS ESTAN VACIOS", "T√≠tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 					 	}
 					 	else {
 						try (FileOutputStream output = new FileOutputStream("apostadores.dat")) {
@@ -274,10 +274,10 @@ private String line;
 					    		
 					     		dstream.close();
 					     		output.close(); 
-					            JOptionPane.showMessageDialog(null, "EXITOSO", "TÌtulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+					            JOptionPane.showMessageDialog(null, "EXITOSO", "T√≠tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 					         } catch (IOException io) {
 					             io.printStackTrace();
-					             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "TÌtulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
+					             JOptionPane.showMessageDialog(null, "ERROR: NO EXISTE EL ARCHIVO", "T√≠tulo del Message Dialog", JOptionPane.INFORMATION_MESSAGE);
 					         } 
 					 	}
 					}
